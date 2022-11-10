@@ -96,18 +96,20 @@ def extract_chart(chart_link, chart_type):
     return chart_dict_copy
 
 
-def main():
-    page = "https://commons.wikimedia.org/wiki/Category:Horizontal_bar_charts"
-    chart_type = "barchart_horizontal"
-
+def create_chart_dataset(page, chart_type):
     # load website
     response = requests.get(page)
     page_content = BeautifulSoup(response.content, "html.parser")
     chart_image_list = []
 
+    # if next page and go to next page first
+    for link in page_content.find_all("a"):
+        if link.text.strip() == "next page":
+            next_page_link = COMMONS_CHART_URL.format(link["href"])
+            chart_image_list = create_chart_dataset(next_page_link, chart_type)
+
     # iterate over images on overview page
     for item in page_content.find_all('li', {"class": "gallerybox"})[:10]:
-
         # for each image retrieve link to its page
         chart_link = COMMONS_CHART_URL.format(item.find_all('a')[1]["href"])
 
@@ -117,11 +119,18 @@ def main():
         if chart_dict_copy:
             chart_image_list.append(chart_dict_copy)
 
+    return chart_image_list
+
+
+def main():
+    page = "https://commons.wikimedia.org/wiki/Category:Horizontal_bar_charts"
+    chart_type = "barchart_horizontal"
+
+    chart_image_list = create_chart_dataset(page, chart_type)
+
     # save chart_image_list
     with open(r"../data/horizontal_bar_charts.json", "w", encoding="utf-8") as file:
         json.dump(chart_image_list, file, indent=4)
-
-    # continue with "next" page until there exists none left
 
 
 if __name__ == '__main__':
