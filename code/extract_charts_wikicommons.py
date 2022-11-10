@@ -15,9 +15,9 @@ CHART_DICT = {
     'wikipedia_pages': []
 }
 
+
 def get_lang_detector(nlp, name):
     return LanguageDetector(seed=42)  # We use the seed 42
-
 
 COMMONS_CHART_URL = "https://commons.wikimedia.org/{}"
 NLP_MODEL = spacy.load("en_core_web_sm")
@@ -75,14 +75,20 @@ def extract_chart(chart_link, chart_type):
         source = source_link[0]["href"]
 
     # save chart image locally
-    image_path = ""
+    image_filename = ""
+    for img_item in chart_page.find_all("img"):
+        if "File:" in img_item["alt"]: # select chart image
+            img_response = requests.get(img_item["src"])
+            image_filename = "".join(chart_link.split("File:")[1:])
+            with open("../data/images/{}".format(image_filename), 'wb') as f:
+                f.write(img_response.content)
 
     # save chart dict
     chart_dict_copy = CHART_DICT.copy()
     chart_dict_copy["title"] = chart_page.title.text
     chart_dict_copy["type"] = chart_type
     chart_dict_copy["url"] = chart_link
-    chart_dict_copy["image_path"] = image_path
+    chart_dict_copy["image_path"] = image_filename
     chart_dict_copy["source"] = source
     chart_dict_copy["description"] = description
     chart_dict_copy["wikipedia_pages"] = wiki_links
@@ -92,7 +98,7 @@ def extract_chart(chart_link, chart_type):
 
 def main():
     page = "https://commons.wikimedia.org/wiki/Category:Horizontal_bar_charts"
-    chart_type = "horizontal_bar_charts"
+    chart_type = "barchart_horizontal"
 
     # load website
     response = requests.get(page)
@@ -100,7 +106,7 @@ def main():
     chart_image_list = []
 
     # iterate over images on overview page
-    for item in page_content.find_all('li', {"class": "gallerybox"})[:50]:
+    for item in page_content.find_all('li', {"class": "gallerybox"})[:10]:
 
         # for each image retrieve link to its page
         chart_link = COMMONS_CHART_URL.format(item.find_all('a')[1]["href"])
