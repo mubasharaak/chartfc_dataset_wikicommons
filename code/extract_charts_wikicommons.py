@@ -7,10 +7,9 @@ from spacy.language import Language
 from spacy_language_detection import LanguageDetector
 
 CHART_DICT = {
-    'title': "",
+    'file_name': "",
     'type': "",
     'url': "",
-    'image_path': "",
     'source': "",
     'description': "",
     'wikipedia_pages': []
@@ -24,6 +23,8 @@ def get_lang_detector(nlp, name):
     return LanguageDetector(seed=42)  # We use the seed 42
 
 
+CATEGORY_URL = "https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:{}&cmlimit=1500&cmtype=file&format=json"
+COMMONS_FILE_URL = "https://api.wikimedia.org/core/v1/commons/file/"
 COMMONS_CHART_URL = "https://commons.wikimedia.org/{}"
 NLP_MODEL = spacy.load("en_core_web_sm")
 Language.factory("language_detector", func=get_lang_detector)
@@ -59,15 +60,15 @@ def get_wiki_links(chart_page):
     return wiki_links
 
 
-def extract_chart(chart_link, chart_type):
+def extract_chart(chart_page_url, chart_image_url, chart_type, image_filename=""):
     # access single chart image page, e.g. "https://commons.wikimedia.org/wiki/File:1_guadeloupe_pesticides.jpg"
-    chart_response = requests.get(chart_link)
+    chart_response = requests.get("https:"+chart_page_url, HEADERS, stream=True)
     chart_page = BeautifulSoup(chart_response.content, "html.parser")
 
     # check if English chart, extract description
     description = get_english_description(chart_page)
     if not description or description is None:
-        print(f"{chart_link} non-english chart!")
+        print(f"{chart_page_url} non-english chart!")
         return None
 
     # extract Wikipedia pages using this chart
@@ -80,20 +81,15 @@ def extract_chart(chart_link, chart_type):
         source = source_link[0]["href"]
 
     # save chart image locally
-    image_filename = ""
-    for img_item in chart_page.find_all("img"):
-        if "File:" in img_item["alt"]:  # select chart image
-            img_response = requests.get(img_item["src"], headers=HEADERS, stream=True)
-            image_filename = "".join(chart_link.split("File:")[1:])
-            with open("../data/images/{}".format(image_filename), 'wb') as f:
-                f.write(img_response.content)
+    img_response = requests.get(chart_image_url, headers=HEADERS, stream=True)
+    with open("../data/images/{}".format(image_filename), 'wb') as f:
+        f.write(img_response.content)
 
     # save chart dict
     chart_dict_copy = CHART_DICT.copy()
-    chart_dict_copy["title"] = chart_page.title.text
+    chart_dict_copy["file_name"] = image_filename
     chart_dict_copy["type"] = chart_type
-    chart_dict_copy["url"] = chart_link
-    chart_dict_copy["image_path"] = image_filename
+    chart_dict_copy["url"] = chart_page_url
     chart_dict_copy["source"] = source
     chart_dict_copy["description"] = description
     chart_dict_copy["wikipedia_pages"] = wiki_links
@@ -102,28 +98,27 @@ def extract_chart(chart_link, chart_type):
 
 
 def create_chart_dataset(page, chart_type):
-    # @todo instead of loading category page and scraping => use WikiMedia api to retrieve all chart images
-
-    # load website
-    response = requests.get(page)
-    page_content = BeautifulSoup(response.content, "html.parser")
     chart_image_list = []
 
-    # if next page and go to next page first
-    for link in page_content.find_all("a"):
-        if link.text.strip() == "next page":
-            next_page_link = COMMONS_CHART_URL.format(link["href"])
-            chart_image_list = create_chart_dataset(next_page_link, chart_type)
+    # retrieve all images of the category page "page"
+    category_url = CATEGORY_URL.format(page)
+    response = requests.get(category_url, headers=HEADERS, stream=True)
+    response_json = response.json()
 
-    # iterate over images on overview page
-    for item in page_content.find_all('li', {"class": "gallerybox"})[:10]:
-        # for each image retrieve link to its page
-        chart_link = COMMONS_CHART_URL.format(item.find_all('a')[1]["href"])
+    # iterate over image entries
+    for image_entry in response_json["query"]["categorymembers"]:
+        # get url for page showing image and details
+        url = COMMONS_FILE_URL + image_entry["title"]
+        response = requests.get(url, headers=HEADERS, stream=True)
+        image_content = response.json()
+        image_url = image_content["file_description_url"]
+        image_filename = "".join(image_content["file_description_url"].split("File:")[1:])
 
-        # extract and save chart (content)
-        chart_dict_copy = extract_chart(chart_link, chart_type)
-
+        # extract image file and relevant data
+        chart_dict_copy = extract_chart(chart_page_url=image_url, chart_image_url=image_content["preferred"]["url"],
+                                        chart_type=chart_type, image_filename=image_filename)
         if chart_dict_copy:
+            # information retrieval successful, add entry to dataset list
             chart_image_list.append(chart_dict_copy)
 
     return chart_image_list
@@ -131,11 +126,11 @@ def create_chart_dataset(page, chart_type):
 
 def main():
     chart_categories_dict = {
-        "barchart_horizontal": "https://commons.wikimedia.org/wiki/Category:Horizontal_bar_charts",
-        "barchart_vertical": "https://commons.wikimedia.org/wiki/Category:Vertical_bar_charts",
-        "line_chart": "https://commons.wikimedia.org/wiki/Category:Line_charts",
-        "pie_chart": "https://commons.wikimedia.org/wiki/Category:Pie_charts_in_English",
-        "scatter_plot": "https://commons.wikimedia.org/wiki/Category:Scatterplots",
+        "barchart_horizontal": "Horizontal_bar_charts",
+        "barchart_vertical": "Vertical_bar_charts",
+        "line_chart": "Line_charts",
+        "pie_chart": "Pie_charts_in_English",
+        "scatter_plot": "Scatterplots",
 
     }
     chart_image_list = []
