@@ -1,7 +1,8 @@
 import json
-from bs4 import BeautifulSoup
+
 import requests
 import spacy
+from bs4 import BeautifulSoup
 from spacy.language import Language
 from spacy_language_detection import LanguageDetector
 
@@ -14,10 +15,14 @@ CHART_DICT = {
     'description': "",
     'wikipedia_pages': []
 }
+HEADERS = {
+  'User-Agent': 'mubashara.akhtar@kcl.ac.uk'
+}
 
 
 def get_lang_detector(nlp, name):
     return LanguageDetector(seed=42)  # We use the seed 42
+
 
 COMMONS_CHART_URL = "https://commons.wikimedia.org/{}"
 NLP_MODEL = spacy.load("en_core_web_sm")
@@ -77,8 +82,8 @@ def extract_chart(chart_link, chart_type):
     # save chart image locally
     image_filename = ""
     for img_item in chart_page.find_all("img"):
-        if "File:" in img_item["alt"]: # select chart image
-            img_response = requests.get(img_item["src"])
+        if "File:" in img_item["alt"]:  # select chart image
+            img_response = requests.get(img_item["src"], headers=HEADERS, stream=True)
             image_filename = "".join(chart_link.split("File:")[1:])
             with open("../data/images/{}".format(image_filename), 'wb') as f:
                 f.write(img_response.content)
