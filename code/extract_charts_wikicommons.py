@@ -102,6 +102,8 @@ def extract_chart(chart_link, chart_type):
 
 
 def create_chart_dataset(page, chart_type):
+    # @todo instead of loading category page and scraping => use WikiMedia api to retrieve all chart images
+
     # load website
     response = requests.get(page)
     page_content = BeautifulSoup(response.content, "html.parser")
@@ -128,13 +130,20 @@ def create_chart_dataset(page, chart_type):
 
 
 def main():
-    page = "https://commons.wikimedia.org/wiki/Category:Horizontal_bar_charts"
-    chart_type = "barchart_horizontal"
+    chart_categories_dict = {
+        "barchart_horizontal": "https://commons.wikimedia.org/wiki/Category:Horizontal_bar_charts",
+        "barchart_vertical": "https://commons.wikimedia.org/wiki/Category:Vertical_bar_charts",
+        "line_chart": "https://commons.wikimedia.org/wiki/Category:Line_charts",
+        "pie_chart": "https://commons.wikimedia.org/wiki/Category:Pie_charts_in_English",
+        "scatter_plot": "https://commons.wikimedia.org/wiki/Category:Scatterplots",
 
-    chart_image_list = create_chart_dataset(page, chart_type)
+    }
+    chart_image_list = []
+    for chart_type, page in chart_categories_dict.items():
+        chart_image_list.append(create_chart_dataset(page, chart_type))
 
     # save chart_image_list
-    with open(r"../data/horizontal_bar_charts.json", "w", encoding="utf-8") as file:
+    with open(r"../data/chartfc_V1.json", "w", encoding="utf-8") as file:
         json.dump(chart_image_list, file, indent=4)
 
 
