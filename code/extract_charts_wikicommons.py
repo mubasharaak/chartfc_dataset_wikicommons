@@ -1,4 +1,5 @@
 import json
+import time
 
 import requests
 import spacy
@@ -17,15 +18,14 @@ CHART_DICT = {
 HEADERS = {
   'User-Agent': 'mubashara.akhtar@kcl.ac.uk'
 }
+CATEGORY_URL = "https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:{}&cmlimit=500&cmtype=file&format=json"
+COMMONS_FILE_URL = "https://api.wikimedia.org/core/v1/commons/file/"
+COMMONS_CHART_URL = "https://commons.wikimedia.org/{}"
 
 
 def get_lang_detector(nlp, name):
     return LanguageDetector(seed=42)  # We use the seed 42
 
-
-CATEGORY_URL = "https://commons.wikimedia.org/w/api.php?action=query&list=categorymembers&cmtitle=Category:{}&cmlimit=1500&cmtype=file&format=json"
-COMMONS_FILE_URL = "https://api.wikimedia.org/core/v1/commons/file/"
-COMMONS_CHART_URL = "https://commons.wikimedia.org/{}"
 NLP_MODEL = spacy.load("en_core_web_sm")
 Language.factory("language_detector", func=get_lang_detector)
 NLP_MODEL.add_pipe('language_detector', last=True)
@@ -81,9 +81,20 @@ def extract_chart(chart_page_url, chart_image_url, chart_type, image_filename=""
         source = source_link[0]["href"]
 
     # save chart image locally
+    if "http" not in chart_image_url:
+        chart_image_url = "https:" + chart_image_url
     img_response = requests.get(chart_image_url, headers=HEADERS, stream=True)
-    with open("../data/images/{}".format(image_filename), 'wb') as f:
-        f.write(img_response.content)
+    try:
+        with open(r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\images\{}".format(image_filename),
+                  'wb') as f:
+            f.write(img_response.content)
+    except FileNotFoundError:
+        # shorten file name to overcome error of too long file names specific to Python/Windows setting
+        image_filename_parts = image_filename.split(".")
+        image_filename = image_filename_parts[0][:100] + "." + image_filename_parts[1]
+        with open(r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\images\{}".format(image_filename),
+                  'wb') as f:
+            f.write(img_response.content)
 
     # save chart dict
     chart_dict_copy = CHART_DICT.copy()
@@ -99,20 +110,49 @@ def extract_chart(chart_page_url, chart_image_url, chart_type, image_filename=""
 
 def create_chart_dataset(page, chart_type):
     chart_image_list = []
+    has_more_items = False
 
-    # retrieve all images of the category page "page"
+    # retrieve all images of the given category "page"
     category_url = CATEGORY_URL.format(page)
     response = requests.get(category_url, headers=HEADERS, stream=True)
+    time.sleep(10)
     response_json = response.json()
+    chart_pages_list = response_json["query"]["categorymembers"]
+    if "continue" in response_json.keys():
+        # category has multiple pages of items
+        has_more_items = True
 
-    # iterate over image entries
-    for image_entry in response_json["query"]["categorymembers"]:
+    while has_more_items:
+        # iterate until the category has a followup page
+        category_url_continue = category_url + "&cmcontinue=" + response_json["continue"]["cmcontinue"] + "&continue=" + response_json["continue"]["continue"]
+        response = requests.get(category_url_continue, headers=HEADERS, stream=True)
+        time.sleep(10)
+        response_json = response.json()
+        chart_pages_list.extend(response_json["query"]["categorymembers"])
+        if "continue" not in response_json.keys():
+            has_more_items = False
+
+    # iterate over retrieved image entries
+    for image_entry in chart_pages_list:
         # get url for page showing image and details
         url = COMMONS_FILE_URL + image_entry["title"]
-        response = requests.get(url, headers=HEADERS, stream=True)
+        try:
+            response = requests.get(url, headers=HEADERS, stream=True)
+        except Exception as e:
+            print(f"The following error occurred for entry {image_entry}: {e}.")
+
         image_content = response.json()
-        image_url = image_content["file_description_url"]
-        image_filename = "".join(image_content["file_description_url"].split("File:")[1:])
+        if "file_description_url" in image_content.keys():
+            image_url = image_content["file_description_url"]
+            image_filename = "".join(image_content["file_description_url"].split("File:")[1:])
+        elif "title" in image_content.keys():
+            image_url = url
+            image_filename = "".join(image_content["title"].split("File:")[1:])
+        else:
+            # image was not retrieved correctly
+            print(f"Skipping entry {image_entry}. Doing a timeout. ")
+            time.sleep(2400)
+            continue
 
         # extract image file and relevant data
         chart_dict_copy = extract_chart(chart_page_url=image_url, chart_image_url=image_content["preferred"]["url"],
@@ -125,20 +165,21 @@ def create_chart_dataset(page, chart_type):
 
 
 def main():
+    # wikimedia categories to extract data from
     chart_categories_dict = {
-        "barchart_horizontal": "Horizontal_bar_charts",
-        "barchart_vertical": "Vertical_bar_charts",
-        "line_chart": "Line_charts",
+        # "barchart_horizontal": "Horizontal_bar_charts",
+        # "barchart_vertical": "Vertical_bar_charts",
+        # "line_chart": "Line_charts",
         "pie_chart": "Pie_charts_in_English",
-        "scatter_plot": "Scatterplots",
+        # "scatter_plot": "Scatterplots",
 
     }
     chart_image_list = []
     for chart_type, page in chart_categories_dict.items():
         chart_image_list.append(create_chart_dataset(page, chart_type))
 
-    # save chart_image_list
-    with open(r"../data/chartfc_V1.json", "w", encoding="utf-8") as file:
+    # save chart_image_list @todo adjust file name
+    with open(r"../data/pie_chart.json", "w", encoding="utf-8") as file:
         json.dump(chart_image_list, file, indent=4)
 
 
