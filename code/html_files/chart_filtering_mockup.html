@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Wikidata Reference Verification</title>
+    <title>Claim Generation</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
@@ -15,7 +15,7 @@
     <style>
         input[type="range"].unmoved::-webkit-slider-thumb {
             border: 1px solid #dddddd;
-            background: #dddddd;le
+            background: #dddddd;
         }
 
         input[type="range"].unmoved::-moz-range-thumb {
@@ -56,12 +56,11 @@
                         <h4 class="text-left mt-3">
                             Examples
                         </h4>
-                        <br>
-                        <p>In this task you will see a <b>claim and a table</b> at the top of the page. After reading them you must adjust the claim. </br> </br> <b> Adjust the given claim</b> as little as possible to get a well-formed sentence which is <b>verified or refuted given the table</b>. You are allowed to change the claim's meaning to form the new claim. </br> </br> <b>Avoid writing simple claims</b>, but instead combine information from at least two different table rows or columns. When writing refuted claims, <b>avoid using negation words</b>  such as "not" and "never". Below we have highlighted the table cells which were used to adjust the claim.</p>
+                        <br>In this task you will see at the top of the page a <b>claim and a table</b>. After reading them you must adjust the claim such that the sentence is verifiable or refutable by someone using the information in the table. </br> </br> Don't write a completely new claim but try to <b>adjust the given claim as little as possible</b> to get a well-formed sentence, which is <b>verifiable or refutable given the table</b>. </br> </br> <b>Avoid writing very simple claims</b> but combine information from at least two different table rows or table columns. While writing refutable claims <b>avoid using negation words</b> like "not" and "never". Below we have highlighted the table cells, which were used to adjust the claim.</p>
                         <hr>
                         <div>
                             <h5 class="text-left text-primary mt-3">
-                                1. Example: VERIFIED CLAIM
+                                1. Example: VERIFIABLE CLAIM
                             </h5>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-11 pr-0 pl-0">
@@ -99,7 +98,7 @@
                                 <div id="claim-panel" class=''>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-11 pr-0 pl-0">
-                                            <h6>3. Afterwards adjust the claim such that it can be verified or refuted given the table.</h6>
+                                            <h6>3. Afterwards adjust the claim such that it verifiable or refutable given the table.</h6>
                                             <div class="row d-flex justify-content-center">
                                                 <div class="col-sm-11 bg-light border rounded p-2">
                                                     <p>The average income in Wisconsin is $5,000 less than its neighbors state Minnesota.</p>
@@ -112,7 +111,7 @@
                                 <div id="label-panel" class=''>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-11 pr-0 pl-0">
-                                            <h6>4. Select if the adjusted claim can be verified or refuted given the table.</h6>
+                                            <h6>4. Select if the claim you just wrote, is verifiable or refutable given the table.</h6>
                                         </div>
                                     </div>
                                     <div class="row d-flex justify-content-center">
@@ -120,13 +119,13 @@
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" id="supports" checked disabled>
                                                 <label class="form-check-label" for="supports">
-                                                    Verified
+                                                    Verify
                                                 </label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="radio" id="refutes" disabled>
                                                 <label class="form-check-label" for="refutes">
-                                                    Refuted
+                                                    Refute
                                                 </label>
                                             </div>
                                         </div>
@@ -134,12 +133,12 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The claim states that the largest city in Wisconsin (Milwaukee) is at the shore of Lake Michigan. We adjust the claim so that it can be <b>verified given the table</b>. As <b>Wisconsin</b> is the only part of the claim which is related to the table, we keep Wisconsin and adjust the claim using information from the 4th row (Minnesota) and the 11th row (Wisconsin). As our adjusted claim can be verified using the table, we select <b>"Verified"</b> after entering the new claim.</p>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The claim states that the largest city in Wisconsin (Milwaukee) is at the shore of Lake Michigan. We adjust the claim so that it is <b>verifiable given the table</b>. As <b>Wisconsin</b> is the only part of the claim which is related to the table, we keep Wisconsin and adjust the claim using information from the 4th row (Minnesota) and the 11th row (Wisconsin). As our adjusted claim can be verified using the table, we select <b>"Verify"</b> after entering the new claim.</p>
                     </div>
                     <hr>
                     <div>
                         <h5 class="text-left text-primary mt-3">
-                            2. Example: REFUTED CLAIM
+                            2. Example: REFUTABLE CLAIM
                         </h5>
                         <div class="row d-flex justify-content-center">
                             <div class="col-sm-11 pr-0 pl-0">
@@ -176,7 +175,7 @@
                             <div id="claim-panel" class=''>
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>3. Afterwards adjust the claim such that it can be verified or refuted given the table.</h6>
+                                        <h6>3. Afterwards adjust the claim such that it verifiable or refutable given the table.</h6>
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-11 bg-light border rounded p-2">
                                                 <p>More people died from the influenza virus in the US last year than in the previous years.</p>
@@ -189,7 +188,7 @@
                             <div id="label-panel" class=''>
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>4. Select if the adjusted claim can be verified or refuted given the table.</h6>
+                                        <h6>4. Select if the claim you just wrote, is verifiable or refutable given the table.</h6>
                                     </div>
                                 </div>
                                 <div class="row d-flex justify-content-center">
@@ -197,13 +196,13 @@
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" id="supports" disabled>
                                             <label class="form-check-label" for="supports">
-                                                Verified
+                                                Verify
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" id="refutes" checked disabled>
                                             <label class="form-check-label" for="refutes">
-                                                Refuted
+                                                Refute
                                             </label>
                                         </div>
                                     </div>
@@ -211,12 +210,12 @@
                             </div>
                             <br />
                         </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION: </b>The given claim compares last year's COVID-19 and influenza virus deaths. The <b>table does not mention COVID-19 but the influenza virus</b>. We adjust the claim by deleting and adding a few words such that it can be <b>refuted given the information in the table</b>. We use information from the <b>caption</b>, the <b>last column</b> and from <b>row two and four</b>.</p>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION: </b>The given claim compares last year's COVID-19 and influenza virus deaths. The <b>table does not mention COVID-19 but the influenza virus</b>. We adjust the claim by deleting and adding a few words such that it is <b>refutable given the information in the table</b>. We use information from the <b>caption</b>, the <b>last column</b> and from <b>row two and four</b>.</p>
                     </div>
                     <hr>
                     <div>
                         <h5 class="text-left text-primary mt-3">
-                            3. Example: REFUTED CLAIM
+                            3. Example: REFUTABLE CLAIM
                         </h5>
                         <div class="row d-flex justify-content-center">
                             <div class="col-sm-11 pr-0 pl-0">
@@ -253,7 +252,7 @@
                             <div id="claim-panel" class=''>
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>3. Afterwards adjust the claim such that it can be verified or refuted given the table.</h6>
+                                        <h6>3. Afterwards adjust the claim such that it verifiable or refutable given the table.</h6>
                                         <div class="row d-flex justify-content-center">
                                             <div class="col-sm-11 bg-light border rounded p-2">
                                                 <p>Statistics on crime rates demonstrate that in Australia the crime rate has increased since the 90's.</p>
@@ -266,7 +265,7 @@
                             <div id="label-panel" class=''>
                                 <div class="row d-flex justify-content-center">
                                     <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>4. Select if the adjusted claim can be verified or refuted given the table.</h6>
+                                        <h6>4. Select if the claim you just wrote, is verifiable or refutable given the table.</h6>
                                     </div>
                                 </div>
                                 <div class="row d-flex justify-content-center">
@@ -274,13 +273,13 @@
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" id="supports" disabled>
                                             <label class="form-check-label" for="supports">
-                                                Verified
+                                                Verify
                                             </label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" id="refutes" checked disabled>
                                             <label class="form-check-label" for="refutes">
-                                                Refuted
+                                                Refute
                                             </label>
                                         </div>
                                     </div>
@@ -288,18 +287,22 @@
                             </div>
                             <br />
                         </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The claim says that crime statistics were collected in New Zealand since the 90's. The <b>table is not related to New Zealand</b> but to crime rates in Australia. However, the table does not tell us since when statistics on Australian crime rates have been collected. Therefore we form a <b>claim on Australian crime rates which can be refuted using the table</b> and avoid using negation words.</p>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The claim says that crime statistics were collected in New Zealand since the 90's. The <b>table is not related to New Zealand</b> but to crime rates in Australia. However, the table does not tell us since when statistics on Australian crime rates have been collected. Therefore we form a <b>refutable claim on Australian crime rates</b> and avoid using negation words.</p>
                     </div>
                     <hr>
                 </div>
+            </div>
+            <div class="text-left">
                 <div id="instructions-2" class="instructions d-none">
-                    <h5><b>Task rules</b></h5>
+                    <h5><b>General rules</b></h5>
                     <p id="instructions-rules-text"></p>
+                    <h5><b>Claim adjustment rules</b></h5>
+                    <p id="instructions-rules-claim-generation-text"></p>
                 </div>
                 <div id="instructions-3" class="instructions d-none">
                     <div id="lan_test" class="text-left">
                         <h5><b>Task Qualification Test: </b></h5>
-                        <p>Below you find a table and a few related questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates. </p>
+                        <p>Below you find a table and a few related questions. You need to answer them successfully to start with the task. If you fail, you get a second chance. The task will terminate if you fail a second time. </p>
                         <div class="row d-flex justify-content-center">
                             <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
                                 <p><table style="border: 1px solid black;"><tbody><tr><th style="border: 1px solid black;">Cities</th><th style="border: 1px solid black;">Population</th><th style="border: 1px solid black;">Region</th></tr><tr><td style="border: 1px solid black;"><b><a>New York</a></b></td><td style="border: 1px solid black;">19,979,477</td><td style="border: 1px solid black;"><a>Northeast</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Los Angeles</a></b></td><td style="border: 1px solid black;">13,291,486</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Chicago</a></b></td><td style="border: 1px solid black;">9,498,716</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Dallas–Fort Worth</a></b></td><td style="border: 1px solid black;">7,539,711</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Houston</a></b></td><td style="border: 1px solid black;">6,997,384</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Washington, D.C.</a></b></td><td style="border: 1px solid black;">6,249,950</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Miami</a></b></td><td style="border: 1px solid black;">6,198,782</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Philadelphia</a></b></td><td style="border: 1px solid black;">6,096,372</td><td style="border: 1px solid black;"><a>Northeast</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Detroit</a></b></td><td style="border: 1px solid black;">4,326,442</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Seattle</a></b></td><td style="border: 1px solid black;">3,939,363</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Minneapolis–St. Paul</a></b></td><td style="border: 1px solid black;">3,629,190</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>San Diego</a></b></td><td style="border: 1px solid black;">3,343,364</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Tampa–St. Petersburg</a></b></td><td style="border: 1px solid black;">3,142,663</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Denver</a></b></td><td style="border: 1px solid black;">2,932,415</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>St. Louis</a></b></td><td style="border: 1px solid black;">2,805,465</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr></tr></tbody></table></p>
@@ -320,9 +323,14 @@
             </h4>
             <br />
             <!---->
+            <div id="instructions-main" class="instructions">
+                <h5><b>Claim adjustment rules</b></h5>
+                <p id="main-page-rules-claim-generation-text"></p>
+            </div>
+            <hr>
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-11 pr-0 pl-0">
-                    <h5>1. Considering the claim:
+                    <h5>1. Look at the following claim:
                     </h5>
                 </div>
             </div>
@@ -335,7 +343,7 @@
             <div id="table-panel" class=''>
                 <div class="row d-flex justify-content-center">
                     <div class="col-sm-11 pr-0 pl-0">
-                        <h5>2. And considering the table (and its caption, if available):</h5>
+                        <h5>2. Look at the accompanying table and (if available) its caption:</h5>
                     </div>
                 </div>
                 <div class="row d-flex justify-content-center">
@@ -343,29 +351,25 @@
                         <p id="fc-table"></p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-11">
-                        <p><b>Caption: </b><span id='caption'></span></p>
-                    </div>
-                </div>
+                <p><b>Caption: </b><span id='caption'></span></p>
                 <br />
                 <!---->
-                <div id="claim-adj-panel" class=''>
+                <div id="author-panel" class=''>
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-11 pr-0 pl-0">
-                            <h5>3. Adjust the given claim such it can either verified or refuted when considering the table.</h5>
-                            <h7>You are allowed to change the meaning of the given claim if it does not match the table. You can look at the examples from before by clicking on "Show Instructions" at the top of this page.</h7>
+                            <h5>3. Afterwards adjust the claim such that it can be either verified or refuted given the table.</h5>
+                            <p>You can look at some exemplary, adjusted claims by clicking on "Show Instructions" at the top of this page.</p>
                             <div class="form-group">
-                                <textarea class="form-control" id="adjusted_claim" rows="2" placeholder="Write adjusted claim here..."></textarea>
+                                <textarea class="form-control" id="adjustedClaim" rows="2" placeholder="Write adjusted claim here..."></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="claim-label-panel" class=''>
-                    <div class="row d-flex justify-content-center">
+                <br />
+                <div id="author-panel" class=''>
+                <div class="row d-flex justify-content-center">
                         <div class="col-sm-11 pr-0 pl-0">
-                            <h5>4. Select if the adjusted claim can be verified or refuted given the table.</h5>
+                            <h5>4. Select if the claim you just wrote, can be verified or refuted given the table.</h5>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-center">
@@ -385,8 +389,6 @@
                         </div>
                     </div>
                 </div>
-                <br />
-                <!---->
                 <br />
                 <!---->
                 <div class="row p-3">
@@ -492,12 +494,11 @@
         <input type="hidden" value="" name="assignmentId" id="assignmentId" />
         <input type="submit" id="submitButton" style="visibility: hidden;" />
         <input type="hidden" name="outputs" value="" id="outputs" />
+        <input type="hidden" name="unsortedElems" value="" id="unsortedElems" />
         <input type="hidden" name="times" value="" id="times" />
         <input type="hidden" name="events" value="" id="events" />
         <input type="hidden" name="feedback" value="" id="feedback" />
-    </form>
-</div>
-<script language="Javascript">
+        <script language="Javascript">
         let sub_publisher_options = {
             0:[
                 "Academic and research institutions (e.g. universities and research centres, but not museums and libraries, as those are cultural organisations)",
@@ -518,15 +519,17 @@
             4: [],
             5: []
         }
-        let references = ${references}$
-        let lan_test_questions = ${lan_test_questions}$;
+        let references = [{'claim_db_id': '6072bd2d000ca92c09d146fb', 'claim': "The death from influenza of eight mostly vaccinated people over 65 in California's Santa Barbara County during the 2017-2018 flu season proves that you shouldn’t get the flu shot.", 'label': 'false', 'table': {'url': 'https://www.cdc.gov/flu/about/burden/2017-2018/archive.htm', 'caption': 'Table 1: Estimated influenza disease burden, by age group United States, 2017-2018 influenza season', 'header_horizontal': ['', 'Symptomatic Illnesses', 'Medical Visits', 'Hospitalizations', 'Deaths', 'Age group', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI'], 'header_vertical': [], 'rows_list': [['0-4 yrs', '3,678,342', '(2,563,438 -7,272,693)', '2,464,489', '(1,695,054 4,904,296)', '25,644', '(17,871 50,702)', '115', '(0 367)'], ['5-17 yrs', '7,512,601', '(5,899,989 10,199,144)', '3,906,553', '(3,002,375 5,356,724)', '20,599', '(16,177 27,965)', '528', '(205 1,392)'], ['18-49 yrs', '14,428,065', '(12,258,820 19,396,710)', '5,338,384', '(4,262,260 -7,333,716)', '80,985', '(68,809 108,874)', '2,803', '(1,610 6,936)'], ['50-64 yrs', '13,237,932', '(9,400,614 -23,062,957)', '5,692,311', '(3,895,925 10,028,080)', '140,385', '(99,691 244,576)', '6,751', '(4,244 15,863)'], ['65+ yrs', '5,945,690', '(3,907,025 11,786,777)', '3,329,586', '(2,139,716- 6,623,717)', '540,517', '(355,184 -1,071,525)', '50,903', '(35,989 83,230)'], ['All ages', '44,802,629', '(39,322,959 57,928,172)', '20,731,323', '(17,978,392 27,248,302)', '808,129', '(620,768 -1,357,043)', '61,099', '(46,404 94,987)']], 'html_table': `<table><caption><h3>Table 1: Estimated influenza disease burden, by age group — United States, 2017-2018 influenza season</h3></caption><thead><tr><th></th><th>Symptomatic Illnesses</th><th>Medical Visits</th><th>Hospitalizations</th><th>Deaths</th></tr><tr><th>Age group</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th></tr></thead><tbody><tr><td>0-4 yrs</td><td>3,678,342</td><td>(2,563,438 -7,272,693)</td><td>2,464,489</td><td>(1,695,054 – 4,904,296)</td><td>25,644</td><td>(17,871 – 50,702)</td><td>115</td><td>(0 – 367)</td></tr><tr><td>5-17 yrs</td><td>7,512,601</td><td>(5,899,989 – 10,199,144)</td><td>3,906,553</td><td>(3,002,375 – 5,356,724)</td><td>20,599</td><td>(16,177 – 27,965)</td><td>528</td><td>(205 – 1,392)</td></tr><tr><td>18-49 yrs</td><td>14,428,065</td><td>(12,258,820 – 19,396,710)</td><td>5,338,384</td><td>(4,262,260 -7,333,716)</td><td>80,985</td><td>(68,809 – 108,874)</td><td>2,803</td><td>(1,610 – 6,936)</td></tr><tr><td>50-64 yrs</td><td>13,237,932</td><td>(9,400,614 -23,062,957)</td><td>5,692,311</td><td>(3,895,925 – 10,028,080)</td><td>140,385</td><td>(99,691 – 244,576)</td><td>6,751</td><td>(4,244 – 15,863)</td></tr><tr><td>65+ yrs</td><td>5,945,690</td><td>(3,907,025 – 11,786,777)</td><td>3,329,586</td><td>(2,139,716-  6,623,717)</td><td>540,517</td><td>(355,184 -1,071,525)</td><td>50,903</td><td>(35,989 – 83,230)</td></tr><tr><td>All ages</td><td>44,802,629</td><td>(39,322,959 – 57,928,172)</td><td>20,731,323</td><td>(17,978,392 – 27,248,302)</td><td>808,129</td><td>(620,768 -1,357,043)</td><td>61,099</td><td>(46,404 – 94,987)</td></tr></tbody></table>`}, 'g_id': {'label': [2], 'header': -1}}, {'claim_db_id': '6072bd2d000ca92c09d1473b', 'claim': 'In 2019, a U.S. District Court judge ruled that girls in an Illinois school district "must shower with boys" and had no right to privacy.', 'label': 'false', 'table': {'url': 'https://www.law.cornell.edu/uscode/text/28/133', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['Delaware', '1'], ['Florida, Northern and Southern', '1'], ['Georgia, Northern', '1'], ['Kansas', '1'], ['Missouri, Eastern and Western', '1'], ['Ohio, Northern', '1'], ['Oklahoma, Western', '1'], ['Pennsylvania, Eastern, Middle and Western', '1'], ['West Virginia, Northern and Southern', '1']], 'html_table': `<table><colgroup><col/><col/></colgroup><thead><tr><th><p><em>Districts</em></p></th><th><p><em>Judges</em></p></th></tr></thead><tbody><tr><td><p><span>Delaware</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Florida, Northern and Southern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Georgia, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Kansas</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Missouri, Eastern and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Ohio, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Oklahoma, Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Pennsylvania, Eastern, Middle and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>West Virginia, Northern and Southern</span></p></td><td><p>1</p></td></tr></tbody></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d1453d', 'claim': '“The NFL agreed to give the domestic terror group, BLM, 250 million dollars.', 'label': 'false', 'table': {'url': 'https://www.nps.gov/parkhistory/online_books/blm/history/', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['OPPORTUNITY AND CHALLENGE The Story of BLM', 'OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM By James Muhn Hanson R. Stuart designed by Peter D. Doran September 1988 second printing U.S. Department of the Interior Bureau of Land Management TABLE OF CONTENTS', 'OPPORTUNITY AND CHALLENGE', 'The Story of BLM'], ['OPPORTUNITY AND CHALLENGE'], ['The Story of BLM'], ['index.htm Last Updated: 08-Sep-2008']], 'html_table': `<table><tr><td><table><tr><td><font>OPPORTUNITY AND CHALLENGE</font><br/><font>The Story of BLM</font><hr/></td><td><img/></td></tr></table></td></tr><tr><td><img/></td><td><br/><table><tr><td><font><b>OPPORTUNITY AND CHALLENGE</b></font></td></tr><tr><td><font><b>The Story of BLM</b></font></td></tr></table><p><br/><font><b>By</b></font><br/><font><b>James Muhn<br/>Hanson R. Stuart</b></font></p><p><br/><font><b>designed by</b></font><br/><font><b>Peter D. Doran</b></font></p><p><br/><font><b>September 1988</b></font><br/><font>second printing</font></p><p><font>U.S. Department of the Interior<br/>Bureau of Land Management</font></p><p><br/><a><b>TABLE OF CONTENTS</b></a></p></td></tr><tr><td><div><br/><hr/><font>index.htm<br/>Last Updated: 08-Sep-2008</font></div></td></tr></table>`}, 'g_id': {'label': [1], 'header': [1]}}, {'claim_db_id': '6072bd2d000ca92c09d145bc', 'claim': 'Connecticut confirms 4th case of measles.', 'label': 'true', 'table': {'url': 'https://www.tax-brackets.org/connecticuttaxtable', 'caption': '', 'header_horizontal': ['Tax Bracket', 'Tax Rate'], 'header_vertical': [], 'rows_list': [['$0.00+', '3%'], ['$10,000.00+', '5%'], ['$50,000.00+', '5.5%'], ['$100,000.00+', '6%'], ['$200,000.00+', '6.5%'], ['$250,000.00+', '6.9%'], ['$500,000.00+', '6.99%']], 'html_table': '<table><thead><tr><th> Tax Bracket </th><th> Tax Rate </th></tr></thead><tbody><tr><td> $0.00+ </td><td> 3% </td></tr><tr><td> $10,000.00+ </td><td> 5% </td></tr><tr><td> $50,000.00+ </td><td> 5.5% </td></tr><tr><td> $100,000.00+ </td><td> 6% </td></tr><tr><td> $200,000.00+ </td><td> 6.5% </td></tr><tr><td> $250,000.00+ </td><td> 6.9% </td></tr><tr><td> $500,000.00+ </td><td> 6.99% </td></tr></tbody></table>'}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d14861', 'claim': "France's coronavirus death rate accelerates, cases near 100,000.", 'label': 'true', 'table': {'url': 'https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section3.html', 'caption': '', 'header_horizontal': ['Measure', 'Numerator', 'Denominator', '10n'], 'header_vertical': ['Crude death rate', 'Cause-specific death rate', 'Proportionate mortality', 'Death-to-case ratio', 'Neonatal mortality rate', 'Postneonatal mortality rate', 'Infant mortality rate', 'Maternal mortality rate'], 'rows_list': [['Total number of deaths during a given time interval', 'Mid-interval population', '1,000 or 100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Mid-interval population', '100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Total number of deaths from all causes during the same time interval', '100 or 1,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Number of new cases of same disease reported during the same time interval', '100'], ['Number of deaths among children < 28 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children 28364 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children < 1 year of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths assigned to pregnancy-related causes during a given time interval', 'Number of live births during the same time interval', '100,000']], 'html_table': '<table><thead><tr><th>Measure</th><th>Numerator</th><th>Denominator</th><th>10<sup>n</sup></th></tr></thead><tbody><tr><th>Crude death rate</th><td>Total number of deaths during a given time interval</td><td>Mid-interval population</td><td>1,000 or<br/>100,000</td></tr><tr><th>Cause-specific death rate</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Mid-interval population</td><td>100,000</td></tr><tr><th>Proportionate mortality</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Total number of deaths from all causes during the same time interval</td><td>100 or 1,000</td></tr><tr><th>Death-to-case ratio</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Number of new cases of same disease reported during the same time interval</td><td>100</td></tr><tr><th>Neonatal mortality rate</th><td>Number of deaths among children<br/>&lt; 28 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Postneonatal mortality rate</th><td>Number of deaths among children 28–364 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Infant mortality rate</th><td>Number of deaths among children<br/>&lt; 1 year of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Maternal mortality rate</th><td>Number of deaths assigned to pregnancy-related causes during a given time interval</td><td>Number of live births during the same time interval</td><td>100,000</td></tr></tbody></table>'}, 'g_id': 0}]
+        let lan_test_language = "Swedish";
+        //1301
+        let lan_test_questions = [{"question": " What is the first column describing?", "options": ["Countries", "Cities", "Regions"], "answer": 1}, {"question": " Which city has the largest population?", "options": ["Los Angeles", "Miami", "New York City"], "answer": 2}, {"question": " Houston has a larger number of population than Chicago.", "options": ["False", "True"], "answer": 0}];
 
         let total = references.length;
 
         var outputs = [];
         // DEFAULT OUTPUTS IN JSON FORMAT, EX:  { similarity: -1, confidence: -1, reason: "" }
         for (i = 0; i < total; i++) {
-            outputs[i] = {label: -1, adjusted_claim: "", publisher: -1, sub_publisher: -1};
+            outputs[i] = {label: -1, header: -1, publisher: -1, sub_publisher: -1};
         }
 
         var events = [];
@@ -551,11 +554,13 @@
         failCount = 0;
         lanFailCount = 0;
 
-<!--        $("#instructions-project-text").html(`</br>Welcome to the Table-Fact-Checking-Task, </br></br> we will show you a <b>sequence of five facts</b> about the topic <a href='https://www.euro.who.int/en/health-topics/Health-systems/public-health-services'>public health</a>. Each fact comes with a table. We will ask you to answer for each fact the following question: <b>Is the displayed table supporting or refuting the fact?</b> Please avoid applying your own knowledge. Answer this question based on information from the table. On the next page you will find some examples on how to solve this. </br></br>We will also ask you <b>three questions to evaluate skills</b> required for solving this task. After passing them successfully you can start with the task. The task also includes some <b>checks</b>, you can only complete it and receive payment by passing them successfully. </br></br>The data collected in this study will consist only of your inputs, the time you spent on the task and which buttons you clicked. This experiment has received ethical clearance on the 17th April, 2021 by King's College London (KCL), with registration number MRSP-20/21-22978. The data controller for this project will be KCL. If you have any questions or need further assistance, please contact the researcher responsible for this study at <a href='mailto:k20116188@kcl.ac.uk'>k20116188@kcl.ac.uk</a>. </br></br>By continuing with the task, you agree to take part in this research project and consent for the data collected to be used for the purpose of this study.`);-->
-<!--        $("#instructions-rules-text").html(`<ul><li><b>Read</b> the claim and table carefully.</li><li>You might need to <b>scroll down the table</b> to see all rows.</li><li>You must <b>fill all the information</b> requested.</li><li>Do not use any <b>additional sources</b> or your own background knowledge to solve the task.</li><li>You can navigate freely through the tasks using the buttons at the bottom of the page.</li><li>At the end of the task, we <b>check the quality of your work</b>. If you don't pass the test, you can adjust your answers and resubmit two more times. If you fail three times, the task terminates and the work is not accepted.</li><li>Make sure you are using either Chrome, Firefox or Edge. Do not use Internet Explorer.</li><li>You can open these instructions again anytime during the task.</li></ul><p>Next, we will ask you a few questions. You need to answer them successfully to start with the task. If you fail, you get a second chance. The task will terminate if you fail a second time.</p>`);-->
-        $("#instructions-project-text").html(${instructions_project_text}$);
-        $("#instructions-rules-text").html(${instructions_rules_text}$);
+        $("#instructions-project-text").html(`</br> Welcome to the Table-Claim-Generation-Task. </br></br> We will show you <b>seven claims</b> related to <a href='https://www.euro.who.int/en/health-topics/Health-systems/public-health-services'>public health</a>. Each claim comes with a related table. For each claim, you will be asked to do the following: <b>Adjust the claim so that it can be verified or refuted given the table.</b> Write the claim using only information from the table. Please avoid using any additional sources or own knowledge. </br></br> We will show you some examples of how to solve this task on the next page. </br></br> Afterwards, we will ask you <b>three questions</b>. You can progress to the task by answering these questions correctly. The task also includes some <b>checks</b>. You can only submit and receive payment by passing them successfully. </br></br> The data collected in this study consist of your inputs, the time you spent on the task and the buttons clicked. This experiment received ethical clearance on 17th April, 2021 from King's College London (KCL), with registration number MRSP-20/21-22978. The data controller for this project will be KCL. If you have any questions or need further assistance, please contact <a href='mailto:k20116188@kcl.ac.uk'>k20116188@kcl.ac.uk</a>. </br></br> By continuing with the task, you agree to take part in this research project and consent for the data collected to be used for the purpose of this study.`);
+        $("#instructions-intro-text").html("In this task, we want your help classifying the nature of some websites. You will be asked to take a look at six websites, and, for each, we'll ask:<br>1) What is the kind of author that normally puts information in that website;<br>2) What is the type of publisher that the website most closely classifies as;<br>3) Depending on the publisher type, a sub-type of publisher will also be asked.");
+        $("#instructions-rules-text").html(`<ul><li><b>Read</b> the claim and table carefully.</li><li>You might need to <b>scroll down the table</b> to see all rows.</li><li>You must <b>fill all the information</b> requested.</li><li>Do not use any <b>additional sources</b> or your own background knowledge to solve the task.</li><li>You can navigate freely through the tasks using the buttons at the bottom of the page.</li><li>At the end of the task, we <b>check the quality of your work</b>. If you don't pass the test, you can adjust your answers and resubmit two more times. If you fail three times, the task terminates and the work is not accepted.</li><li>Make sure you are using either Chrome, Firefox or Edge. Do not use Internet Explorer.</li><li>You can open these instructions again anytime during the task.</li></ul>`);
+        $("#instructions-rules-claim-generation-text").html(`<ul><li><b>Adjust the given claim</b> as little as possible to create a claim verifiable or refutable given the table.</li><li> To verify or refute the claim, <b>only information from the table</b> and commonsense should be needed.</li><li>Do not include your own background knowledge on the topic while adjusting the claim.</li><li>To verify or refute the claim, information from at least two different table rows or table columns must be needed. Do <b>not write simple lookup sentences</b>.</li><li>The claim must be a well-formed, grammatically correct sentence. </li><li>Avoid using vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Avoid using ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>Avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>Refuting claims must not include negation words like “not”, “never”, “none”, etc.</li><li> Refuting claims must be <b>refutable given only the table and no additional information</b>.</li><li>Numbers and dates can be formatted in any appropriate English format.</li></ul><p> Next, we will ask you a few questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates.</p>`);
+        $("#main-page-rules-claim-generation-text").html(`<ul><li><b>Adjust the given claim</b> as little as possible to create a claim verifiable or refutable given the table.</li><li> To verify or refute the claim, <b>only information from the table</b> and commonsense should be needed.</li><li>Do not include your own background knowledge on the topic while adjusting the claim.</li><li>To verify or refute the claim, information from at least two different table rows or table columns must be needed. Do <b>not write simple lookup sentences</b>.</li><li>The claim must be a well-formed, grammatically correct sentence. </li><li>Avoid using vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Avoid using ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>Avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>Refuting claims must not include negation words like “not”, “never”, “none”, etc.</li><li> Refuting claims must be <b>refutable given only the table and no additional information</b>.</li><li>Numbers and dates can be formatted in any appropriate English format.</li></ul>`);
 
+        $("#lan_test_language").text(lan_test_language)
 
         for (i = 0; i < lan_test_questions.length; i++) {
             $('#lan_test').append(`<p class="mb-0">${lan_test_questions[i]['question']}</p>`)
@@ -588,8 +593,7 @@
             pageIndex = currentPage - 1;
             output = outputs[pageIndex];
 
-            $("textarea#adjusted_claim").val(output['adjusted_claim']);
-            for (i = 0; i < 2; i++) {
+            for (i = 0; i < 3; i++) {
                 if (output['label'] == i) {
                     $(`#label_${i}`).addClass("active");
                     $(`#label_${i}`).children('input').prop('checked', true)
@@ -599,10 +603,87 @@
                 }
             }
 
+            for (i = 0; i < 6; i++) {
+                if (output['publisher'] == i) {
+                    $(`#publisher_${i}`).addClass("active");
+                    $(`#publisher_${i}`).children('input').prop('checked', true)
+                } else {
+                    $(`#publisher_${i}`).removeClass("active");
+                    $(`#publisher_${i}`).children('input').prop('checked', false)
+                }
+            }
+
+            $('#sub-publisher-options').empty()
+            if (output['publisher'] == -1){
+                $('#sub-publisher-panel').addClass('d-none')
+            } else if (sub_publisher_options[output['publisher']].length == 0) {
+                $('#sub-publisher-panel').addClass('d-none')
+            } else {
+                $('#sub-publisher-panel').removeClass('d-none')
+                for (i = 0; i < sub_publisher_options[output['publisher']].length; i++) {
+                    $("#sub-publisher-options").append(
+                        `<label id="sub_publisher_${i}" class="btn btn-primary subpublisher">
+                            <input type="radio" autocomplete="off" value='unavailable' name='sub_publisher_radios'>
+                            ${sub_publisher_options[output['publisher']][i]}
+                        </label>`
+                    );
+                    $('label.btn.subpublisher').click(function () {
+                        page = parseInt($("#current-page").text());
+                        pageIndex = page - 1;
+                        outputs[pageIndex]['sub_publisher'] = parseInt(this.id.split('sub_publisher_')[1]);
+                    });
+                    if (output['sub_publisher'] == i) {
+                        $(`#sub_publisher_${i}`).addClass("active");
+                        $(`#sub_publisher_${i}`).children('input').prop('checked', true)
+                    } else {
+                        $(`#sub_publisher_${i}`).removeClass("active");
+                        $(`#sub_publisher_${i}`).children('input').prop('checked', false)
+                    }
+                }
+            }
+
+            $("#website_reference").text(references[pageIndex]["table"]["url"]);
+            $("#website_reference").prop("href", references[pageIndex]["table"]["url"]);
+
             $("#statement_reference").text(references[pageIndex]["claim"]);
             $("#caption").text(references[pageIndex]["table"]["caption"]);
             $("#fc-table").html(references[pageIndex]["table"]["html_table"]);
+<!--            $("#adjustedClaim").val(references[pageIndex]["claim"]);-->
 
+            let headers = references[pageIndex]["table"]["header_horizontal"];
+            $('#header_div').empty()
+            if (headers.length > 0) {
+                // iterate over all headers
+                for (i = 0; i < headers.length; i++) {
+                    if ((references[pageIndex]["table"]["header_horizontal"][i]) && (references[pageIndex]["table"]["header_horizontal"][i] != "")) {
+                        // create checkbox for header
+                        $('#header_div').append(`<div class="form-check form-check-inline"><input id="input_header_${i}" class="btn form-check-input" type="checkbox"><label id="header_${i}" class="form-check-label">${references[pageIndex]["table"]["header_horizontal"][i]}</label></div>`)
+                    }
+                }
+            } else {
+                let col_count = 1
+                let rows = references[pageIndex]["table"]["rows_list"]
+                for (i = 0; i < rows.length; i++) {
+                    if (references[pageIndex]["table"]["rows_list"][i].length > col_count) {
+                        col_count = references[pageIndex]["table"]["rows_list"][i].length
+                    }
+                } for (i = 0; i < col_count; i++) {
+                    $('#header_div').append(`<div class="form-check form-check-inline"><input id="input_header_${i}" class="btn form-check-input" type="checkbox"><label id="header_${i}" class="form-check-label">${i+1}. Column</label></div>`)
+                }
+            }
+
+            // set added checkbox to checked if it has been clicked before
+            if (output['header'] != -1) {
+            // headers for this page have been check-boxed before
+                for (j = 0; j < output['header'].length; j++) {
+                    var elem_j = output['header'][j]
+                    // set checkbox to checked when found in output['header] list
+<!--                    $(`#header_${elem_j}`).addClass("active");-->
+                    $(`#input_header_${elem_j}`).prop('checked', true)
+                }
+            }
+
+            <!--            Shuffle support, refute and unrelated radio buttons randomly -->
             var parent = $('#label_div');
             var divs = parent.children();
             while (divs.length) {
@@ -633,86 +714,19 @@
             lastChange = Date.now();
 
             var allControlsUsedCheck = true;
-            var claimDuplicateCheck = true;
-            var claimLengthCheck = true;
-            var claimNegationCheck = true;
-            var claimTableCheck = true;
-            var claimUncertaintyCheck = true;
             const outputs_flat = [].concat(...outputs)
             for (i = 0; i < outputs_flat.length; i++){
                 if (
                     (outputs_flat[i]["label"] == -1) ||
-                    (outputs_flat[i]["adjusted_claim"].length == 0)
+                    ((outputs_flat[i]["label"] in [0, 1]) &&
+                    ((outputs_flat[i]["header"] == -1) || (outputs_flat[i]["header"].length == 0)))
                 ) {
                     allControlsUsedCheck = false;
-                }
-                if ((outputs_flat[i]["adjusted_claim"].split(' ').length < 5) ||
-                    (outputs_flat[i]["adjusted_claim"].split(' ').length > 30)) {
-                    claimLengthCheck = false;
-                }
-                if (outputs_flat[i]["adjusted_claim"] == references[i]["claim"]) {
-                    claimDuplicateCheck = false;
-                }
-                if ((outputs_flat[i]["adjusted_claim"].indexOf(" perhaps ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" maybe ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" probably ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" mostly ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" occasionally ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" frequently ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" might ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" many ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" few ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" some ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" several ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" most of ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" sometimes ") >= 0)
-                    ) {
-                    claimUncertaintyCheck = false;
-                }
-                if (outputs_flat[i]["adjusted_claim"].indexOf(" table ") >= 0) {
-                    claimTableCheck = false;
-                }
-                if ((outputs_flat[i]["adjusted_claim"].indexOf(" not ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" never ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" none ") >= 0) ||
-                    (outputs_flat[i]["adjusted_claim"].indexOf(" nobody ") >= 0)
-                    ) {
-                    claimNegationCheck = false;
                 }
             }
             if (!allControlsUsedCheck) {
                 log_event("verification_check_failed", {
                     check_failed: "outputs_moved_check",
-                    outputs: JSON.parse(JSON.stringify(outputs))
-                });
-            }
-            if (!claimLengthCheck) {
-                log_event("verification_check_failed", {
-                    check_failed: "claim_length_check",
-                    outputs: JSON.parse(JSON.stringify(outputs))
-                });
-            }
-            if (!claimDuplicateCheck) {
-                log_event("verification_check_failed", {
-                    check_failed: "claim_duplicate_check",
-                    outputs: JSON.parse(JSON.stringify(outputs))
-                });
-            }
-            if (!claimTableCheck) {
-                log_event("verification_check_failed", {
-                    check_failed: "claim_table_check",
-                    outputs: JSON.parse(JSON.stringify(outputs))
-                });
-            }
-            if (!claimNegationCheck) {
-                log_event("verification_check_failed", {
-                    check_failed: "claim_negation_check",
-                    outputs: JSON.parse(JSON.stringify(outputs))
-                });
-            }
-            if (!claimUncertaintyCheck) {
-                log_event("verification_check_failed", {
-                    check_failed: "claim_uncertainty_check",
                     outputs: JSON.parse(JSON.stringify(outputs))
                 });
             }
@@ -731,6 +745,28 @@
             }
 
             var allGoldenCheck = true;
+
+            for (i = 0; i < total; i++) {
+                if (references[i]['g_id'] != 0) {
+                    if (references[i]['g_id']['label'] != -1){
+                        if (references[i]['g_id']['label'].indexOf(outputs[i]['label']) == -1){
+                            allGoldenCheck = false
+                        }
+                    }
+                    if (references[i]['g_id']['header'] != -1){
+                        if ((outputs[i]['header'] == -1) || (outputs[i]['header'].length == 0)) allGoldenCheck = false;
+                        else {
+                            for (j = 0; j < references[i]['g_id']['header']; j++) {
+                                if (outputs[i]['header'].indexOf(references[i]['g_id']['header'][j]) == -1) {
+                                    allGoldenCheck = false;
+                                    break;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
             if (!allGoldenCheck) {
                 log_event("verification_check_failed", {
                     check_failed: "golden_standard_check",
@@ -740,13 +776,12 @@
 
             //allGoldenCheck = true;
 
-            return {'controls':allControlsUsedCheck, 'claim_length':claimLengthCheck, 'claim_negation':claimNegationCheck, 'claim_table':claimTableCheck, 'claim_uncertainty':claimUncertaintyCheck, 'claim_duplicate':claimDuplicateCheck, 'times':allTimesCheck, 'golden':allGoldenCheck};
+            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'golden':allGoldenCheck};
         }
 
         $(function () {
             $("#previous-page").click(function () {
                 var page = parseInt($("#current-page").text());
-                outputs[pageIndex]['adjusted_claim'] = $("textarea#adjusted_claim").val()
                 newPage = page - 1;
                 showContent(newPage);
                 log_event("moved_backward", {
@@ -756,7 +791,6 @@
             });
             $("#next-page").click(function () {
                 var page = parseInt($("#current-page").text());
-                outputs[pageIndex]['adjusted_claim'] = $("textarea#adjusted_claim").val()
                 newPage = page + 1;
                 showContent(newPage);
                 log_event("moved_forward", {
@@ -803,6 +837,28 @@
                 }
             });
 
+            $('#header_div').on('click', '.btn', function () {
+                if (this.id.startsWith('input_header')) {
+                    let header_i = parseInt(this.id.split('input_header_')[1]);
+                    if (outputs[pageIndex]['header'] == -1) {
+                        // add element
+                        var headerArray = [];
+                        headerArray.push(header_i);
+                        outputs[pageIndex]['header'] = headerArray;
+                    } else {
+                        let headerArray = outputs[pageIndex]['header'];
+                        if (headerArray.indexOf(header_i) == -1) { // if check is set
+                            // add to list, element not there
+                            headerArray.push(header_i);
+                        } else {
+                            // remove => find out why Array(0) when splice used
+                            headerArray.splice(headerArray.indexOf(header_i), 1)
+                        }
+                        outputs[pageIndex]['header'] = headerArray;
+                    }
+                }
+            });
+
             $('label.btn').click(function () {
                 page = parseInt($("#current-page").text());
                 pageIndex = page - 1;
@@ -832,6 +888,13 @@
                 }
             });
 
+            $('#website_reference').on('click auxclick', function (e) {
+                if (e.which <= 2) {
+                    page = parseInt($("#current-page").text());
+                    pageIndex = page - 1;
+                    links_clicked[pageIndex] = true;
+                }
+            });
             $('#intro-next').click(function () {
                 let current_instructions_active = $('div.instructions.active')[0];
                 let current_instructions_id = parseInt(current_instructions_active.id.split('instructions-')[1]);
@@ -849,22 +912,16 @@
                 let current_instructions_id = parseInt(current_instructions_active.id.split('instructions-')[1]);
                 $(`#instructions-${current_instructions_id}`).addClass('d-none').removeClass('active');
                 $(`#instructions-${current_instructions_id - 1}`).removeClass('d-none').addClass('active');
-                if (current_instructions_id == 3) {
+                if (current_instructions_id == 2) {
                     $('#ready-button').addClass('d-none');
                     $('#intro-next').removeClass('d-none');
                 } else if (current_instructions_id == 1) {
                     $('#intro-previous').addClass('d-none');
                 }
             });
-
-            $('#presubmit').click(function () {
-                outputs[pageIndex]['adjusted_claim'] = $("textarea#adjusted_claim").val()
-            });
-
             $("#submit").click(function () {
-                outputs[pageIndex]['adjusted_claim'] = $("textarea#adjusted_claim").val()
                 let verification = verifyAnswers();
-                if (verification['controls'] && verification['claim_length'] && verification['claim_duplicate'] && verification['claim_uncertainty'] && verification['claim_negation'] && verification['claim_table'] && verification['times'] && verification['golden']){
+                if (verification['controls'] && verification['times'] && verification['golden']){
                     $("#successModal").modal("toggle");
                     $("#successModal").on("hidden.bs.modal", function () {
                         log_event("task_finished", null);
@@ -879,22 +936,7 @@
                     $("#warning-hints").empty();
                     let warningString = "<ul>"
                     if (!verification['controls']){
-                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one. If you provided answers to a non-required question, that is ok.</li>"
-                    }
-                    if (!verification['claim_length']){
-                        warningString += "<li>At least on of the written claims is too short in length (less than 5 words) or too long (more than thirty words).</li>"
-                    }
-                    if (!verification['claim_duplicate']){
-                        warningString += "<li>At least on of your adjusted claims is almost identical with our initially provided claim. Please adjust the claims given the instructions and the provided table, otherwise this task will be rejected after submission.</li>"
-                    }
-                    if (!verification['claim_negation']){
-                        warningString += "<li>At least on of your adjusted claims has a clear negation word like 'not' and 'never'. Please adjust the claims given the instructions and the provided table.</li>"
-                    }
-                    if (!verification['claim_table']){
-                        warningString += "<li>At least on of your adjusted claims contains the word 'table'. Please adjust the claim such that phrases like 'the table mentions' are not included.</li>"
-                    }
-                    if (!verification['claim_uncertainty']){
-                        warningString += "<li>At least on of your adjusted claims has a word expressing uncertainty like 'maybe' and 'probably'. Please adjust the claims given the instructions and the provided table.</li>"
+                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one. If you provided answers to a non-required question, that is ok. If any slider is in the position you want, but grey, click on it to turn it blue.</li>"
                     }
                     if (!verification['times']){
                         warningString += "<li>You seem to have filled some questions too quickly and we suspected bot activity. Spend a couple of seconds more in each item, maybe review your answers.</li>"
@@ -920,6 +962,7 @@
         });
         turkSetAssignmentID();
     </script>
+    </form>
 </body>
 
 </html>
