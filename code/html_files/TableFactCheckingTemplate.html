@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Wikidata Reference Verification</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://s3.amazonaws.com/mturk-public/externalHIT_v1.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <style>
+        input[type="range"].unmoved::-webkit-slider-thumb {
+            border: 1px solid #dddddd;
+            background: #dddddd;le
+        }
+
+        input[type="range"].unmoved::-moz-range-thumb {
+            border: 1px solid #dddddd;
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container p-5">
+    <div class="row justify-content-center">
+        <button type="button" class="btn btn-primary col-sm-12 d-none" data-toggle="collapse"
+                data-target="#instructions-panel" id="instructions-toggle">
+            <span id="instructions-toggle-text">Show Instructions</span>
+        </button>
+    </div>
+    <div id="instructions-btns" class="row">
+        <button type="button" class="btn btn-primary mr-auto col-sm-2 mb-3 d-none" id="intro-previous">
+            Previous
+        </button>
+        <button type="button" class="btn btn-primary ml-auto col-sm-2 mb-3" id="intro-next">
+            Next
+        </button>
+        <button type="button" class="btn btn-success ml-auto col-sm-2 mb-3 d-none" id="ready-button">
+            Proceed
+        </button>
+    </div>
+    <div id="instructions-panel" class="row">
+        <div class="col-sm-12 mx-auto border rounded shadow-sm text-center" style="background-color: #f5f5f5;">
+            <h4 class="text-left mt-3"><strong>Task instructions</strong></h4>
+            <div class="text-left">
+                <div id="instructions-0" class="instructions active">
+                    <p id="instructions-project-text"></p>
+                </div>
+                <div id="instructions-1" class="instructions d-none">
+                    <div class="col-sm-12 mx-auto border rounded shadow-sm" style="background-color: #f5f5f5;">
+                        <h4 class="text-left mt-3">
+                            Examples
+                        </h4>
+                        <p>In this task you will see a claim and a table. </br><br>You need to select whether the table 1) supports the claim, 2) refutes the claim, 3) is related to the claim but not providing enough information or 4) is unrelated to the claim. </br><br>If you selected “supports”, “refutes” or “related but not enough information”, please tick-mark the columns you used for your decision which can be found at the bottom of the page.</p>
+                        <hr>
+
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                1. Example: SUPPORT
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Considering the claim:
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 bg-light border rounded p-2">
+                                    <p>The typical Wisconsin worker makes $5,000 less each year than our neighbors in Minnesota</p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-table-1" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>2. And considering the table (and its caption, if available):</h6>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                                        <p><table style="border: 1px solid black;"><tbody><tr><th style="border: 1px solid black;">State or territory</th><th style="border: 1px solid black;">Per person income</th><th style="border: 1px solid black;">Population</th></tr><tr><td style="border: 1px solid black;"><span> </span><a>District of Columbia</a></td><td style="border: 1px solid black;">$45,877</td><td style="border: 1px solid black;">658,893</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Alaska</a></td><td style="border: 1px solid black;">$33,062</td><td style="border: 1px solid black;">736,732</td></tr><tr><td class="table-warning" style="border: 1px solid black;"><span> </span><a>Minnesota</a></td><td class="table-warning" style="border: 1px solid black;">$32,638</td><td style="border: 1px solid black;">5,457,173</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Colorado</a></td><td style="border: 1px solid black;">$32,357</td><td style="border: 1px solid black;">5,355,866</td></tr><tr><td style="border: 1px solid black;"><span><a></a></span> <a>Washington</a></td><td style="border: 1px solid black;">$31,841</td><td style="border: 1px solid black;">7,061,530</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Rhode Island</a></td><td style="border: 1px solid black;">$30,830</td><td style="border: 1px solid black;">1,055,173</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Delaware</a></td><td style="border: 1px solid black;">$30,488</td><td style="border: 1px solid black;">935,614</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>California</a></td><td style="border: 1px solid black;">$30,441</td><td style="border: 1px solid black;">38,802,500</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Iowa</a></td><td style="border: 1px solid black;">$28,361</td><td style="border: 1px solid black;">3,107,126</td></tr><tr><td class="table-warning" style="border: 1px solid black;"><span> </span><a>Wisconsin</a></td><td class="table-warning" style="border: 1px solid black;">$28,213</td><td style="border: 1px solid black;">5,757,564</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Maine</a></td><td style="border: 1px solid black;">$27,978</td><td style="border: 1px solid black;">1,330,089</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Kansas</a></td><td style="border: 1px solid black;">$27,870</td><td style="border: 1px solid black;">2,904,021</td></tr></tbody></table></p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b></p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>3. Select if the table supports of refutes the claim.</h6>
+                                            <h7>If the table is related to the claim but does not provide enough information, select the third option ("Related but not enough information"). If the table is completely unrelated to the claim, select option "Unrelated".</h7>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label" for="supports">
+                                                    <input class="form-check-input" type="radio" id="supports" checked disabled>
+                                                    Supports
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label" for="refutes">
+                                                    <input class="form-check-input" type="radio" id="refutes" disabled>
+                                                    Refutes
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not_enough_information" disabled>
+                                                <label class="form-check-label" for="not_enough_information">
+                                                    Related but not enough information
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="unrelated" disabled>
+                                                <label class="form-check-label" for="unrelated">
+                                                    Unrelated
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>4. If you selected "Supports", "Refutes" or "Related but not enough information", select below which column(s) from the table led to your decision:</h6>
+                                        <h7>You have to select a value for at least one of them. </h7>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col1" checked disabled>
+                                            <label class="form-check-label" for="col1">
+                                                State or territory
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col2" checked disabled>
+                                            <label class="form-check-label" for="col2">
+                                                Per person income
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                Population
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <p class="p-3 mb-2 bg-light text-primary"><b> Explanation Text:</b> The claim states that a typical worker in Wisconsin earns $5,000 less per year compared to a typical worker in Minnesota. We can say that this claim is <b>supported</b> by the table by looking at the column <b>“Per person income”</b>. The income value in row Wisconsin is <b>$28,213</b>. The income in Minnesota is <b>$32,638</b>. This is approximately $4,500 more than Wisconsin. Therefore, we decide that the claim is <b>supported</b>.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                2. Example: REFUTE
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Considering the claim:
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 bg-light border rounded p-2">
+                                    <p>The flu killed 80,000 Americans last year according to the CDC</p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-table-2" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>2. And considering the table (and its caption, if available):</h6>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                                        <p><table style="border: 1px solid black;"><thead><tr><th style="border: 1px solid black;"></th><th style="border: 1px solid black;">Symptomatic Illnesses</th><th style="border: 1px solid black;">Medical Visits</th><th style="border: 1px solid black;">Hospitalizations</th><th class="table-warning" style="border: 1px solid black;">Deaths</th></tr></thead><tbody><tr><td style="border: 1px solid black;"><a>2017-2018</a>*</td><td style="border: 1px solid black;">45,000,000</td><td style="border: 1px solid black;">21,000,000</td><td style="border: 1px solid black;">810,000</td><td style="border: 1px solid black;">61,000</td></tr><tr><td style="border: 1px solid black;"><a>2018-2019</a>*</td><td style="border: 1px solid black;">36,000,000</td><td style="border: 1px solid black;">17,000,000</td><td style="border: 1px solid black;">490,000</td><td style="border: 1px solid black;">34,000</td></tr><tr><td class="table-warning" style="border: 1px solid black;"><a>2019-2020</a>*</td><td style="border: 1px solid black;">38,000,000</td><td style="border: 1px solid black;">18,000,000</td><td style="border: 1px solid black;">400,000</td><td class="table-warning" style="border: 1px solid black;">22,000</td></tr></tbody></table></p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b>Table 1: Estimated Influenza Disease Burden, by Season — United States, 2010-11 through 2019-20 Influenza Seasons</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>3. Select if the table supports of refutes the claim.</h6>
+                                            <h7>If the table is related to the claim but does not provide enough information, select the third option ("Related but not enough information"). If the table is completely unrelated to the claim, select option "Unrelated".</h7>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label" for="supports">
+                                                    <input class="form-check-input" type="radio" id="supports" disabled>
+                                                    Supports
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <label class="form-check-label" for="refutes">
+                                                    <input class="form-check-input" type="radio" id="refutes" checked disabled>
+                                                    Refutes
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not_enough_information" disabled>
+                                                <label class="form-check-label" for="not_enough_information">
+                                                    Related but not enough information
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="unrelated" disabled>
+                                                <label class="form-check-label" for="unrelated">
+                                                    Unrelated
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>4. If you selected "Supports", "Refutes" or "Related but not enough information", select below which column(s) from the table led to your decision:</h6>
+                                        <h7>You have to select a value for at least one of them. </h7>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col1" disabled>
+                                            <label class="form-check-label" for="col1">
+                                                Symptomatic Illnesses
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col2" disabled>
+                                            <label class="form-check-label" for="col2">
+                                                Medical Visits
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                Hospitalizations
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col4" checked disabled>
+                                            <label class="form-check-label" for="col3">
+                                                Deaths
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="p-3 mb-2 bg-light text-primary"><b>Explanation Text: </b> We first look at the column <b>“Deaths”</b>. We take the Death value from the <b>last row</b> because this is the <b>value for 2019-2020</b>. There we see that the deaths last year were approx. <b>22,000</b>. This value is much <b>smaller than the 80,000</b> deaths from the claim. Thus, we can say that the <b>claim is refuted</b>.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                3. Example: REFUTE
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Considering the claim:
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 bg-light border rounded p-2">
+                                    <p>Statistics demonstrate that crime rates in Australia have increased substantially since the government there instituted a gun buy-back program in 1997</p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-table-3" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>2. And considering the table (and its caption, if available):</h6>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                                        <p><table class="historical_data_table table table-striped table-bordered"><thead><tr><th style="border: 1px solid black;">Australia Crime Rate Statistics - Historical Data</th></tr></thead><thead><tr><th style="border: 1px solid black;">Year</th><th style="border: 1px solid black;">Per 100K Population</th><th style="border: 1px solid black;">Annual % Change</th></tr></thead><tbody><tr><td class="table-warning" style="border: 1px solid black;">2018</td><td class="table-warning" style="border: 1px solid black;">0.89</td><td style="border: 1px solid black;">7.98%</td></tr><tr><td style="border: 1px solid black;">2017</td><td style="border: 1px solid black;">0.83</td><td style="border: 1px solid black;">-11.75%</td></tr><tr><td style="border: 1px solid black;">2016</td><td style="border: 1px solid black;">0.94</td><td style="border: 1px solid black;">-5.12%</td></tr><tr><td style="border: 1px solid black;">2015</td><td style="border: 1px solid black;">0.99</td><td style="border: 1px solid black;">-4.24%</td></tr><tr><td style="border: 1px solid black;">2014</td><td style="border: 1px solid black;">1.03</td><td style="border: 1px solid black;">-2.25%</td></tr><tr><td style="border: 1px solid black;">2013</td><td style="border: 1px solid black;">1.05</td><td style="border: 1px solid black;">-0.71%</td></tr><tr><td style="border: 1px solid black;">2012</td><td style="border: 1px solid black;">1.06</td><td style="border: 1px solid black;">-3.58%</td></tr><tr><td style="border: 1px solid black;">2011</td><td style="border: 1px solid black;">1.10</td><td style="border: 1px solid black;">5.53%</td></tr><tr><td style="border: 1px solid black;">2010</td><td style="border: 1px solid black;">1.04</td><td style="border: 1px solid black;">-13.76%</td></tr><tr><td style="border: 1px solid black;">2009</td><td style="border: 1px solid black;">1.21</td><td style="border: 1px solid black;">-1.18%</td></tr><tr><td style="border: 1px solid black;">2008</td><td style="border: 1px solid black;">1.22</td><td style="border: 1px solid black;">0.36%</td></tr><tr><td style="border: 1px solid black;">2007</td><td style="border: 1px solid black;">1.22</td><td style="border: 1px solid black;">-10.95%</td></tr><tr><td style="border: 1px solid black;">2006</td><td style="border: 1px solid black;">1.37</td><td style="border: 1px solid black;">6.66%</td></tr><tr><td style="border: 1px solid black;">2005</td><td style="border: 1px solid black;">1.28</td><td style="border: 1px solid black;">-2.99%</td></tr><tr><td style="border: 1px solid black;">2004</td><td style="border: 1px solid black;">1.32</td><td style="border: 1px solid black;">-14.03%</td></tr><tr><td style="border: 1px solid black;">2003</td><td style="border: 1px solid black;">1.54</td><td style="border: 1px solid black;">-18.43%</td></tr><tr><td style="border: 1px solid black;">2002</td><td style="border: 1px solid black;">1.89</td><td style="border: 1px solid black;">4.35%</td></tr><tr><td style="border: 1px solid black;">2001</td><td style="border: 1px solid black;">1.81</td><td style="border: 1px solid black;">-5.16%</td></tr><tr><td style="border: 1px solid black;">2000</td><td style="border: 1px solid black;">1.91</td><td style="border: 1px solid black;">-6.98%</td></tr><tr><td style="border: 1px solid black;">1999</td><td style="border: 1px solid black;">2.05</td><td style="border: 1px solid black;">14.03%</td></tr><tr><td style="border: 1px solid black;">1998</td><td style="border: 1px solid black;">1.80</td><td style="border: 1px solid black;">-9.22%</td></tr><tr><td class="table-warning" style="border: 1px solid black;">1997</td><td class="table-warning" style="border: 1px solid black;">1.98</td><td style="border: 1px solid black;">1.72%</td></tr><tr><td style="border: 1px solid black;">1996</td><td style="border: 1px solid black;">1.95</td><td style="border: 1px solid black;">-1.63%</td></tr><tr><td style="border: 1px solid black;">1995</td><td style="border: 1px solid black;">1.98</td><td style="border: 1px solid black;">10.05%</td></tr><tr><td style="border: 1px solid black;">1994</td><td style="border: 1px solid black;">1.80</td><td style="border: 1px solid black;">-4.96%</td></tr><tr><td style="border: 1px solid black;">1993</td><td style="border: 1px solid black;">1.89</td><td style="border: 1px solid black;">9.37%</td></tr><tr><td style="border: 1px solid black;">1992</td><td style="border: 1px solid black;">1.73</td><td style="border: 1px solid black;">-12.55%</td></tr><tr><td style="border: 1px solid black;">1991</td><td style="border: 1px solid black;">1.98</td><td style="border: 1px solid black;">-10.30%</td></tr><tr><td style="border: 1px solid black;">1990</td><td style="border: 1px solid black;">2.21</td><td style="border: 1px solid black;">-10.30%</td></tr></tbody></table></p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b></p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>3. Select if the table supports of refutes the claim.</h6>
+                                            <h7>If the table is related to the claim but does not provide enough information, select the third option ("Related but not enough information"). If the table is completely unrelated to the claim, select option "Unrelated".</h7>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="supports" disabled>
+                                                <label class="form-check-label" for="supports">
+                                                    Supports
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="refutes" checked disabled>
+                                                <label class="form-check-label" for="refutes">
+                                                    Refutes
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not_enough_information" disabled>
+                                                <label class="form-check-label" for="not_enough_information">
+                                                    Related but not enough information
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="unrelated" disabled>
+                                                <label class="form-check-label" for="unrelated">
+                                                    Unrelated
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>4. If you selected "Supports", "Refutes" or "Related but not enough information", select below which column(s) from the table led to your decision:</h6>
+                                        <h7>You have to select a value for at least one of them. </h7>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col1" checked disabled>
+                                            <label class="form-check-label" for="col1">
+                                                Year
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col2" checked disabled>
+                                            <label class="form-check-label" for="col2">
+                                                Per 100K Population
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                Annual % Change
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="p-3 mb-2 bg-light text-primary"><b>Explanation Text:</b> The table shows <b>crime rates from 1995 till 2018</b> (as you can see in the column “Year”). The crime value for <b>1997 was 1.98</b>. The latest value <b>(2018) is 0.98</b> and therefore smaller than 1.98. We can say that the crime has not increase but decreased and <b>refute the claim</b>.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                4. Example: UNRELATED
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Considering the claim:
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 bg-light border rounded p-2">
+                                    <p>In January 2017, Dr. Anthony Fauci predicted a serious pandemic during U.S. President Donald Trump's tenure in office</p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-table-4" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>2. And considering the table (and its caption, if available):</h6>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                                        <p><table><tbody><tr><td style="border: 1px solid black;"><strong>Age (deaths/cases)</strong></td><td style="border: 1px solid black;"><strong>CFR (95% CI)</strong></td></tr><tr><td style="border: 1px solid black;">≤ 9 years   (0/416)</td><td style="border: 1px solid black;">0%</td></tr><tr><td style="border: 1px solid black;">10 to 19 years (1/549)</td><td style="border: 1px solid black;">0.18%   (0.03 to 1.02%)</td></tr><tr><td style="border: 1px solid black;">20 to 49  years (63/19790)</td><td style="border: 1px solid black;">0.32% (0.25% to 0.41%)</td></tr><tr><td style="border: 1px solid black;">50 to 59 years (130/10,008)</td><td style="border: 1px solid black;">1.3%  (1.1% to 1.5%)</td></tr><tr><td style="border: 1px solid black;">60 to 69 years (309/8583)</td><td style="border: 1px solid black;">3.6% (3.2% to 4.0%)</td></tr><tr><td style="border: 1px solid black;">70 to 79 years (312/3918)</td><td style="border: 1px solid black;">8.0% (7.2% to 8.9%)</td></tr><tr><td style="border: 1px solid black;">≥80 years (208/1408)</td><td style="border: 1px solid black;"> 14.8% (13.0% to 16.7%)</td></tr></tbody></table></p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b></p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>3. Select if the table supports of refutes the claim.</h6>
+                                            <h7>If the table is related to the claim but does not provide enough information, select the third option ("Related but not enough information"). If the table is completely unrelated to the claim, select option "Unrelated".</h7>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="supports" disabled>
+                                                <label class="form-check-label" for="supports">
+                                                    Supports
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="refutes" disabled>
+                                                <label class="form-check-label" for="refutes">
+                                                    Refutes
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not_enough_information" disabled>
+                                                <label class="form-check-label" for="not_enough_information">
+                                                    Related but not enough information
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="unrelated" checked disabled>
+                                                <label class="form-check-label" for="unrelated">
+                                                    Unrelated
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>4. If you selected "Supports", "Refutes" or "Related but not enough information", select below which column(s) from the table led to your decision:</h6>
+                                        <h7>You have to select a value for at least one of them. </h7>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col1" disabled>
+                                            <label class="form-check-label" for="col1">
+                                                Age (deaths/cases)
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col2" disabled>
+                                            <label class="form-check-label" for="col2">
+                                                CFR (95% CI)
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="p-3 mb-2 bg-light text-primary"><b>Explanation Text:</b> We first look at the <b>table's columns</b> (“Age (death/cases)”, “CFR (95% CI)”) and its content. We can say that the table is unrelated to the claim about Dr. Fauci and his prediction. We select the option <b>unrelated</b> for that reason.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                5. Example: RELATED BUT NOT ENOUGH INFORMATION
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Considering the claim:
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 bg-light border rounded p-2">
+                                    <p>Suicide kills one person every 40 seconds, says WHO</p>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-table-5" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>2. And considering the table (and its caption, if available):</h6>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                                        <p><table style="border: 1px solid black;"><thead><tr><th style="border: 1px solid black;"></th><th style="border: 1px solid black;">Select Age Groups</th></tr><tr><th style="border: 1px solid black;">Rank</th><th style="border: 1px solid black;">10-14</th><th style="border: 1px solid black;">15-24</th><th style="border: 1px solid black;">25-34</th><th style="border: 1px solid black;">35-44</th><th style="border: 1px solid black;">45-54</th><th style="border: 1px solid black;">55-64</th><th style="border: 1px solid black;">All Ages</th></tr></thead><tbody><tr><th style="border: 1px solid black;">1</th><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>692</td><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>12,044</td><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>24,614</td><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>22,667</td><td style="border: 1px solid black;">Malignant<br/>Neoplasms<br/>37,301</td><td style="border: 1px solid black;">Malignant<br/>Neoplasms<br/>113,947</td><td style="border: 1px solid black;">Heart<br/>Disease<br/>655,381</td></tr><tr><th style="border: 1px solid black;">2</th><td class="table-warning" style="border: 1px solid black;">Suicide<br/>596</td><td class="table-warning" style="border: 1px solid black;">Suicide<br/>6,211</td><td class="table-warning" style="border: 1px solid black;">Suicide<br/>8,020</td><td style="border: 1px solid black;">Malignant<br/>Neoplasms<br/>10,640</td><td style="border: 1px solid black;">Heart<br/>Disease<br/>32,220</td><td style="border: 1px solid black;">Heart<br/>Disease<br/>81,042</td><td style="border: 1px solid black;">Malignant<br/>Neoplasms<br/>599,274</td></tr><tr><th style="border: 1px solid black;">3</th><td style="border: 1px solid black;">Malignant<br/>Neoplasms<br/>450</td><td style="border: 1px solid black;">Homicide<br/>4,607</td><td style="border: 1px solid black;">Homicide<br/>5,234</td><td style="border: 1px solid black;">Heart<br/>Disease<br/>10,532</td><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>23,056</td><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>23,693</td><td style="border: 1px solid black;">Unintentional<br/>Injury<br/>167,127</td></tr><tr><th style="border: 1px solid black;">4</th><td style="border: 1px solid black;">Congenital<br/>Abnormalities<br/>172</td><td style="border: 1px solid black;">Malignant<br/>Neoplasms<br/>1,371</td><td style="border: 1px solid black;">Malignant <br/>Neoplasms<br/>3,684</td><td class="table-warning" style="border: 1px solid black;">Suicide<br/>7,521</td><td class="table-warning" style="border: 1px solid black;">Suicide<br/>8,345</td><td style="border: 1px solid black;">CLRD<br/>18,804</td><td style="border: 1px solid black;">CLRD<br/>159,486</td></tr><tr><th style="border: 1px solid black;">5</th><td style="border: 1px solid black;">Homicide<br/>168</td><td style="border: 1px solid black;">Heart<br/>Disease<br/>905</td><td style="border: 1px solid black;"> <p>Heart<br/>Disease<br/>3,561</p> </td><td style="border: 1px solid black;">Homicide<br/>3,304</td><td style="border: 1px solid black;">Liver<br/>Disease<br/>8,157</td><td style="border: 1px solid black;">Diabetes<br/>Mellitus<br/>14,941</td><td style="border: 1px solid black;">Cerebro-<br/>vascular<br/>147,810</td></tr></tbody></table></p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b></p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>3. Select if the table supports of refutes the claim.</h6>
+                                            <h7>If the table is related to the claim but does not provide enough information, select the third option ("Related but not enough information"). If the table is completely unrelated to the claim, select option "Unrelated".</h7>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="supports" disabled>
+                                                <label class="form-check-label" for="supports">
+                                                    Supports
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="refutes" disabled>
+                                                <label class="form-check-label" for="refutes">
+                                                    Refutes
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not_enough_information" checked disabled>
+                                                <label class="form-check-label" for="not_enough_information">
+                                                    Related but not enough information
+                                                </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="unrelated" disabled>
+                                                <label class="form-check-label" for="unrelated">
+                                                    Unrelated
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <h6>4. If you selected "Supports", "Refutes" or "Related but not enough information", select below which column(s) from the table led to your decision:</h6>
+                                        <h7>You have to select a value for at least one of them. </h7>
+                                    </div>
+                                </div>
+                                <div class="row d-flex justify-content-center">
+                                    <div class="col-sm-11 pr-0 pl-0">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col1" disabled>
+                                            <label class="form-check-label" for="col1">
+                                                Rank
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                10-14
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                15-24
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                25-34
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                35-44
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                45-54
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                55-64
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="col3" disabled>
+                                            <label class="form-check-label" for="col3">
+                                                All Ages
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="p-3 mb-2 bg-light text-primary"><b>Explanation text: </b>We look at the table and <b>find the word “Suicide” in row two and four</b>. The table is related to the claim. However, we cannot say if the claim (= that one person dies every 40 seconds) is supported or refuted by the table. We select the option <b>“Related but not enough information”</b>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="instructions-2" class="instructions d-none">
+                    <h5><b>Task rules</b></h5>
+                    <p id="instructions-rules-text"></p>
+                </div>
+                <div id="instructions-3" class="instructions d-none">
+                    <div id="lan_test" class="text-left">
+                        <h5><b>Task Qualification Test: </b></h5>
+                        <p>Below you find a table and a few related questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates. </p>
+                        <div class="row d-flex justify-content-center">
+                            <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                                <p><table style="border: 1px solid black;"><tbody><tr><th style="border: 1px solid black;">Cities</th><th style="border: 1px solid black;">Population</th><th style="border: 1px solid black;">Region</th></tr><tr><td style="border: 1px solid black;"><b><a>New York</a></b></td><td style="border: 1px solid black;">19,979,477</td><td style="border: 1px solid black;"><a>Northeast</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Los Angeles</a></b></td><td style="border: 1px solid black;">13,291,486</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Chicago</a></b></td><td style="border: 1px solid black;">9,498,716</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Dallas–Fort Worth</a></b></td><td style="border: 1px solid black;">7,539,711</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Houston</a></b></td><td style="border: 1px solid black;">6,997,384</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Washington, D.C.</a></b></td><td style="border: 1px solid black;">6,249,950</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Miami</a></b></td><td style="border: 1px solid black;">6,198,782</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Philadelphia</a></b></td><td style="border: 1px solid black;">6,096,372</td><td style="border: 1px solid black;"><a>Northeast</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Detroit</a></b></td><td style="border: 1px solid black;">4,326,442</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Seattle</a></b></td><td style="border: 1px solid black;">3,939,363</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Minneapolis–St. Paul</a></b></td><td style="border: 1px solid black;">3,629,190</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>San Diego</a></b></td><td style="border: 1px solid black;">3,343,364</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Tampa–St. Petersburg</a></b></td><td style="border: 1px solid black;">3,142,663</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Denver</a></b></td><td style="border: 1px solid black;">2,932,415</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>St. Louis</a></b></td><td style="border: 1px solid black;">2,805,465</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr></tr></tbody></table></p>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div id="task-panel" class="row d-none">
+        <div class="col-sm-12 mx-auto border rounded shadow-sm" style="background-color: #f5f5f5;">
+            <h4 class="text-left mt-3">
+                Reference <strong><span id="current-page"></span></strong> of
+                <strong><span id="n-pages"></span></strong>:
+            </h4>
+            <br />
+            <!---->
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-11 pr-0 pl-0">
+                    <h5>1. Considering the claim:
+                    </h5>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-sm-11 bg-light border rounded p-2">
+                    <p><span id='statement_reference'></span></p>
+                </div>
+            </div>
+            <br />
+            <div id="table-panel" class=''>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <h5>2. And considering the table (and its caption, if available):</h5>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
+                        <p id="fc-table"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col-11">
+                        <p><b>Caption: </b><span id='caption'></span></p>
+                    </div>
+                </div>
+                <br />
+                <!---->
+                <div id="author-panel" class=''>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-11 pr-0 pl-0">
+                            <h5>3. Select if the table supports of refutes the claim.</h5>
+                            <h7>If the table is related to the claim but does not provide enough information, select the third option ("Related but not enough information"). If the table is completely unrelated to the claim, select option "Unrelated".</h7>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div  id="label_div" class="col-sm-11 pr-0 pl-0">
+                            <div class="form-check form-check-inline">
+                                <label id="label_0" class="btn form-check-label" for="input_label_0">
+                                    <input id="input_label_0" class="form-check-input" type="radio" name="label_radio">
+                                    Supports
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label id="label_1" class="btn form-check-label" for="input_label_1">
+                                    <input id="input_label_1" class="form-check-input" type="radio" name="label_radio">
+                                    Refutes
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label id="label_2" class="btn form-check-label" for="input_label_2">
+                                    <input id="input_label_2" class="form-check-input" type="radio" name="label_radio">
+                                    Related but not enough information
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label id="label_3" class="btn form-check-label" for="input_label_3">
+                                    <input id="input_label_3" class="form-check-input" type="radio" name="label_radio">
+                                    Unrelated
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!---->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <h5>4. If you selected "Supports", "Refutes" or "Related but not enough information", select below which column(s) from the table led to your decision:</h5>
+                        <h7>You have to select a value for at least one of them.</h7>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div id="header_div" class="col-sm-11 pr-0 pl-0">
+                        <div class="form-check form-check-inline">
+                            <label id="header_0" class="btn form-check-label" for="input_header_0">
+                                <input id="input_header_0" class="form-check-input" type="checkbox">
+                                0. column
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label id="header_1" class="btn form-check-label" for="input_header_1">
+                                <input class="form-check-input" type="checkbox" id="input_header_1">
+                                1. column
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label id="header_2" class="btn form-check-label" for="input_header_2">
+                                <input class="form-check-input" type="checkbox" id="input_header_2">
+                                2. column
+                            </label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label id="header_3" class="btn form-check-label" for="input_header_3">
+                                <input class="form-check-input" type="checkbox" id="input_header_3">
+                                3. column
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <!---->
+                <div class="row p-3">
+                    <button type="button" class="btn btn-primary col-sm-2 mr-auto" id="previous-page">
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-success col-sm-2 ml-auto" id="presubmit" data-toggle="modal"
+                            data-target="#submitModal">
+                        Submit
+                    </button>
+                    <button type="button" class="btn btn-primary col-sm-2 ml-auto" id="next-page">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="submitModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Submit your work?</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Please make sure every question has been properly answered before
+                    submitting your work. Incomplete work will not be rewarded!
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-danger ml-auto" data-dismiss="modal" value="Cancel" />
+                    <input type="button" class="btn btn-success mr-auto" data-dismiss="modal" value="Submit"
+                           id="submit" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="lanErrorModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Warning</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="lan-warning-text">You didn't pass the language test. Please review your
+                        answers and try again!</span>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-warning mx-auto" data-dismiss="modal" value="OK"
+                           id="lan_close_error" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="errorModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Warning</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="warning-text">Your answer didn't pass our quality check. Please review your
+                        answers and try again!</span>
+                    <span id="warning-hints"></span>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-warning mx-auto" data-dismiss="modal" value="OK"
+                           id="close_error" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="successModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Success!</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="success-text">Your answer passed our quality check! Press finish to submit
+                        them. We appreciate any feedback you may have on the task.</span>
+                </div>
+                <textarea class="form-control" rows="5" id="feedback_text"
+                          placeholder="Type your feeback here ..."></textarea>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-success mx-auto" data-dismiss="modal" value="Finish"
+                           id="close_success" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <form name="mturk_form" method="post" id="mturk_form" action="https://www.mturk.com/mturk/externalSubmit">
+        <input type="hidden" value="" name="assignmentId" id="assignmentId" />
+        <input type="submit" id="submitButton" style="visibility: hidden;" />
+        <input type="hidden" name="outputs" value="" id="outputs" />
+        <input type="hidden" name="times" value="" id="times" />
+        <input type="hidden" name="events" value="" id="events" />
+        <input type="hidden" name="feedback" value="" id="feedback" />
+    </form>
+    <script language="Javascript">
+        let sub_publisher_options = {
+            0:[
+                "Academic and research institutions (e.g. universities and research centres, but not museums and libraries, as those are cultural organisations)",
+                "Academic publishers (e.g. journal and article publishers)",
+                "Other academic organisations"
+            ],
+            1: [
+                "Vendors and e-commerce companies",
+                "Political or religious organisations",
+                "Cultural institutions and organisations",
+                "Other types of company"
+            ],
+            2: [],
+            3: [
+                "Traditional news and media (e.g. news agencies, broadcasters)",
+                "Non-traditional news and media (e.g. online magazines, platforms to collaboratively create news)"
+            ],
+            4: [],
+            5: []
+        }
+        let references = ${references}$
+        let lan_test_questions = ${lan_test_questions}$;
+
+        let total = references.length;
+
+        var outputs = [];
+        // DEFAULT OUTPUTS IN JSON FORMAT, EX:  { similarity: -1, confidence: -1, reason: "" }
+        for (i = 0; i < total; i++) {
+            outputs[i] = {label: -1, header: -1, publisher: -1, sub_publisher: -1};
+        }
+
+        var events = [];
+
+        function log_event(event_type, event_attr) {
+            event_obj = {
+                timestamp: new Date(),
+                type: event_type
+            };
+            if (event_attr != null) {
+                event_obj.attr = event_attr;
+            }
+            events.push(event_obj);
+        }
+
+        log_event("page_displayed", null);
+
+        var times = Array(total).fill(0.0);
+        var links_clicked = Array(total).fill(false);
+        var lastChange = null;
+
+        failCount = 0;
+        lanFailCount = 0;
+
+        $("#instructions-project-text").html(${instructions_project_text}$);
+        $("#instructions-rules-text").html(${instructions_rules_text}$);
+
+        for (i = 0; i < lan_test_questions.length; i++) {
+            $('#lan_test').append(`<p class="mb-0">${lan_test_questions[i]['question']}</p>`)
+            $('#lan_test').append(`<div id="lan_quest_${i}" class="btn-group btn-group-toggle mb-3" data-toggle="buttons">`)
+            for (j = 0; j < lan_test_questions[i]['options'].length; j++)
+                $(`#lan_quest_${i}`).append(`<label class="btn btn-primary"><input type="radio" autocomplete="off" value=${j} name='lang_quest_${i}'>${lan_test_questions[i]['options'][j]}<br/></label>`)
+        }
+
+        $("#n-pages").text(total);
+
+        function showContent(currentPage) {
+            if (lastChange) {
+                times[parseInt($("#current-page").text()) - 1] +=
+                    Date.now() - lastChange;
+            }
+            $("#current-page").text(currentPage);
+            if (currentPage == 1) {
+                $("#previous-page").hide();
+                $("#next-page").show();
+                $("#presubmit").hide();
+            } else if (currentPage == total) {
+                $("#previous-page").show();
+                $("#next-page").hide();
+                $("#presubmit").show();
+            } else {
+                $("#previous-page").show();
+                $("#next-page").show();
+                $("#presubmit").hide();
+            }
+            pageIndex = currentPage - 1;
+            output = outputs[pageIndex];
+
+            for (i = 0; i < 4; i++) {
+                if (output['label'] == i) {
+                    $(`#label_${i}`).addClass("active");
+                    $(`#label_${i}`).children('input').prop('checked', true)
+                } else {
+                    $(`#label_${i}`).removeClass("active");
+                    $(`#label_${i}`).children('input').prop('checked', false)
+                }
+            }
+            for (i = 0; i < 6; i++) {
+                if (output['publisher'] == i) {
+                    $(`#publisher_${i}`).addClass("active");
+                    $(`#publisher_${i}`).children('input').prop('checked', true)
+                } else {
+                    $(`#publisher_${i}`).removeClass("active");
+                    $(`#publisher_${i}`).children('input').prop('checked', false)
+                }
+            }
+
+
+            $('#sub-publisher-options').empty()
+            if (output['publisher'] == -1){
+                $('#sub-publisher-panel').addClass('d-none')
+            } else if (sub_publisher_options[output['publisher']].length == 0) {
+                $('#sub-publisher-panel').addClass('d-none')
+            } else {
+                $('#sub-publisher-panel').removeClass('d-none')
+                for (i = 0; i < sub_publisher_options[output['publisher']].length; i++) {
+                    $("#sub-publisher-options").append(
+                        `<label id="sub_publisher_${i}" class="btn btn-primary subpublisher">
+                            <input type="radio" autocomplete="off" value='unavailable' name='sub_publisher_radios'>
+                            ${sub_publisher_options[output['publisher']][i]}
+                        </label>`
+                    );
+                    $('label.btn.subpublisher').click(function () {
+                        page = parseInt($("#current-page").text());
+                        pageIndex = page - 1;
+                        outputs[pageIndex]['sub_publisher'] = parseInt(this.id.split('sub_publisher_')[1]);
+                    });
+                    if (output['sub_publisher'] == i) {
+                        $(`#sub_publisher_${i}`).addClass("active");
+                        $(`#sub_publisher_${i}`).children('input').prop('checked', true)
+                    } else {
+                        $(`#sub_publisher_${i}`).removeClass("active");
+                        $(`#sub_publisher_${i}`).children('input').prop('checked', false)
+                    }
+                }
+            }
+
+            $("#statement_reference").text(references[pageIndex]["claim"]);
+            $("#caption").text(references[pageIndex]["table"]["caption"]);
+            $("#fc-table").html(references[pageIndex]["table"]["html_table"]);
+
+<!-- Column check boxes are added dynamically -->
+            let headers = references[pageIndex]["table"]["header_horizontal"];
+            $('#header_div').empty()
+            if (headers.length > 0) {
+                // iterate over all headers
+                for (i = 0; i < headers.length; i++) {
+                    if ((references[pageIndex]["table"]["header_horizontal"][i]) && (references[pageIndex]["table"]["header_horizontal"][i] != "")) {
+                        // create checkbox for header
+                        $('#header_div').append(`<div class="form-check form-check-inline"><input id="input_header_${i}" class="btn form-check-input" type="checkbox"><label id="header_${i}" class="form-check-label">${references[pageIndex]["table"]["header_horizontal"][i]}</label></div>`)
+                    }
+                }
+            } else {
+                let col_count = 1
+                let rows = references[pageIndex]["table"]["rows_list"]
+                for (i = 0; i < rows.length; i++) {
+                    if (references[pageIndex]["table"]["rows_list"][i].length > col_count) {
+                        col_count = references[pageIndex]["table"]["rows_list"][i].length
+                    }
+                } for (i = 0; i < col_count; i++) {
+                    $('#header_div').append(`<div class="form-check form-check-inline"><input id="input_header_${i}" class="btn form-check-input" type="checkbox"><label id="header_${i}" class="form-check-label">${i+1}. Column</label></div>`)
+                }
+            }
+
+            // set added checkbox to checked if it has been clicked before
+            if (output['header'] != -1) {
+            // headers for this page have been check-boxed before
+                for (j = 0; j < output['header'].length; j++) {
+                    var elem_j = output['header'][j]
+                    // set checkbox to checked when found in output['header] list
+<!--                    $(`#header_${elem_j}`).addClass("active");-->
+                    $(`#input_header_${elem_j}`).prop('checked', true)
+                }
+            }
+
+            var parent = $('#label_div');
+            var divs = parent.children();
+            while (divs.length) {
+                parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
+            }
+
+            lastChange = Date.now();
+        }
+
+        function validateRegex(str) {
+            var reU = /^(null|(?!0*[.]0*$|[.]0*$|0*$)\d+[.]?\d{0,}$)/;
+            return reU.test(str);
+        }
+
+        function verifyLanguageAnswers() {
+            allOK = 4;
+            for (i = 0; i < lan_test_questions.length; i++) {
+                let chosen = parseInt($(`input[name="lang_quest_${i}"]:checked`).val());
+                if (chosen != lan_test_questions[i]['answer']) {
+                    allOK = allOK - 1
+                }
+            }
+            return (allOK == 4)
+        }
+
+        function verifyAnswers() {
+            times[times.length - 1] += Date.now() - lastChange;
+            lastChange = Date.now();
+
+            var allControlsUsedCheck = true;
+            const outputs_flat = [].concat(...outputs)
+            for (i = 0; i < outputs_flat.length; i++){
+                if (
+                    (outputs_flat[i]["label"] == -1) ||
+                    ((outputs_flat[i]["label"] in [0, 1, 2]) &&
+                    ((outputs_flat[i]["header"] == -1) || (outputs_flat[i]["header"].length == 0)))
+                ) {
+                    allControlsUsedCheck = false;
+                }
+            }
+            if (!allControlsUsedCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "outputs_moved_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+
+            var allTimesCheck = true;
+            for (t of times) {
+                if (t < 2500) {
+                    allTimesCheck = false;
+                }
+            }
+            if (!allTimesCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "minimum_time_check",
+                    times: JSON.parse(JSON.stringify(times))
+                });
+            }
+
+            var allGoldenCheck = true;
+
+            for (i = 0; i < total; i++) { // iterate over all tasks
+                if (references[i]['g_id'] != -1) {
+                    if (references[i]['g_id'] != outputs[i]['label']){
+                        allGoldenCheck = false // set false if label of gold example is different than annotation
+                    }
+<!--                    if (references[i]['g_id']['header'] != -1){-->
+<!--                        if ((outputs[i]['header'] == -1) || (outputs[i]['header'].length == 0)) allGoldenCheck = false;-->
+<!--                        else {-->
+<!--                            for (j = 0; j < references[i]['g_id']['header']; j++) {-->
+<!--                                if (outputs[i]['header'].indexOf(references[i]['g_id']['header'][j]) == -1) {-->
+<!--                                    allGoldenCheck = false;-->
+<!--                                    break;-->
+<!--                                }-->
+<!--                            }-->
+
+<!--                        }-->
+<!--                    }-->
+                }
+            }
+
+            if (!allGoldenCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "golden_standard_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+
+            //allGoldenCheck = true;
+
+            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'golden':allGoldenCheck};
+        }
+
+        $(function () {
+            $("#previous-page").click(function () {
+                var page = parseInt($("#current-page").text());
+                newPage = page - 1;
+                showContent(newPage);
+                log_event("moved_backward", {
+                    new_page_index: newPage,
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            });
+            $("#next-page").click(function () {
+                var page = parseInt($("#current-page").text());
+                newPage = page + 1;
+                showContent(newPage);
+                log_event("moved_forward", {
+                    new_page_index: newPage,
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            });
+            $("#ready-button").click(function () {
+                if (verifyLanguageAnswers()) {
+                    $("#instructions-0").addClass("d-none");
+                    $("#instructions-1").removeClass("d-none");
+                    $("#instructions-2").removeClass("d-none");
+                    $("#instructions-3").removeClass("d-none");
+                    $("#instructions-btns").addClass("d-none");
+                    $(this).addClass("d-none");
+                    $("#instructions-toggle").removeClass("d-none");
+                    $("#instructions-panel").addClass("collapse");
+                    $("#task-panel").removeClass("d-none");
+                    showContent(1);
+                    log_event("task_started", null);
+                } else {
+                    lanFailCount = lanFailCount + 1;
+                    if (lanFailCount >= 3) {
+                        $("#lan-warning-text").html(
+                            "You didn't pass the language test.<br><br><strong>Unfortunately, you've reached the maximum amount of trials.<br><br>This window will be erased. Thank you very much for your work and please press return above so other worker may take this task.</strong>"
+                        );
+                        $("#lanErrorModal").modal("toggle");
+                        $("#lanErrorModal").on("hidden.bs.modal", function () {
+                            $("*").empty();
+                        });
+                    } else {
+                        $("#lanErrorModal").modal("toggle");
+                    }
+                }
+            });
+            $("#instructions-toggle").click(function () {
+                is_shown = $("#instructions-panel").hasClass("show");
+                if (is_shown) {
+                    $("#instructions-toggle-text").text("Show Instructions");
+                    log_event("closed_instructions", null);
+                } else {
+                    $("#instructions-toggle-text").text("Hide Instructions");
+                    log_event("opened_instructions", null);
+                }
+            });
+
+            $('#header_div').on('click', '.btn', function () {
+                if (this.id.startsWith('input_header')) {
+                    let header_i = parseInt(this.id.split('input_header_')[1]);
+                    if (outputs[pageIndex]['header'] == -1) {
+                        // add element
+                        var headerArray = [];
+                        headerArray.push(header_i);
+                        outputs[pageIndex]['header'] = headerArray;
+                    } else {
+                        let headerArray = outputs[pageIndex]['header'];
+                        if (headerArray.indexOf(header_i) == -1) { // if check is set
+                            // add to list, element not there
+                            headerArray.push(header_i);
+                        } else {
+                            // remove => find out why Array(0) when splice used
+                            headerArray.splice(headerArray.indexOf(header_i), 1)
+                        }
+                        outputs[pageIndex]['header'] = headerArray;
+                    }
+                }
+            });
+
+            $('label.btn').click(function () {
+                page = parseInt($("#current-page").text());
+                pageIndex = page - 1;
+                if (this.id.startsWith('label')) {
+                    outputs[pageIndex]['label'] = parseInt(this.id.split('label_')[1]);
+                } else if (this.id.startsWith('publisher')) {
+                    outputs[pageIndex]['publisher'] = parseInt(this.id.split('publisher_')[1]);
+                    $('#sub-publisher-options').empty();
+                    if (sub_publisher_options[outputs[pageIndex]['publisher']].length == 0){
+                        $('#sub-publisher-panel').addClass('d-none');
+                    } else {
+                        $('#sub-publisher-panel').removeClass('d-none');
+                        for (i = 0; i < sub_publisher_options[outputs[pageIndex]['publisher']].length; i++) {
+                            $("#sub-publisher-options").append(
+                                `<label id="sub_publisher_${i}" class="btn btn-primary subpublisher">
+                                    <input type="radio" autocomplete="off" value='unavailable' name='sub_publisher_radios'>
+                                    ${sub_publisher_options[outputs[pageIndex]['publisher']][i]}
+                                </label>`
+                            )
+                        };
+                        $('label.btn.subpublisher').click(function () {
+                            page = parseInt($("#current-page").text());
+                            pageIndex = page - 1;
+                            outputs[pageIndex]['sub_publisher'] = parseInt(this.id.split('sub_publisher_')[1]);
+                        })
+                    }
+                }
+            });
+
+<!--            $('#website_reference').on('click auxclick', function (e) {-->
+<!--                if (e.which <= 2) {-->
+<!--                    page = parseInt($("#current-page").text());-->
+<!--                    pageIndex = page - 1;-->
+<!--                    links_clicked[pageIndex] = true;-->
+<!--                }-->
+<!--            });-->
+            $('#intro-next').click(function () {
+                let current_instructions_active = $('div.instructions.active')[0];
+                let current_instructions_id = parseInt(current_instructions_active.id.split('instructions-')[1]);
+                $(`#instructions-${current_instructions_id}`).addClass('d-none').removeClass('active');
+                $(`#instructions-${current_instructions_id + 1}`).removeClass('d-none').addClass('active');
+                if (current_instructions_id == 0) {
+                    $('#intro-previous').removeClass('d-none');
+                } else if (current_instructions_id == 2) {
+                    $('#intro-next').addClass('d-none');
+                    $('#ready-button').removeClass('d-none');
+                }
+            });
+            $('#intro-previous').click(function () {
+                let current_instructions_active = $('div.instructions.active')[0];
+                let current_instructions_id = parseInt(current_instructions_active.id.split('instructions-')[1]);
+                $(`#instructions-${current_instructions_id}`).addClass('d-none').removeClass('active');
+                $(`#instructions-${current_instructions_id - 1}`).removeClass('d-none').addClass('active');
+                if (current_instructions_id == 3) {
+                    $('#ready-button').addClass('d-none');
+                    $('#intro-next').removeClass('d-none');
+                } else if (current_instructions_id == 1) {
+                    $('#intro-previous').addClass('d-none');
+                }
+            });
+            $("#submit").click(function () {
+                let verification = verifyAnswers();
+                if (verification['controls'] && verification['times'] && verification['golden']){
+                    $("#successModal").modal("toggle");
+                    $("#successModal").on("hidden.bs.modal", function () {
+                        log_event("task_finished", null);
+                        $("#feedback").val($("#feedback_text").val());
+                        $("#outputs").val(JSON.stringify(outputs));
+                        $("#times").val(JSON.stringify(times));
+                        $("#events").val(JSON.stringify(events));
+                        $("#submitButton").trigger("click");
+                    });
+                } else {
+                    failCount = failCount + 1;
+                    $("#warning-hints").empty();
+                    let warningString = "<ul>"
+                    if (!verification['controls']){
+                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one. If you provided answers to a non-required question, that is ok. If any slider is in the position you want, but grey, click on it to turn it blue.</li>"
+                    }
+                    if (!verification['times']){
+                        warningString += "<li>You seem to have filled some questions too quickly and we suspected bot activity. Spend a couple of seconds more in each item, maybe review your answers.</li>"
+                    }
+                    if (!verification['golden']){
+                        warningString += "<li>We know the answers for a small portion of the questions, and you seem to disagree with us. Please review your answers, but if you feel you are right even so, please contact the Requester.</li>"
+                    }
+                    warningString += "</ul>"
+                    $("#warning-hints").html(warningString);
+                    if (failCount >= 3) {
+                        $("#warning-text").html(
+                            "Your answer didn't pass our quality check.<br><br><strong>Unfortunately, you've reached the maximum amount of trials.<br><br>This window will be erased. Thank you very much for your work and please press return above so other worker may take this task.</strong>"
+                        );
+                        $("#errorModal").modal("toggle");
+                        $("#errorModal").on("hidden.bs.modal", function () {
+                            $("*").empty();
+                        });
+                    } else {
+                        $("#errorModal").modal("toggle");
+                    }
+                }
+            });
+        });
+        turkSetAssignmentID();
+    </script>
+</div>
+</body>
+
+</html>
