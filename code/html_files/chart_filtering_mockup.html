@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <title>Claim Generation</title>
@@ -56,257 +56,731 @@
                         <h4 class="text-left mt-3">
                             Examples
                         </h4>
-                        <br>In this task you will see at the top of the page a <b>claim and a table</b>. After reading them you must adjust the claim such that the sentence is verifiable or refutable by someone using the information in the table. </br> </br> Don't write a completely new claim but try to <b>adjust the given claim as little as possible</b> to get a well-formed sentence, which is <b>verifiable or refutable given the table</b>. </br> </br> <b>Avoid writing very simple claims</b> but combine information from at least two different table rows or table columns. While writing refutable claims <b>avoid using negation words</b> like "not" and "never". Below we have highlighted the table cells, which were used to adjust the claim.</p>
+                        <br> In this task you will see a chart. After looking at it carefully, decide if the chart should be filtered because it has any of the following issues: </br> (1) not in <b>English</b>, (2) not <b>readable</b> (e.g. blurred text, cropped image, etc.), OR (3) not <b>understandable</b> what the chart is about. </br></br> Otherwise select "The chart has no issue from above". </br></br> We added some automated checks and will manually check some submissions before accepting. </p>
                         <hr>
                         <div>
                             <h5 class="text-left text-primary mt-3">
-                                1. Example: VERIFIABLE CLAIM
+                                1. Example: CHART NOT IN ENGLISH
                             </h5>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-11 pr-0 pl-0">
-                                    <h6>1. Look at the claim at the top of the page:
+                                    <h6>1. Look at the following chart and (if available) its caption:
                                     </h6>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <div class="col-sm-11 bg-light border rounded p-2">
-                                    <p>Milwaukee, the largest city in Wisconsin, sits on the western shore of Lake Michigan.</p>
                                 </div>
                             </div>
                             <br />
                             <div id="example-table-1" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>2. Look at the accompanying table and (if available) its caption:</h6>
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
-                                        <p><table style="border: 1px solid black;"><tbody><tr><th style="border: 1px solid black;">State or territory</th><th style="border: 1px solid black;">Per person income</th><th style="border: 1px solid black;">Population</th></tr><tr><td style="border: 1px solid black;"><span> </span><a>District of Columbia</a></td><td style="border: 1px solid black;">$45,877</td><td style="border: 1px solid black;">658,893</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Alaska</a></td><td style="border: 1px solid black;">$33,062</td><td style="border: 1px solid black;">736,732</td></tr><tr><td class="table-warning" style="border: 1px solid black;"><span> </span><a>Minnesota</a></td><td class="table-warning" style="border: 1px solid black;">$32,638</td><td style="border: 1px solid black;">5,457,173</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Colorado</a></td><td style="border: 1px solid black;">$32,357</td><td style="border: 1px solid black;">5,355,866</td></tr><tr><td style="border: 1px solid black;"><span><a></a></span> <a>Washington</a></td><td style="border: 1px solid black;">$31,841</td><td style="border: 1px solid black;">7,061,530</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Rhode Island</a></td><td style="border: 1px solid black;">$30,830</td><td style="border: 1px solid black;">1,055,173</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Delaware</a></td><td style="border: 1px solid black;">$30,488</td><td style="border: 1px solid black;">935,614</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>California</a></td><td style="border: 1px solid black;">$30,441</td><td style="border: 1px solid black;">38,802,500</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Iowa</a></td><td style="border: 1px solid black;">$28,361</td><td style="border: 1px solid black;">3,107,126</td></tr><tr><td class="table-warning" style="border: 1px solid black;"><span> </span><a>Wisconsin</a></td><td class="table-warning" style="border: 1px solid black;">$28,213</td><td style="border: 1px solid black;">5,757,564</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Maine</a></td><td style="border: 1px solid black;">$27,978</td><td style="border: 1px solid black;">1,330,089</td></tr><tr><td style="border: 1px solid black;"><span> </span><a>Kansas</a></td><td style="border: 1px solid black;">$27,870</td><td style="border: 1px solid black;">2,904,021</td></tr></tbody></table></p>
-                                        </p>
-                                    </div>
+                                    <img src="./images_html_files/not_english_chart.PNG" alt="..." class="img-thumbnail">
                                     <br />
                                 </div>
                                 <div class="row">
                                     <div class="col"></div>
-                                    <div class="col-11">
-                                        <p><b>Caption: </b></p>
+                                    <div class="col-8">
+                                        <p><b>Caption: </b>Turks in Ukraine</p>
                                     </div>
                                 </div>
                                 <br />
                                 <!---->
-                                <div id="claim-panel" class=''>
+                                <div id="label-panel" class=''>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-11 pr-0 pl-0">
-                                            <h6>3. Afterwards adjust the claim such that it verifiable or refutable given the table.</h6>
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col-sm-11 bg-light border rounded p-2">
-                                                    <p>The average income in Wisconsin is $5,000 less than its neighbors state Minnesota.</p>
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" checked disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-7">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Only experts of a specific topic can understand it</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The <b>title</b> of the chart shows it's <b>not in English</b>. Therefore the chart needs to be filtered; we <b>select</b> option <b>"The chart is not in English"</b> .</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                2. Example: CHART NOT READABLE
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-chart-2" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/not_readable_chart.png" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-10">
+                                        <p><b>Caption: </b>2011 Budget taxation chart outlining revenue accumulated by various taxation areas.</p>
+                                    </div>
+                                </div>
                                 <br />
-                                <div id="label-panel" class=''>
+                                <!---->
+                                <div id="label-panel-chart-2" class=''>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-11 pr-0 pl-0">
-                                            <h6>4. Select if the claim you just wrote, is verifiable or refutable given the table.</h6>
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
                                         </div>
                                     </div>
                                     <div class="row d-flex justify-content-center">
                                         <div class="col-sm-11 pr-0 pl-0">
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="supports" checked disabled>
-                                                <label class="form-check-label" for="supports">
-                                                    Verify
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
                                                 </label>
                                             </div>
+                                            <br>
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="refutes" disabled>
-                                                <label class="form-check-label" for="refutes">
-                                                    Refute
+                                                <input class="form-check-input" type="radio" id="not-readable" checked disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
                                                 </label>
                                             </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-7">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Only experts of a specific topic can understand it</label>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The claim states that the largest city in Wisconsin (Milwaukee) is at the shore of Lake Michigan. We adjust the claim so that it is <b>verifiable given the table</b>. As <b>Wisconsin</b> is the only part of the claim which is related to the table, we keep Wisconsin and adjust the claim using information from the 4th row (Minnesota) and the 11th row (Wisconsin). As our adjusted claim can be verified using the table, we select <b>"Verify"</b> after entering the new claim.</p>
-                    </div>
-                    <hr>
-                    <div>
-                        <h5 class="text-left text-primary mt-3">
-                            2. Example: REFUTABLE CLAIM
-                        </h5>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-sm-11 pr-0 pl-0">
-                                <h6>1. Look at the claim at the top of the page:
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-sm-11 bg-light border rounded p-2">
-                                <p>More people died from the influenza virus last year than from COVID-19.</p>
-                            </div>
-                        </div>
-                        <br />
-                        <div id="example-table-1" class=''>
+                            <br>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-11 pr-0 pl-0">
-                                    <h6>2. Look at the table and (if available) its caption:</h6>
-                                </div>
-                            </div>
-                            <div class="row d-flex justify-content-center">
-                                <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
-                                    <p><table style="border: 1px solid black;"><thead><tr><th style="border: 1px solid black;"></th><th style="border: 1px solid black;">Symptomatic Illnesses</th><th style="border: 1px solid black;">Medical Visits</th><th style="border: 1px solid black;">Hospitalizations</th><th class="table-warning" style="border: 1px solid black;">Deaths</th></tr></thead><tbody><tr><td class="table-warning" style="border: 1px solid black;"><a>2017-2018</a>*</td><td style="border: 1px solid black;">45,000,000</td><td style="border: 1px solid black;">21,000,000</td><td style="border: 1px solid black;">810,000</td><td class="table-warning" style="border: 1px solid black;">61,000</td></tr><tr><td style="border: 1px solid black;"><a>2018-2019</a>*</td><td style="border: 1px solid black;">36,000,000</td><td style="border: 1px solid black;">17,000,000</td><td style="border: 1px solid black;">490,000</td><td style="border: 1px solid black;">34,000</td></tr><tr><td class="table-warning" style="border: 1px solid black;"><a>2019-2020</a>*</td><td style="border: 1px solid black;">38,000,000</td><td style="border: 1px solid black;">18,000,000</td><td style="border: 1px solid black;">400,000</td><td class="table-warning" style="border: 1px solid black;">22,000</td></tr></tbody></table></p>
-                                </div>
-                                <br />
-                            </div>
-                            <div class="row">
-                                <div class="col"></div>
-                                <div class="col-11">
-                                    <p><b>Caption: </b>Table 1: Estimated Influenza Disease Burden, by Season — United States, 2010-11 through 2019-20 Influenza Seasons</p>
-                                </div>
-                            </div>
-                            <br />
-                            <!---->
-                            <div id="claim-panel" class=''>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>3. Afterwards adjust the claim such that it verifiable or refutable given the table.</h6>
-                                        <div class="row d-flex justify-content-center">
-                                            <div class="col-sm-11 bg-light border rounded p-2">
-                                                <p>More people died from the influenza virus in the US last year than in the previous years.</p>
-                                            </div>
-                                        </div>
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <br />
-                            <div id="label-panel" class=''>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>4. Select if the claim you just wrote, is verifiable or refutable given the table.</h6>
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="supports" disabled>
-                                            <label class="form-check-label" for="supports">
-                                                Verify
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="refutes" checked disabled>
-                                            <label class="form-check-label" for="refutes">
-                                                Refute
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br />
                         </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION: </b>The given claim compares last year's COVID-19 and influenza virus deaths. The <b>table does not mention COVID-19 but the influenza virus</b>. We adjust the claim by deleting and adding a few words such that it is <b>refutable given the information in the table</b>. We use information from the <b>caption</b>, the <b>last column</b> and from <b>row two and four</b>.</p>
-                    </div>
-                    <hr>
-                    <div>
-                        <h5 class="text-left text-primary mt-3">
-                            3. Example: REFUTABLE CLAIM
-                        </h5>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-sm-11 pr-0 pl-0">
-                                <h6>1. Look at the claim at the top of the page:
-                                </h6>
-                            </div>
-                        </div>
-                        <div class="row d-flex justify-content-center">
-                            <div class="col-sm-11 bg-light border rounded p-2">
-                                <p>New Zealand started collecting statistics on crime rates in the 90's.</p>
-                            </div>
-                        </div>
-                        <br />
-                        <div id="example-table-1" class=''>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart is <b>not readable</b> because 1. it's bottom part is <b>cropped</b> and 2. the <b>text</b> is too <b>small</b> to be read. Therefore the chart needs to be filtered; we <b>select</b> option <b>"The chart is not readable"</b> .</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                3. Example: CHART NOT UNDERSTANDABLE (missing information)
+                            </h5>
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-11 pr-0 pl-0">
-                                    <h6>2. Look at the table and (if available) its caption:</h6>
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
                                 </div>
                             </div>
-                            <div class="row d-flex justify-content-center">
-                                <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
-                                    <p><table class="historical_data_table table table-striped table-bordered"><thead><tr><th style="border: 1px solid black;">Australia Crime Rate &amp; Statistics - Historical Data</th></tr></thead><thead><tr><th style="border: 1px solid black;">Year</th><th style="border: 1px solid black;">Per 100K Population</th><th style="border: 1px solid black;">Annual % Change</th></tr></thead><tbody><tr><td class="table-warning" style="border: 1px solid black;">2018</td><td class="table-warning" style="border: 1px solid black;">0.89</td><td style="border: 1px solid black;">7.98%</td></tr><tr><td style="border: 1px solid black;">2017</td><td style="border: 1px solid black;">0.83</td><td style="border: 1px solid black;">-11.75%</td></tr><tr><td style="border: 1px solid black;">2016</td><td style="border: 1px solid black;">0.94</td><td style="border: 1px solid black;">-5.12%</td></tr><tr><td style="border: 1px solid black;">2015</td><td style="border: 1px solid black;">0.99</td><td style="border: 1px solid black;">-4.24%</td></tr><tr><td style="border: 1px solid black;">2014</td><td style="border: 1px solid black;">1.03</td><td style="border: 1px solid black;">-2.25%</td></tr><tr><td style="border: 1px solid black;">2013</td><td style="border: 1px solid black;">1.05</td><td style="border: 1px solid black;">-0.71%</td></tr><tr><td style="border: 1px solid black;">2012</td><td style="border: 1px solid black;">1.06</td><td style="border: 1px solid black;">-3.58%</td></tr><tr><td style="border: 1px solid black;">2011</td><td style="border: 1px solid black;">1.10</td><td style="border: 1px solid black;">5.53%</td></tr><tr><td style="border: 1px solid black;">2010</td><td style="border: 1px solid black;">1.04</td><td style="border: 1px solid black;">-13.76%</td></tr><tr><td style="border: 1px solid black;">2009</td><td style="border: 1px solid black;">1.21</td><td style="border: 1px solid black;">-1.18%</td></tr><tr><td style="border: 1px solid black;">2008</td><td style="border: 1px solid black;">1.22</td><td style="border: 1px solid black;">0.36%</td></tr><tr><td style="border: 1px solid black;">2007</td><td style="border: 1px solid black;">1.22</td><td style="border: 1px solid black;">-10.95%</td></tr><tr><td style="border: 1px solid black;">2006</td><td style="border: 1px solid black;">1.37</td><td style="border: 1px solid black;">6.66%</td></tr><tr><td style="border: 1px solid black;">2005</td><td style="border: 1px solid black;">1.28</td><td style="border: 1px solid black;">-2.99%</td></tr><tr><td style="border: 1px solid black;">2004</td><td style="border: 1px solid black;">1.32</td><td style="border: 1px solid black;">-14.03%</td></tr><tr><td style="border: 1px solid black;">2003</td><td style="border: 1px solid black;">1.54</td><td style="border: 1px solid black;">-18.43%</td></tr><tr><td style="border: 1px solid black;">2002</td><td style="border: 1px solid black;">1.89</td><td style="border: 1px solid black;">4.35%</td></tr><tr><td style="border: 1px solid black;">2001</td><td style="border: 1px solid black;">1.81</td><td style="border: 1px solid black;">-5.16%</td></tr><tr><td style="border: 1px solid black;">2000</td><td style="border: 1px solid black;">1.91</td><td style="border: 1px solid black;">-6.98%</td></tr><tr><td style="border: 1px solid black;">1999</td><td style="border: 1px solid black;">2.05</td><td style="border: 1px solid black;">14.03%</td></tr><tr><td style="border: 1px solid black;">1998</td><td style="border: 1px solid black;">1.80</td><td style="border: 1px solid black;">-9.22%</td></tr><tr><td class="table-warning" style="border: 1px solid black;">1997</td><td class="table-warning" style="border: 1px solid black;">1.98</td><td style="border: 1px solid black;">1.72%</td></tr><tr><td style="border: 1px solid black;">1996</td><td style="border: 1px solid black;">1.95</td><td style="border: 1px solid black;">-1.63%</td></tr><tr><td style="border: 1px solid black;">1995</td><td style="border: 1px solid black;">1.98</td><td style="border: 1px solid black;">10.05%</td></tr><tr><td style="border: 1px solid black;">1994</td><td style="border: 1px solid black;">1.80</td><td style="border: 1px solid black;">-4.96%</td></tr><tr><td style="border: 1px solid black;">1993</td><td style="border: 1px solid black;">1.89</td><td style="border: 1px solid black;">9.37%</td></tr><tr><td style="border: 1px solid black;">1992</td><td style="border: 1px solid black;">1.73</td><td style="border: 1px solid black;">-12.55%</td></tr><tr><td style="border: 1px solid black;">1991</td><td style="border: 1px solid black;">1.98</td><td style="border: 1px solid black;">-10.30%</td></tr><tr><td style="border: 1px solid black;">1990</td><td style="border: 1px solid black;">2.21</td><td style="border: 1px solid black;">-10.30%</td></tr></tbody></table></p>
+                            <br />
+                            <div id="example-chart-2" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/not_readable_chart.png" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-8">
+                                        <p><b>Caption: </b>Turks in Ukraine</p>
+                                    </div>
                                 </div>
                                 <br />
-                            </div>
-                            <div class="row">
-                                <div class="col"></div>
-                                <div class="col-11">
-                                    <p><b>Caption: </b></p>
-                                </div>
-                            </div>
-                            <br />
-                            <!---->
-                            <div id="claim-panel" class=''>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>3. Afterwards adjust the claim such that it verifiable or refutable given the table.</h6>
-                                        <div class="row d-flex justify-content-center">
-                                            <div class="col-sm-11 bg-light border rounded p-2">
-                                                <p>Statistics on crime rates demonstrate that in Australia the crime rate has increased since the 90's.</p>
+                                <!---->
+                                <div id="label-panel-chart-3" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
                                             </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" checked disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-7">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Only experts of a specific topic can understand it</label>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <br />
-                            <div id="label-panel" class=''>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <h6>4. Select if the claim you just wrote, is verifiable or refutable given the table.</h6>
-                                    </div>
-                                </div>
-                                <div class="row d-flex justify-content-center">
-                                    <div class="col-sm-11 pr-0 pl-0">
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="supports" disabled>
-                                            <label class="form-check-label" for="supports">
-                                                Verify
-                                            </label>
-                                        </div>
-                                        <div class="form-check form-check-inline">
-                                            <input class="form-check-input" type="radio" id="refutes" checked disabled>
-                                            <label class="form-check-label" for="refutes">
-                                                Refute
-                                            </label>
-                                        </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
                                     </div>
                                 </div>
                             </div>
-                            <br />
                         </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The claim says that crime statistics were collected in New Zealand since the 90's. The <b>table is not related to New Zealand</b> but to crime rates in Australia. However, the table does not tell us since when statistics on Australian crime rates have been collected. Therefore we form a <b>refutable claim on Australian crime rates</b> and avoid using negation words.</p>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart is <b>not understandable</b> because the legend is missing, thus we do not know what the blue and black dots mean. Therefore the chart needs to be filtered; we <b>select</b> options <b>"The chart is not understandable"</b> and <b>"Missing crucial information (like title, numbers, or names)"</b>.</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                4. Example: CHART NOT UNDERSTANDABLE (data)
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-chart-2" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/not_readable_chart.png" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-8">
+                                        <p><b>Caption: </b>Turks in Ukraine</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel-chart-3" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" checked disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-7">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" checked disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Data not understandable (i.e. I am not able to describe this chart in one sentence)</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart is <b>not understandable</b> because we <b>no knowledge</b> what the title <b>ASAP1 R415Q (ASAP2s)</b> means. Even though the chart has title and labels, we can not write a sentence describing the chart. Therefore the chart needs to be filtered; we <b>select</b> options <b>"The chart is not understandable"</b> and <b>"Data not understandable (i.e. I am not able to describe this chart in one sentence)"</b>.</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                5. Example: CHART NOT UNDERSTANDABLE (colors)
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-chart-5" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/not_understandable_color_chart.gif" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-12">
+                                        <p><b>Caption: </b>A 2D scatter plot forming 3 lines, with the approximate lines shown, with circles to show distance from the axis, and data divided by color to form 3 "blobs", one for each line. Other information To be used to answer a Reference Desk question.</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel-chart-3" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" checked disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-9">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Data not understandable (i.e. I am not able to describe this chart in one sentence)</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart is <b>not understandable</b> because it uses many colors without explaining what they mean. Therefore the chart needs to be filtered; we <b>select</b> options <b>"The chart is not understandable"</b> and <b>"Confusing use of colors"</b>.</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                6. Example: CHART HAS NO ISSUES
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-chart-5" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/no_issues_chart_1.jpg" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b>Graph Showing the Occupational statistics of 1831.</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel-chart-3" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-9">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Data not understandable (i.e. I am not able to describe this chart in one sentence)</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" checked disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart has <b>no issues</b> because it is in <b>English</b>, <b>readable</b>, and <b>understandable</b>, i.e. we are able to <b>write one sentence about it</b>, e.g. "The chart shows that agricultural labourers had the highest occupation in 1831," . We <b>select</b> option <b>"The chart has no issue from above (i.e. it is in English, readable, and understandable)"</b>.</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                7. Example: CHART HAS NO ISSUES
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-chart-7" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/no_issues_chart_2.png" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b>2006 Mexican Presidential election vote count progression. Percentage of poll stations counted (abscissa or x-axis) vs. percentage of candidate vote (ordinate or y-axis).</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel-chart-7" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-9">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Data not understandable (i.e. I am not able to describe this chart in one sentence)</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" checked disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart has <b>no issues</b> because it is in <b>English</b>, <b>readable</b>, and <b>understandable</b>, i.e. we are able to <b>write one sentence about it</b>, e.g. "In the 2006 Mexican presidential election Calderon had more votes after all polling stations were counted than Lopez." . We <b>select</b> option <b>"The chart has no issue from above (i.e. it is in English, readable, and understandable)"</b>.</p>
+                        <hr>
+                        <div>
+                            <h5 class="text-left text-primary mt-3">
+                                8. Example: CHART HAS NO ISSUES
+                            </h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>1. Look at the following chart and (if available) its caption:
+                                    </h6>
+                                </div>
+                            </div>
+                            <br />
+                            <div id="example-chart-8" class=''>
+                                <div class="row d-flex justify-content-center">
+                                    <img src="./images_html_files/no_issues_chart_3.png" alt="..." class="img-thumbnail">
+                                    <br />
+                                </div>
+                                <div class="row">
+                                    <div class="col"></div>
+                                    <div class="col-11">
+                                        <p><b>Caption: </b>2004 Global Autogas Consumption graph. Data: http://www.worldlpgas.com/gain/what-is-autogas-/global-autogas-statistics/.</p>
+                                    </div>
+                                </div>
+                                <br />
+                                <!---->
+                                <div id="label-panel-chart-8" class=''>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <h6>2. Afterwards decide, if the chart has any of the issues below: </h6>
+                                        </div>
+                                    </div>
+                                    <div class="row d-flex justify-content-center">
+                                        <div class="col-sm-11 pr-0 pl-0">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-english" disabled>
+                                                <label class="form-check-label" for="not-english">
+                                                    The chart is not in English.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-readable" disabled>
+                                                <label class="form-check-label" for="not-readable">
+                                                    The chart is not readable.
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="not-understandable" disabled>
+                                                <label class="form-check-label" for="not-understandable">
+                                                    The chart is not understandable because (select one of the reasons below):
+                                                </label>
+                                            </div>
+                                            <br>
+                                            <div class="col-sm-9">
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox1">Missing crucial information (like title, numbers, or names)</label>
+                                                </div>
+                                                <br>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox2">Confusing use of colors</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                                                    <label class="form-check-label" for="inlineCheckbox3">Data not understandable (i.e. I am not able to describe this chart in one sentence)</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <h6>3. Otherwise, select:
+                                    </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" id="chart-no-issue" checked disabled>
+                                        <label class="form-check-label" for="chart-no-issue">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable).
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The chart has <b>no issues</b> because it is in <b>English</b>, <b>readable</b>, and <b>understandable</b>, i.e. we are able to <b>write one sentence about it</b>, e.g. "South Korea has the highest autogas consumption in 2004." . We <b>select</b> option <b>"The chart has no issue from above (i.e. it is in English, readable, and understandable)"</b>.</p>
+                        <hr>
                     </div>
-                    <hr>
                 </div>
             </div>
             <div class="text-left">
                 <div id="instructions-2" class="instructions d-none">
                     <h5><b>General rules</b></h5>
                     <p id="instructions-rules-text"></p>
-                    <h5><b>Claim adjustment rules</b></h5>
+                    <h5><b>Chart filtering rules</b></h5>
                     <p id="instructions-rules-claim-generation-text"></p>
                 </div>
                 <div id="instructions-3" class="instructions d-none">
                     <div id="lan_test" class="text-left">
                         <h5><b>Task Qualification Test: </b></h5>
-                        <p>Below you find a table and a few related questions. You need to answer them successfully to start with the task. If you fail, you get a second chance. The task will terminate if you fail a second time. </p>
+                        <p>Below you find a chart and a few related questions. You need to answer them successfully to start with the task. If you fail, you get a second chance. The task will terminate if you fail a second time. </p>
                         <div class="row d-flex justify-content-center">
-                            <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
-                                <p><table style="border: 1px solid black;"><tbody><tr><th style="border: 1px solid black;">Cities</th><th style="border: 1px solid black;">Population</th><th style="border: 1px solid black;">Region</th></tr><tr><td style="border: 1px solid black;"><b><a>New York</a></b></td><td style="border: 1px solid black;">19,979,477</td><td style="border: 1px solid black;"><a>Northeast</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Los Angeles</a></b></td><td style="border: 1px solid black;">13,291,486</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Chicago</a></b></td><td style="border: 1px solid black;">9,498,716</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Dallas–Fort Worth</a></b></td><td style="border: 1px solid black;">7,539,711</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Houston</a></b></td><td style="border: 1px solid black;">6,997,384</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Washington, D.C.</a></b></td><td style="border: 1px solid black;">6,249,950</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Miami</a></b></td><td style="border: 1px solid black;">6,198,782</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Philadelphia</a></b></td><td style="border: 1px solid black;">6,096,372</td><td style="border: 1px solid black;"><a>Northeast</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Detroit</a></b></td><td style="border: 1px solid black;">4,326,442</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Seattle</a></b></td><td style="border: 1px solid black;">3,939,363</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Minneapolis–St. Paul</a></b></td><td style="border: 1px solid black;">3,629,190</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr><td style="border: 1px solid black;"><b><a>San Diego</a></b></td><td style="border: 1px solid black;">3,343,364</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Tampa–St. Petersburg</a></b></td><td style="border: 1px solid black;">3,142,663</td><td style="border: 1px solid black;"><a>South</a></td></tr><tr><td style="border: 1px solid black;"><b><a>Denver</a></b></td><td style="border: 1px solid black;">2,932,415</td><td style="border: 1px solid black;"><a>West</a></td></tr><tr><td style="border: 1px solid black;"><b><a>St. Louis</a></b></td><td style="border: 1px solid black;">2,805,465</td><td style="border: 1px solid black;"><a>Midwest</a></td></tr><tr></tr></tbody></table></p>
-                            </div>
+                            <img src="./images_html_files/not_english_chart.PNG" alt="..." class="img-thumbnail">
                             <br />
                         </div>
                     </div>
@@ -324,71 +798,80 @@
             <br />
             <!---->
             <div id="instructions-main" class="instructions">
-                <h5><b>Claim adjustment rules</b></h5>
+                <h5><b>Chart filtering rules</b></h5>
                 <p id="main-page-rules-claim-generation-text"></p>
             </div>
             <hr>
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-11 pr-0 pl-0">
-                    <h5>1. Look at the following claim:
+                    <h5>1. Look at the following chart and (if available) its caption:
                     </h5>
                 </div>
             </div>
             <div class="row d-flex justify-content-center">
-                <div class="col-sm-11 bg-light border rounded p-2">
-                    <p><span id='statement_reference'></span></p>
-                </div>
+                <!--                    <p><span id='chart_reference'></span></p>-->
+                <img src="" id='chart_reference' alt="..." class="img-thumbnail">
+                <p><b>Caption: </b><span id='caption'></span></p>
+                <br />
             </div>
             <br />
             <div id="table-panel" class=''>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-sm-11 pr-0 pl-0">
-                        <h5>2. Look at the accompanying table and (if available) its caption:</h5>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="table-responsive-sm" style="max-width:800px;max-height:500px;overflow: scroll;">
-                        <p id="fc-table"></p>
-                    </div>
-                </div>
-                <p><b>Caption: </b><span id='caption'></span></p>
-                <br />
-                <!---->
                 <div id="author-panel" class=''>
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-11 pr-0 pl-0">
-                            <h5>3. Afterwards adjust the claim such that it can be either verified or refuted given the table.</h5>
-                            <p>You can look at some exemplary, adjusted claims by clicking on "Show Instructions" at the top of this page.</p>
-                            <div class="form-group">
-                                <textarea class="form-control" id="adjustedClaim" rows="2" placeholder="Write adjusted claim here..."></textarea>
+                            <h5>2. Afterwards decide, if the chart has any of the issues below:</h5>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-sm-11 pr-0 pl-0">
+                                    <div class="form-check form-check-inline">
+                                        <label id="label_0" class="btn form-check-label" for="input_label_0">
+                                        <input class="form-check-input" type="radio" id="input_label_0" name="label_radio">
+                                            The chart is not in English.
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <label id="label_1" class="btn form-check-label" for="input_label_1">
+                                        <input class="form-check-input" type="radio" id="input_label_1" name="label_radio">
+                                            The chart is not readable.
+                                        </label>
+                                    </div>
+                                    <br>
+                                    <div class="form-check form-check-inline">
+                                        <label id="placeholder" class="btn form-check-label" for="input_placeholder">
+                                            <input class="form-check-input" type="radio" id="input_placeholder" name="label_radio" disabled>
+                                            The chart is not understandable because (select one of the reasons below):
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label id="label_2" class="btn form-check-label" for="input_label_2">
+                                            <input class="form-check-input" type="radio" id="input_label_2" name="label_radio">
+                                            Missing information (like title, numbers, or names)
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label id="label_3" class="btn form-check-label" for="input_label_3">
+                                            <input class="form-check-input" type="radio" id="input_label_3" name="label_radio">
+                                            Confusing use of colors
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label id="label_4" class="btn form-check-label" for="input_label_4">
+                                            <input class="form-check-input" type="radio" id="input_label_4" name="label_radio">
+                                            Other reasons:
+                                        </label>
+                                        <br>
+<!--                                        <p>If you selected "Other reasons", give the reason below:</p>-->
+                                        <div class="form-group">
+                                            <textarea class="form-control" id="reason_other" rows="1" placeholder="Enter reason here..." style="min-width: 100%"></textarea>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <br />
-                <div id="author-panel" class=''>
-                <div class="row d-flex justify-content-center">
-                        <div class="col-sm-11 pr-0 pl-0">
-                            <h5>4. Select if the claim you just wrote, can be verified or refuted given the table.</h5>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div  id="label_div" class="col-sm-11 pr-0 pl-0">
-                            <div class="form-check form-check-inline">
-                                <label id="label_0" class="btn form-check-label" for="input_label_0">
-                                    <input id="input_label_0" class="form-check-input" type="radio" name="label_radio">
-                                    Verified
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label id="label_1" class="btn form-check-label" for="input_label_1">
-                                    <input id="input_label_1" class="form-check-input" type="radio" name="label_radio">
-                                    Refuted
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <br />
                 <!---->
                 <div class="row p-3">
@@ -404,6 +887,7 @@
                     </button>
                 </div>
             </div>
+        </div>
         </div>
     </div>
     <div class="modal" id="submitModal">
@@ -519,17 +1003,18 @@
             4: [],
             5: []
         }
-        let references = [{'claim_db_id': '6072bd2d000ca92c09d146fb', 'claim': "The death from influenza of eight mostly vaccinated people over 65 in California's Santa Barbara County during the 2017-2018 flu season proves that you shouldn’t get the flu shot.", 'label': 'false', 'table': {'url': 'https://www.cdc.gov/flu/about/burden/2017-2018/archive.htm', 'caption': 'Table 1: Estimated influenza disease burden, by age group United States, 2017-2018 influenza season', 'header_horizontal': ['', 'Symptomatic Illnesses', 'Medical Visits', 'Hospitalizations', 'Deaths', 'Age group', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI'], 'header_vertical': [], 'rows_list': [['0-4 yrs', '3,678,342', '(2,563,438 -7,272,693)', '2,464,489', '(1,695,054 4,904,296)', '25,644', '(17,871 50,702)', '115', '(0 367)'], ['5-17 yrs', '7,512,601', '(5,899,989 10,199,144)', '3,906,553', '(3,002,375 5,356,724)', '20,599', '(16,177 27,965)', '528', '(205 1,392)'], ['18-49 yrs', '14,428,065', '(12,258,820 19,396,710)', '5,338,384', '(4,262,260 -7,333,716)', '80,985', '(68,809 108,874)', '2,803', '(1,610 6,936)'], ['50-64 yrs', '13,237,932', '(9,400,614 -23,062,957)', '5,692,311', '(3,895,925 10,028,080)', '140,385', '(99,691 244,576)', '6,751', '(4,244 15,863)'], ['65+ yrs', '5,945,690', '(3,907,025 11,786,777)', '3,329,586', '(2,139,716- 6,623,717)', '540,517', '(355,184 -1,071,525)', '50,903', '(35,989 83,230)'], ['All ages', '44,802,629', '(39,322,959 57,928,172)', '20,731,323', '(17,978,392 27,248,302)', '808,129', '(620,768 -1,357,043)', '61,099', '(46,404 94,987)']], 'html_table': `<table><caption><h3>Table 1: Estimated influenza disease burden, by age group — United States, 2017-2018 influenza season</h3></caption><thead><tr><th></th><th>Symptomatic Illnesses</th><th>Medical Visits</th><th>Hospitalizations</th><th>Deaths</th></tr><tr><th>Age group</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th></tr></thead><tbody><tr><td>0-4 yrs</td><td>3,678,342</td><td>(2,563,438 -7,272,693)</td><td>2,464,489</td><td>(1,695,054 – 4,904,296)</td><td>25,644</td><td>(17,871 – 50,702)</td><td>115</td><td>(0 – 367)</td></tr><tr><td>5-17 yrs</td><td>7,512,601</td><td>(5,899,989 – 10,199,144)</td><td>3,906,553</td><td>(3,002,375 – 5,356,724)</td><td>20,599</td><td>(16,177 – 27,965)</td><td>528</td><td>(205 – 1,392)</td></tr><tr><td>18-49 yrs</td><td>14,428,065</td><td>(12,258,820 – 19,396,710)</td><td>5,338,384</td><td>(4,262,260 -7,333,716)</td><td>80,985</td><td>(68,809 – 108,874)</td><td>2,803</td><td>(1,610 – 6,936)</td></tr><tr><td>50-64 yrs</td><td>13,237,932</td><td>(9,400,614 -23,062,957)</td><td>5,692,311</td><td>(3,895,925 – 10,028,080)</td><td>140,385</td><td>(99,691 – 244,576)</td><td>6,751</td><td>(4,244 – 15,863)</td></tr><tr><td>65+ yrs</td><td>5,945,690</td><td>(3,907,025 – 11,786,777)</td><td>3,329,586</td><td>(2,139,716-  6,623,717)</td><td>540,517</td><td>(355,184 -1,071,525)</td><td>50,903</td><td>(35,989 – 83,230)</td></tr><tr><td>All ages</td><td>44,802,629</td><td>(39,322,959 – 57,928,172)</td><td>20,731,323</td><td>(17,978,392 – 27,248,302)</td><td>808,129</td><td>(620,768 -1,357,043)</td><td>61,099</td><td>(46,404 – 94,987)</td></tr></tbody></table>`}, 'g_id': {'label': [2], 'header': -1}}, {'claim_db_id': '6072bd2d000ca92c09d1473b', 'claim': 'In 2019, a U.S. District Court judge ruled that girls in an Illinois school district "must shower with boys" and had no right to privacy.', 'label': 'false', 'table': {'url': 'https://www.law.cornell.edu/uscode/text/28/133', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['Delaware', '1'], ['Florida, Northern and Southern', '1'], ['Georgia, Northern', '1'], ['Kansas', '1'], ['Missouri, Eastern and Western', '1'], ['Ohio, Northern', '1'], ['Oklahoma, Western', '1'], ['Pennsylvania, Eastern, Middle and Western', '1'], ['West Virginia, Northern and Southern', '1']], 'html_table': `<table><colgroup><col/><col/></colgroup><thead><tr><th><p><em>Districts</em></p></th><th><p><em>Judges</em></p></th></tr></thead><tbody><tr><td><p><span>Delaware</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Florida, Northern and Southern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Georgia, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Kansas</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Missouri, Eastern and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Ohio, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Oklahoma, Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Pennsylvania, Eastern, Middle and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>West Virginia, Northern and Southern</span></p></td><td><p>1</p></td></tr></tbody></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d1453d', 'claim': '“The NFL agreed to give the domestic terror group, BLM, 250 million dollars.', 'label': 'false', 'table': {'url': 'https://www.nps.gov/parkhistory/online_books/blm/history/', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['OPPORTUNITY AND CHALLENGE The Story of BLM', 'OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM By James Muhn Hanson R. Stuart designed by Peter D. Doran September 1988 second printing U.S. Department of the Interior Bureau of Land Management TABLE OF CONTENTS', 'OPPORTUNITY AND CHALLENGE', 'The Story of BLM'], ['OPPORTUNITY AND CHALLENGE'], ['The Story of BLM'], ['index.htm Last Updated: 08-Sep-2008']], 'html_table': `<table><tr><td><table><tr><td><font>OPPORTUNITY AND CHALLENGE</font><br/><font>The Story of BLM</font><hr/></td><td><img/></td></tr></table></td></tr><tr><td><img/></td><td><br/><table><tr><td><font><b>OPPORTUNITY AND CHALLENGE</b></font></td></tr><tr><td><font><b>The Story of BLM</b></font></td></tr></table><p><br/><font><b>By</b></font><br/><font><b>James Muhn<br/>Hanson R. Stuart</b></font></p><p><br/><font><b>designed by</b></font><br/><font><b>Peter D. Doran</b></font></p><p><br/><font><b>September 1988</b></font><br/><font>second printing</font></p><p><font>U.S. Department of the Interior<br/>Bureau of Land Management</font></p><p><br/><a><b>TABLE OF CONTENTS</b></a></p></td></tr><tr><td><div><br/><hr/><font>index.htm<br/>Last Updated: 08-Sep-2008</font></div></td></tr></table>`}, 'g_id': {'label': [1], 'header': [1]}}, {'claim_db_id': '6072bd2d000ca92c09d145bc', 'claim': 'Connecticut confirms 4th case of measles.', 'label': 'true', 'table': {'url': 'https://www.tax-brackets.org/connecticuttaxtable', 'caption': '', 'header_horizontal': ['Tax Bracket', 'Tax Rate'], 'header_vertical': [], 'rows_list': [['$0.00+', '3%'], ['$10,000.00+', '5%'], ['$50,000.00+', '5.5%'], ['$100,000.00+', '6%'], ['$200,000.00+', '6.5%'], ['$250,000.00+', '6.9%'], ['$500,000.00+', '6.99%']], 'html_table': '<table><thead><tr><th> Tax Bracket </th><th> Tax Rate </th></tr></thead><tbody><tr><td> $0.00+ </td><td> 3% </td></tr><tr><td> $10,000.00+ </td><td> 5% </td></tr><tr><td> $50,000.00+ </td><td> 5.5% </td></tr><tr><td> $100,000.00+ </td><td> 6% </td></tr><tr><td> $200,000.00+ </td><td> 6.5% </td></tr><tr><td> $250,000.00+ </td><td> 6.9% </td></tr><tr><td> $500,000.00+ </td><td> 6.99% </td></tr></tbody></table>'}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d14861', 'claim': "France's coronavirus death rate accelerates, cases near 100,000.", 'label': 'true', 'table': {'url': 'https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section3.html', 'caption': '', 'header_horizontal': ['Measure', 'Numerator', 'Denominator', '10n'], 'header_vertical': ['Crude death rate', 'Cause-specific death rate', 'Proportionate mortality', 'Death-to-case ratio', 'Neonatal mortality rate', 'Postneonatal mortality rate', 'Infant mortality rate', 'Maternal mortality rate'], 'rows_list': [['Total number of deaths during a given time interval', 'Mid-interval population', '1,000 or 100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Mid-interval population', '100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Total number of deaths from all causes during the same time interval', '100 or 1,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Number of new cases of same disease reported during the same time interval', '100'], ['Number of deaths among children < 28 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children 28364 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children < 1 year of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths assigned to pregnancy-related causes during a given time interval', 'Number of live births during the same time interval', '100,000']], 'html_table': '<table><thead><tr><th>Measure</th><th>Numerator</th><th>Denominator</th><th>10<sup>n</sup></th></tr></thead><tbody><tr><th>Crude death rate</th><td>Total number of deaths during a given time interval</td><td>Mid-interval population</td><td>1,000 or<br/>100,000</td></tr><tr><th>Cause-specific death rate</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Mid-interval population</td><td>100,000</td></tr><tr><th>Proportionate mortality</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Total number of deaths from all causes during the same time interval</td><td>100 or 1,000</td></tr><tr><th>Death-to-case ratio</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Number of new cases of same disease reported during the same time interval</td><td>100</td></tr><tr><th>Neonatal mortality rate</th><td>Number of deaths among children<br/>&lt; 28 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Postneonatal mortality rate</th><td>Number of deaths among children 28–364 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Infant mortality rate</th><td>Number of deaths among children<br/>&lt; 1 year of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Maternal mortality rate</th><td>Number of deaths assigned to pregnancy-related causes during a given time interval</td><td>Number of live births during the same time interval</td><td>100,000</td></tr></tbody></table>'}, 'g_id': 0}]
+        // ['g_id'] sets gold labels
+        let references = [{'claim_db_id': '6072bd2d000ca92c09d146fb', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'false', 'table': {'url': 'https://www.cdc.gov/flu/about/burden/2017-2018/archive.htm', 'caption': 'Table 1: Estimated influenza disease burden, by age group United States, 2017-2018 influenza season', 'header_horizontal': ['', 'Symptomatic Illnesses', 'Medical Visits', 'Hospitalizations', 'Deaths', 'Age group', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI', 'Estimate', '95% Cr UI'], 'header_vertical': [], 'rows_list': [['0-4 yrs', '3,678,342', '(2,563,438 -7,272,693)', '2,464,489', '(1,695,054 4,904,296)', '25,644', '(17,871 50,702)', '115', '(0 367)'], ['5-17 yrs', '7,512,601', '(5,899,989 10,199,144)', '3,906,553', '(3,002,375 5,356,724)', '20,599', '(16,177 27,965)', '528', '(205 1,392)'], ['18-49 yrs', '14,428,065', '(12,258,820 19,396,710)', '5,338,384', '(4,262,260 -7,333,716)', '80,985', '(68,809 108,874)', '2,803', '(1,610 6,936)'], ['50-64 yrs', '13,237,932', '(9,400,614 -23,062,957)', '5,692,311', '(3,895,925 10,028,080)', '140,385', '(99,691 244,576)', '6,751', '(4,244 15,863)'], ['65+ yrs', '5,945,690', '(3,907,025 11,786,777)', '3,329,586', '(2,139,716- 6,623,717)', '540,517', '(355,184 -1,071,525)', '50,903', '(35,989 83,230)'], ['All ages', '44,802,629', '(39,322,959 57,928,172)', '20,731,323', '(17,978,392 27,248,302)', '808,129', '(620,768 -1,357,043)', '61,099', '(46,404 94,987)']], 'html_table': `<table><caption><h3>Table 1: Estimated influenza disease burden, by age group — United States, 2017-2018 influenza season</h3></caption><thead><tr><th></th><th>Symptomatic Illnesses</th><th>Medical Visits</th><th>Hospitalizations</th><th>Deaths</th></tr><tr><th>Age group</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th><th>Estimate</th><th>95% Cr UI</th></tr></thead><tbody><tr><td>0-4 yrs</td><td>3,678,342</td><td>(2,563,438 -7,272,693)</td><td>2,464,489</td><td>(1,695,054 – 4,904,296)</td><td>25,644</td><td>(17,871 – 50,702)</td><td>115</td><td>(0 – 367)</td></tr><tr><td>5-17 yrs</td><td>7,512,601</td><td>(5,899,989 – 10,199,144)</td><td>3,906,553</td><td>(3,002,375 – 5,356,724)</td><td>20,599</td><td>(16,177 – 27,965)</td><td>528</td><td>(205 – 1,392)</td></tr><tr><td>18-49 yrs</td><td>14,428,065</td><td>(12,258,820 – 19,396,710)</td><td>5,338,384</td><td>(4,262,260 -7,333,716)</td><td>80,985</td><td>(68,809 – 108,874)</td><td>2,803</td><td>(1,610 – 6,936)</td></tr><tr><td>50-64 yrs</td><td>13,237,932</td><td>(9,400,614 -23,062,957)</td><td>5,692,311</td><td>(3,895,925 – 10,028,080)</td><td>140,385</td><td>(99,691 – 244,576)</td><td>6,751</td><td>(4,244 – 15,863)</td></tr><tr><td>65+ yrs</td><td>5,945,690</td><td>(3,907,025 – 11,786,777)</td><td>3,329,586</td><td>(2,139,716-  6,623,717)</td><td>540,517</td><td>(355,184 -1,071,525)</td><td>50,903</td><td>(35,989 – 83,230)</td></tr><tr><td>All ages</td><td>44,802,629</td><td>(39,322,959 – 57,928,172)</td><td>20,731,323</td><td>(17,978,392 – 27,248,302)</td><td>808,129</td><td>(620,768 -1,357,043)</td><td>61,099</td><td>(46,404 – 94,987)</td></tr></tbody></table>`}, 'g_id': {'label': [0]}}, {'claim_db_id': '6072bd2d000ca92c09d1473b', 'chart': './images_html_files/no_issues_chart_2.png', 'label': 'false', 'table': {'url': 'https://www.law.cornell.edu/uscode/text/28/133', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['Delaware', '1'], ['Florida, Northern and Southern', '1'], ['Georgia, Northern', '1'], ['Kansas', '1'], ['Missouri, Eastern and Western', '1'], ['Ohio, Northern', '1'], ['Oklahoma, Western', '1'], ['Pennsylvania, Eastern, Middle and Western', '1'], ['West Virginia, Northern and Southern', '1']], 'html_table': `<table><colgroup><col/><col/></colgroup><thead><tr><th><p><em>Districts</em></p></th><th><p><em>Judges</em></p></th></tr></thead><tbody><tr><td><p><span>Delaware</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Florida, Northern and Southern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Georgia, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Kansas</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Missouri, Eastern and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Ohio, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Oklahoma, Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Pennsylvania, Eastern, Middle and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>West Virginia, Northern and Southern</span></p></td><td><p>1</p></td></tr></tbody></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d1453d', 'chart': './images_html_files/no_issues_chart_3.png', 'label': 'false', 'table': {'url': 'https://www.nps.gov/parkhistory/online_books/blm/history/', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['OPPORTUNITY AND CHALLENGE The Story of BLM', 'OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM By James Muhn Hanson R. Stuart designed by Peter D. Doran September 1988 second printing U.S. Department of the Interior Bureau of Land Management TABLE OF CONTENTS', 'OPPORTUNITY AND CHALLENGE', 'The Story of BLM'], ['OPPORTUNITY AND CHALLENGE'], ['The Story of BLM'], ['index.htm Last Updated: 08-Sep-2008']], 'html_table': `<table><tr><td><table><tr><td><font>OPPORTUNITY AND CHALLENGE</font><br/><font>The Story of BLM</font><hr/></td><td><img/></td></tr></table></td></tr><tr><td><img/></td><td><br/><table><tr><td><font><b>OPPORTUNITY AND CHALLENGE</b></font></td></tr><tr><td><font><b>The Story of BLM</b></font></td></tr></table><p><br/><font><b>By</b></font><br/><font><b>James Muhn<br/>Hanson R. Stuart</b></font></p><p><br/><font><b>designed by</b></font><br/><font><b>Peter D. Doran</b></font></p><p><br/><font><b>September 1988</b></font><br/><font>second printing</font></p><p><font>U.S. Department of the Interior<br/>Bureau of Land Management</font></p><p><br/><a><b>TABLE OF CONTENTS</b></a></p></td></tr><tr><td><div><br/><hr/><font>index.htm<br/>Last Updated: 08-Sep-2008</font></div></td></tr></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d145bc', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'true', 'table': {'url': 'https://www.tax-brackets.org/connecticuttaxtable', 'caption': '', 'header_horizontal': ['Tax Bracket', 'Tax Rate'], 'header_vertical': [], 'rows_list': [['$0.00+', '3%'], ['$10,000.00+', '5%'], ['$50,000.00+', '5.5%'], ['$100,000.00+', '6%'], ['$200,000.00+', '6.5%'], ['$250,000.00+', '6.9%'], ['$500,000.00+', '6.99%']], 'html_table': '<table><thead><tr><th> Tax Bracket </th><th> Tax Rate </th></tr></thead><tbody><tr><td> $0.00+ </td><td> 3% </td></tr><tr><td> $10,000.00+ </td><td> 5% </td></tr><tr><td> $50,000.00+ </td><td> 5.5% </td></tr><tr><td> $100,000.00+ </td><td> 6% </td></tr><tr><td> $200,000.00+ </td><td> 6.5% </td></tr><tr><td> $250,000.00+ </td><td> 6.9% </td></tr><tr><td> $500,000.00+ </td><td> 6.99% </td></tr></tbody></table>'}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d14861', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'true', 'table': {'url': 'https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section3.html', 'caption': '', 'header_horizontal': ['Measure', 'Numerator', 'Denominator', '10n'], 'header_vertical': ['Crude death rate', 'Cause-specific death rate', 'Proportionate mortality', 'Death-to-case ratio', 'Neonatal mortality rate', 'Postneonatal mortality rate', 'Infant mortality rate', 'Maternal mortality rate'], 'rows_list': [['Total number of deaths during a given time interval', 'Mid-interval population', '1,000 or 100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Mid-interval population', '100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Total number of deaths from all causes during the same time interval', '100 or 1,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Number of new cases of same disease reported during the same time interval', '100'], ['Number of deaths among children < 28 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children 28364 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children < 1 year of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths assigned to pregnancy-related causes during a given time interval', 'Number of live births during the same time interval', '100,000']], 'html_table': '<table><thead><tr><th>Measure</th><th>Numerator</th><th>Denominator</th><th>10<sup>n</sup></th></tr></thead><tbody><tr><th>Crude death rate</th><td>Total number of deaths during a given time interval</td><td>Mid-interval population</td><td>1,000 or<br/>100,000</td></tr><tr><th>Cause-specific death rate</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Mid-interval population</td><td>100,000</td></tr><tr><th>Proportionate mortality</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Total number of deaths from all causes during the same time interval</td><td>100 or 1,000</td></tr><tr><th>Death-to-case ratio</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Number of new cases of same disease reported during the same time interval</td><td>100</td></tr><tr><th>Neonatal mortality rate</th><td>Number of deaths among children<br/>&lt; 28 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Postneonatal mortality rate</th><td>Number of deaths among children 28–364 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Infant mortality rate</th><td>Number of deaths among children<br/>&lt; 1 year of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Maternal mortality rate</th><td>Number of deaths assigned to pregnancy-related causes during a given time interval</td><td>Number of live births during the same time interval</td><td>100,000</td></tr></tbody></table>'}, 'g_id': 0}]
         let lan_test_language = "Swedish";
         //1301
-        let lan_test_questions = [{"question": " What is the first column describing?", "options": ["Countries", "Cities", "Regions"], "answer": 1}, {"question": " Which city has the largest population?", "options": ["Los Angeles", "Miami", "New York City"], "answer": 2}, {"question": " Houston has a larger number of population than Chicago.", "options": ["False", "True"], "answer": 0}];
+        let lan_test_questions = [{"question": " The data of which years is shown in the chart?", "options": ["2017 and 2019", "2017 and 2018", "2016-20119"], "answer": 1}, {"question": " What does the x-axis show?", "options": ["different months", "different years", "numbers between 0-180"], "answer": 0}, {"question": " What color represents data of 2018?", "options": ["black", "red", "yellow"], "answer": 1}];
 
         let total = references.length;
 
         var outputs = [];
         // DEFAULT OUTPUTS IN JSON FORMAT, EX:  { similarity: -1, confidence: -1, reason: "" }
         for (i = 0; i < total; i++) {
-            outputs[i] = {label: -1, header: -1, publisher: -1, sub_publisher: -1};
+            outputs[i] = {label: -1, reason_other: -1, header: -1, publisher: -1, sub_publisher: -1};
         }
 
         var events = [];
@@ -554,14 +1039,14 @@
         failCount = 0;
         lanFailCount = 0;
 
-        $("#instructions-project-text").html(`</br> Welcome to the Chart-Filtering-Task. </br></br> We will show you <b>seven charts</b>. For each chart, you will be asked to do the following: <b>Decide if the chart should be filtered out because its (1) not in English, (2) not readable, OR (3) it misses important information to be understood</b>.
+        $("#instructions-project-text").html(`</br> Welcome to the Chart-Filtering-Task. </br></br> We will show you <b>seven charts</b>. For each chart, you will be asked to do the following: <b>Decide if the chart should be filtered out because its (1) not in English, (2) not readable, OR (3) not understandable (you cannot say what the chart is about) </b>.
         Please avoid using any additional sources or own knowledge.  </br></br> We will show you some examples of how to solve this task on the next page. </br></br> Afterwards, we will ask you <b>three questions</b>. You can progress to the task by answering these questions correctly. The task also includes some <b>checks</b>.
-        You can only submit and receive payment by passing them successfully. </br></br> The data collected in this study consist of your inputs, the time you spent on the task and the buttons clicked. This experiment received ethical clearance on XXth December, 2022 from King's College London (KCL), with registration number XXX-XXX-XXX.
-        The data controller for this project will be KCL. If you have any questions or need further assistance, please contact <a href='mailto:sahar.tahmasebi@tib.eu'>sahar.tahmasebi@tib.eu</a>. </br></br> By continuing with the task, you agree to take part in this research project and consent for the data collected to be used for the purpose of this study.`);
+        You can only submit and receive payment by passing them successfully. </br></br> The data collected in this study consist of your inputs, the time you spent on the task and the buttons clicked. This experiment received ethical clearance on 2nd December, 2022 from King's College London (KCL), with registration number MRSP-20/21-22978.
+        The data controller for this project will be KCL. If you have any <b>questions or need further assistance</b>, please contact <a href='mailto:sahar.tahmasebi@tib.eu'>sahar.tahmasebi@tib.eu</a>. </br></br> By continuing with the task, you agree to take part in this research project and consent for the data collected to be used for the purpose of this study.`);
         $("#instructions-intro-text").html("In this task, we want your help classifying the nature of some websites. You will be asked to take a look at six websites, and, for each, we'll ask:<br>1) What is the kind of author that normally puts information in that website;<br>2) What is the type of publisher that the website most closely classifies as;<br>3) Depending on the publisher type, a sub-type of publisher will also be asked.");
-        $("#instructions-rules-text").html(`<ul><li><b>Read</b> the claim and table carefully.</li><li>You might need to <b>scroll down the table</b> to see all rows.</li><li>You must <b>fill all the information</b> requested.</li><li>Do not use any <b>additional sources</b> or your own background knowledge to solve the task.</li><li>You can navigate freely through the tasks using the buttons at the bottom of the page.</li><li>At the end of the task, we <b>check the quality of your work</b>. If you don't pass the test, you can adjust your answers and resubmit two more times. If you fail three times, the task terminates and the work is not accepted.</li><li>Make sure you are using either Chrome, Firefox or Edge. Do not use Internet Explorer.</li><li>You can open these instructions again anytime during the task.</li></ul>`);
-        $("#instructions-rules-claim-generation-text").html(`<ul><li><b>Adjust the given claim</b> as little as possible to create a claim verifiable or refutable given the table.</li><li> To verify or refute the claim, <b>only information from the table</b> and commonsense should be needed.</li><li>Do not include your own background knowledge on the topic while adjusting the claim.</li><li>To verify or refute the claim, information from at least two different table rows or table columns must be needed. Do <b>not write simple lookup sentences</b>.</li><li>The claim must be a well-formed, grammatically correct sentence. </li><li>Avoid using vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Avoid using ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>Avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>Refuting claims must not include negation words like “not”, “never”, “none”, etc.</li><li> Refuting claims must be <b>refutable given only the table and no additional information</b>.</li><li>Numbers and dates can be formatted in any appropriate English format.</li></ul><p> Next, we will ask you a few questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates.</p>`);
-        $("#main-page-rules-claim-generation-text").html(`<ul><li><b>Adjust the given claim</b> as little as possible to create a claim verifiable or refutable given the table.</li><li> To verify or refute the claim, <b>only information from the table</b> and commonsense should be needed.</li><li>Do not include your own background knowledge on the topic while adjusting the claim.</li><li>To verify or refute the claim, information from at least two different table rows or table columns must be needed. Do <b>not write simple lookup sentences</b>.</li><li>The claim must be a well-formed, grammatically correct sentence. </li><li>Avoid using vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Avoid using ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>Avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>Refuting claims must not include negation words like “not”, “never”, “none”, etc.</li><li> Refuting claims must be <b>refutable given only the table and no additional information</b>.</li><li>Numbers and dates can be formatted in any appropriate English format.</li></ul>`);
+        $("#instructions-rules-text").html(`<ul><li><b>Read</b> the chart and (if available) its caption carefully.</li><li>You might need to <b>scroll down</b> to see the entire page.</li><li>Do <b>not use</b> any additional <b>sources or your own background knowledge</b> to solve the task. </li><li>You can navigate freely through the tasks using the buttons at the bottom of the page.</li><li>At the end of the task, we <b>automatically check the quality</b> of your work. If you don't pass the test, you can adjust your answers and <b>resubmit</b> two more times. If you fail three times, the <b>task terminates</b> and the work is not accepted.</li><li>We <b>check</b> the quality of the task <b>after submission</b>.</li><li>Make sure you are using either Chrome, Firefox or Edge <b>internet browser</b>. Do not use Internet Explorer.</li><li>You can open these <b>instructions</b> again anytime during the task.</li><li>You must <b>fill all the information</b> requested.</li></ul>`);
+        $("#instructions-rules-claim-generation-text").html(`<ul><li>The aim of this task is to <b>filter charts with certain issues</b>.</li><li>We ask you to filter the chart if it is (1.) not in in <b>English</b>, (2.) not <b>readable</b>, or (3.) not <b>understandable</b> (i.e. you are not able to describe the chart in one sentence).</li><li>Before deciding, you should read the <b>both the chart and its caption</b>.</li><li><b>Not in English:</b> parts of the chart (e.g. title, axes. caption) are not in English.</li><li><b>Not readable:</b> you can not see parts of the chart properly, for example the text is blurred or the image is cropped.</li><li><b>Not understandable:</b> the chart misses crucial information, for example what the axes mean, OR you cannot describe the chart in one sentence to someone.</li></ul><p> Next, we will ask you a few questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates.</p>`);
+        $("#main-page-rules-claim-generation-text").html(`<ul><li>The aim of this task is to <b>filter charts with certain issues</b>.</li><li>We ask you to filter the chart if it is (1.) not in in <b>English</b>, (2.) not <b>readable</b>, or (3.) not <b>understandable</b> (i.e. you are not able to describe the chart in one sentence).</li><li>Before deciding, you should read the <b>both the chart and its caption</b>.</li><li><b>Not in English:</b> parts of the chart (e.g. title, axes. caption) are not in English.</li><li><b>Not readable:</b> you can not see parts of the chart properly, for example the text is blurred or the image is cropped.</li><li><b>Not understandable:</b> the chart misses crucial information, for example what the axes mean, OR you cannot describe the chart in one sentence to someone.</li></ul><p>Click <b>Show Instructions</b> above to see some <b>examples</b>.`);
 
         $("#lan_test_language").text(lan_test_language)
 
@@ -595,8 +1080,13 @@
             }
             pageIndex = currentPage - 1;
             output = outputs[pageIndex];
-
-            for (i = 0; i < 3; i++) {
+            if (output['reason_other'] != -1 && output['reason_other'] != '' && output['reason_other'] != 'Enter reason here...') {
+                $(`#reason_other`).val(output['reason_other']);
+            }
+            else {
+                $(`#reason_other`).val("");
+            }
+            for (i = 0; i < 5; i++) {
                 if (output['label'] == i) {
                     $(`#label_${i}`).addClass("active");
                     $(`#label_${i}`).children('input').prop('checked', true)
@@ -648,7 +1138,7 @@
             $("#website_reference").text(references[pageIndex]["table"]["url"]);
             $("#website_reference").prop("href", references[pageIndex]["table"]["url"]);
 
-            $("#statement_reference").text(references[pageIndex]["claim"]);
+            $("#chart_reference").prop("src", references[pageIndex]["chart"]);
             $("#caption").text(references[pageIndex]["table"]["caption"]);
             $("#fc-table").html(references[pageIndex]["table"]["html_table"]);
 <!--            $("#adjustedClaim").val(references[pageIndex]["claim"]);-->
@@ -687,11 +1177,12 @@
             }
 
             <!--            Shuffle support, refute and unrelated radio buttons randomly -->
-            var parent = $('#label_div');
-            var divs = parent.children();
-            while (divs.length) {
-                parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);
-            }
+<!--todo reactive shuffle if needed-->
+<!--            var parent = $('#issues_div');-->
+<!--            var divs = parent.children();-->
+<!--            while (divs.length) {-->
+<!--                parent.append(divs.splice(Math.floor(Math.random() * divs.length), 1)[0]);-->
+<!--            }-->
 
             lastChange = Date.now();
         }
@@ -720,9 +1211,10 @@
             const outputs_flat = [].concat(...outputs)
             for (i = 0; i < outputs_flat.length; i++){
                 if (
+                    // check if all labels are set and "reason_other" given if "Other reason" selected
                     (outputs_flat[i]["label"] == -1) ||
-                    ((outputs_flat[i]["label"] in [0, 1]) &&
-                    ((outputs_flat[i]["header"] == -1) || (outputs_flat[i]["header"].length == 0)))
+                    ((outputs_flat[i]["label"] == 4) &&
+                    ((outputs_flat[i]["reason_other"] == -1) || (outputs_flat[i]["reason_other"].trim() == '')))
                 ) {
                     allControlsUsedCheck = false;
                 }
@@ -747,25 +1239,14 @@
                 });
             }
 
+            // check gold labels - var references saves gold labels
             var allGoldenCheck = true;
-
             for (i = 0; i < total; i++) {
                 if (references[i]['g_id'] != 0) {
                     if (references[i]['g_id']['label'] != -1){
+                        // check if gold label (g_id) same as input by annotator
                         if (references[i]['g_id']['label'].indexOf(outputs[i]['label']) == -1){
                             allGoldenCheck = false
-                        }
-                    }
-                    if (references[i]['g_id']['header'] != -1){
-                        if ((outputs[i]['header'] == -1) || (outputs[i]['header'].length == 0)) allGoldenCheck = false;
-                        else {
-                            for (j = 0; j < references[i]['g_id']['header']; j++) {
-                                if (outputs[i]['header'].indexOf(references[i]['g_id']['header'][j]) == -1) {
-                                    allGoldenCheck = false;
-                                    break;
-                                }
-                            }
-
                         }
                     }
                 }
@@ -785,6 +1266,9 @@
         $(function () {
             $("#previous-page").click(function () {
                 var page = parseInt($("#current-page").text());
+                if ($("reason_other").val() != "" && $("reason_other").val() != -1) {
+                    outputs[page-1]['reason_other'] = $("#reason_other").val()
+                }
                 newPage = page - 1;
                 showContent(newPage);
                 log_event("moved_backward", {
@@ -794,6 +1278,9 @@
             });
             $("#next-page").click(function () {
                 var page = parseInt($("#current-page").text());
+                if ($("reason_other").val() != "" && $("reason_other").val() != -1) {
+                    outputs[page-1]['reason_other'] = $("#reason_other").val()
+                }
                 newPage = page + 1;
                 showContent(newPage);
                 log_event("moved_forward", {
