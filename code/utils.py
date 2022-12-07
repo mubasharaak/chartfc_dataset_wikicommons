@@ -59,6 +59,23 @@ def upload_json_mongodb(json_file_path: str, db_name: str, db_collection_name: s
     client.close()
 
 
-if __name__ == '__main__':
+def load_wikimedia_data_mongodb():
+    """
+    Loads all chart dataset files created from Wikimedia commons into Mongodb DB "chartfc"
+    :return:
+    """
     path = r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\init_dataset\line_chart.json"
     upload_json_mongodb(path, "chartfc", "chart_filtering")
+
+    path = r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\init_dataset\barchart_horizontal.json"
+    upload_json_mongodb(path, "chartfc", "chart_filtering")
+
+    path = r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\init_dataset\barchart_vertical.json"
+    upload_json_mongodb(path, "chartfc", "chart_filtering")
+
+    path = r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\init_dataset\pie_chart.json"
+    upload_json_mongodb(path, "chartfc", "chart_filtering")
+
+
+if __name__ == '__main__':
+    load_wikimedia_data_mongodb()
