@@ -1,0 +1,72 @@
+[
+    {
+        "question": " What is the first column describing?",
+        "options": ["Countries", "Cities", "Regions"], 
+        "answer": 1
+    }, 
+    {
+        "question": " What is the last column describing?", 
+         "options": ["Countries", "Cities", "Regions"], 
+         "answer": 2
+    }, 
+    {
+        "question": " What is the region of Los Angeles?", 
+         "options": ["West", "Midwest", "South"], 
+         "answer": 0
+    }, 
+    {
+        "question": " What is the region for Miami?", 
+         "options": ["West", "Midwest", "South"], 
+         "answer": 2
+    }, 
+    {
+        "question": " What is the region for St. Louis?", 
+         "options": ["West", "Midwest", "South"], 
+         "answer": 1
+    }, 
+    {
+        "question": " Which city has the largest population?", 
+        "options": ["Los Angeles", "Miami", "New York City"], 
+        "answer": 2
+    }, 
+    {
+        "question": " Which city has the smallest population?", 
+        "options": ["St. Louis", "Seattle", "New York City"], 
+        "answer": 0
+    }, 
+    {
+        "question": " Houston has a larger number of population than Chicago.", 
+        "options": ["False", "True"], 
+        "answer": 0
+    },
+    {
+         "question": " Los Angeles has a larger number of population than San Diego.", 
+         "options": ["False", "True"], 
+         "answer": 1
+    },
+    {
+         "question": " Denver has a larger number of population than Detroit.", 
+         "options": ["False", "True"], 
+         "answer": 0
+    },
+    {
+         "question": " New York has a larger number of population than Philadelphia.", 
+         "options": ["False", "True"], 
+         "answer": 1
+    },
+    {
+         "question": " Los Angeles has a smaller number of population than San Diego.", 
+         "options": ["False", "True"], 
+         "answer": 0
+    },
+    {
+         "question": " Denver has a smaller number of population than Detroit.", 
+         "options": ["False", "True"], 
+         "answer": 1
+    },
+    {
+         "question": " New York has a smaller number of population than Philadelphia.", 
+         "options": ["False", "True"], 
+         "answer": 0
+    }
+]
