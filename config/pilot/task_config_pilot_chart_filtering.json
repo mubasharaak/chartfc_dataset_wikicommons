@@ -1,0 +1,33 @@
+{
+    "type": "chart_filtering",
+    "time_thr": "2500",
+    "language": "en",
+    "tasks" : "...", // TaskSetsForPilot_rel.json
+    "language_str": "English",
+    "html_layout": "...", // WikidataReferenceReleTemplate.html
+    "instructions_project_text_file" : "instructions_project_text.txt",
+    "instructions_intro_text_file": "instructions_intro_text_chart_filtering.txt",
+    "instructions_rules_text_file": "instructions_rules_text_chart_filtering.txt",
+    "task_attributes":
+    {
+        "MaxAssignments": 2,
+        "LifetimeInSeconds": 604800,
+        "AssignmentDurationInSeconds": 1800,
+        "Reward": "...", //0.5
+        "Title": "Checking the relevance of websites",
+        "Keywords": "Pilot, Weblinks, Statements, Information Retrieval",
+        "Description": "This is a pilot study, so useful feedback is rewarded.",
+        "QualificationRequirements": [{
+            "QualificationTypeId": "000000000000000000L0",
+            "Comparator": "GreaterThanOrEqualTo",
+            "IntegerValues": [95],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        },
+        {
+            "QualificationTypeId": "00000000000000000040",
+            "Comparator": "GreaterThan",
+            "IntegerValues": [1000],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        }]
+    }
+}
