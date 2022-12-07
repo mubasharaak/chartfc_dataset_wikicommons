@@ -33,10 +33,13 @@ def dataset_json_to_csv(json_file_path: str):
         csv_writer.writerow(entry.values())
 
 
-def upload_json_mongodb(json_file_path: str):
+def upload_json_mongodb(json_file_path: str, db_name: str, db_collection_name: str):
     """
+    Load chartfc data collected from Wikimedia commons into MongoDB db db_name (e.g. "chartfc") collection db_collection_name (e.g. "chart_filtering")
 
     :param json_file_path:
+    :param db_name:
+    :param db_collection_name:
     :return:
     """
     with open(PATH_MONGODB_CREDENTIALS, 'r') as f:
@@ -45,18 +48,17 @@ def upload_json_mongodb(json_file_path: str):
     # Connect to Mong\oDB
     client = pymongo.MongoClient(mongodb_credentials["connection_string"],
                                     tlsCAFile=certifi.where())  # connecting to database
-    db = client['chartfc']
-    collection = db.chart_filtering
-    requesting = []
+    db = client[db_name]
+    collection = db[db_collection_name]
 
     with open(json_file_path) as f:
         data = json.load(f)
 
     requesting = [InsertOne(jsonObj) for jsonObj in data[0]]
-    result = collection.bulk_write(requesting)
+    collection.bulk_write(requesting)
     client.close()
 
 
 if __name__ == '__main__':
     path = r"C:\Users\k20116188\PycharmProjects\chartfc_dataset_wikicommons\data\init_dataset\line_chart.json"
-    upload_json_mongodb(path)
+    upload_json_mongodb(path, "chartfc", "chart_filtering")
