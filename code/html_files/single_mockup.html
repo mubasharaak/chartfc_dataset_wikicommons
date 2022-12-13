@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Affirmation Classification with a Single Evidence</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://s3.amazonaws.com/mturk-public/externalHIT_v1.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous" />
+    <style>
+        input[type="range"].unmoved::-webkit-slider-thumb {
+            border: 1px solid #dddddd;
+            background: #dddddd;
+        }
+
+        input[type="range"].unmoved::-moz-range-thumb {
+            border: 1px solid #dddddd;
+            background-color: #dddddd;
+        }
+
+        .btn {border-radius: 0;}
+    </style>
+</head>
+
+<body>
+    <div class="container p-5">
+
+        <!-- INSTRUCTION PANELS  -->
+        <!-- ------------------------------------------------- -->
+        <!-- THE TOGGLE BUTTON, THE NAVIGATION BUTTONS, THEN THE TEXT.-->
+        <div id='instructions'>
+            <div class="row justify-content-center">
+                <button type="button" class="btn btn-primary col-sm-12 d-none" data-toggle="collapse"
+                    data-target="#instructions-panel" id="instructions-toggle">
+                    <span id="instructions-toggle-text">Show Instructions</span>
+                </button>
+            </div>
+            <div id="instructions-btns" class="row">
+                <button type="button" class="btn btn-primary mr-auto col-sm-2 mb-3 d-none" id="intro-previous">
+                    Previous
+                </button>
+                <button type="button" class="btn btn-primary ml-auto col-sm-2 mb-3" id="intro-next">
+                    Next
+                </button>
+                <button type="button" class="btn btn-success ml-auto col-sm-2 mb-3 d-none" id="ready-button">
+                    Proceed
+                </button+>
+            </div>
+            <div id="instructions-panel" class="row">
+                <div class="col-sm-12 mx-auto border rounded shadow-sm text-center" style="background-color: #f5f5f5;">
+                    <h4 class="text-left mt-3"><strong>Task instructions</strong></h4>
+                    <div class="text-left">
+                        <div id="instructions-0" class="instructions active">
+                            <h5><b>Project</b></h5>
+                            <div id="instructions-project-text">
+                                <p>We are researchers at King's College London (KCL), United Kingdom, currently conducting research
+                                to verify certain quality aspects of <a href='https://wikidata.org' target='_blank'>Wikidata</a>,
+                                an open knowledge base that gathers claims and references to support these claims. This study is funded by
+                                the European Union's Horizon 2020 research and innovation programme under grant agreement No 780247.
+                                No personal information will be collected during this experiment and all data will be completely anonymous.
+                                There are no foreseeable risks from participating, be they physical, psychological, legal, or any other type, and no way of identifying your personal details.</p>
+                                <p>After you've submitted your responses, you can withdraw them by contacting the researchers (see next paragraph). The data collected in this
+                                study will consist only of your inputs, the time you spent on the task and which buttons you clicked.
+                                It will be stored in a password-protected computer and analysed for research purposes and its results published
+                                in academic journals.</p>
+                                <p>This experiment received ethical clearance on the 7th of April, 2022, by KCL, with
+                                registration number MRA-21/22-29584. The data controller for this project will be KCL.
+                                Research is a task that the University carries out in the public interest. Your data will be processed per the standards set by the General Data Protection Regulation 2016 (GDPR). If you have any questions or need further
+                                assistance, please contact the researcher responsible for this study at
+                                <a href='mailto:k2031554@kcl.ac.uk'>k2031554@kcl.ac.uk</a>.</p>
+                                <p>By continuing with the task, you <b>agree</b> to take part in this research project and consent for
+                                the data collected to be used for this study. Participation is voluntary and you may cancel
+                                the task at any time for any reason before submitting it.</p>
+                                <p><b>Please note</b> that to
+                                proceed with the task you'll need a good comprehension of the English language! <b>This will be
+                                measured by a very short and simple quiz</b>.</p>
+                            </div>
+                        </div>
+                        <div id="instructions-1" class="instructions d-none">
+                            <h5><b>Task Overview</b></h5>
+                            <div id="instructions-intro-text">
+                                <p>
+                                    In this task, you must verify whether a passage containing <u>highlighted text</u>, extracted from a website, either supports, refutes or is inconclusive to an <b>affirmation</b>.
+                                    You will be asked to take a look at six affirmation-passage pairs.
+                                    Each pair consists of an English <b>affirmation</b> (such as 'Obama was president of the US') and a passage containing <u>highlighted text</u> extracted from a website (such as a BBC News article).
+                                    Your goal is to identify whether the <u>highlighted text</u> in the passage supports, refutes, or is inconclusive to the <b>affirmation</b>.
+                                </p>
+                                <p>
+                                    You will have the following four answer options: <b>Supports</b>, <b>Refutes</b>, <b>Neither</b> (it is inconclusive), and <b>Not sure</b>.
+                                    In case you select <b>Not Sure</b> we will ask you to select a reason from a predefined list.
+                                </p>
+                                <p>
+                                    If your reason for selecting Not Sure is <i>Other</i>, a little box will appear for you to tell us what it was.
+                                </p>
+                                <p>
+                                    <b>Please note: </b>
+                                    <ul>
+                                        <li>
+                                            It does not matter if the affirmation is false or unprobable. Please judge only if the highlighted text in the passage supports it, refutes it, or neither.
+                                        </li>
+                                        <li>
+                                            The passage is automatically extracted from a website, so it might have strange formatting, such as a lack of punctuation and incomplete phrases.
+                                            <!--This will only happen for entities, such as people, places, etc, where their names were originally given to us in their native language.-->
+                                            Please <b>do not let this lack of structure impact</b> your judgement much. You can click on the website's URL to read the passage with the original format.
+                                        </li>
+                                        <li>
+                                            Please only judge the <u>highlighted text</u>. For example, if another portion of the passage that is <i>not</i> highlighted supports the affirmation, <i>but the highlighted text does not support it</i>, do not select Supports.
+                                        </li>
+                                        <li>
+                                            You can and should use the rest of the passage and the web page for clarifications and reference. For example, to clarify what pronouns (it/she/he/they) refer to.
+                                        </li>
+                                        <li>
+                                            We will provide examples on the next page.
+                                        </li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                        <div id="instructions-2" class="instructions d-none">
+                            <h5><b>Examples</b></h5>
+                            <br>
+                            <h6><b>Example #1</b></h6>
+                            <p>
+                                Affirmation: <b>Vidyasagar is a performer of Ponniyin Selvan.</b>
+                                <br>
+                                <br>
+                                Passage:
+                                <br>
+                                &emsp; "15 August 2005 ( 2005-08-15 ) Country India Language Tamil Budget ₹ 10 crore. <u>Ponniyin Selvan (English: The son of Ponni) is a 2005 Indian Tamil drama film written and directed by Radha Mohan.
+                                Produced by A. M. Ratnam, it stars his son Ravi Krishna, along with Gopika and Revathi in the lead roles, while Vidyasagar had composed the music for the film.</u>
+                                The film is unrelated to the same-titled novel by Kalki Krishnamurthy.
+                                It was released in Telugu as Muddhula Koduku and additionally featured Uttej and Venu Madhav as part of a separate comedy track shot."
+                                <br>
+                                <br>
+                                Link: <a href='https://en.wikipedia.org/w/index.php?title=Ponniyin_Selvan_(2005_film)&oldid=982538956' target='_blank'>https://en.wikipedia.org/w/index.php?title=Ponniyin_Selvan_(2005_film)&oldid=982538956</a>
+                                <br>
+                                <br>
+                                The affirmation states that an entity named Vidyasagar is a performer of something called Ponniyin Selvan.
+                                From the highlighted portion of the passage, we learn that Ponniyin Selvan is a film and that Vidyasagar composed its music.
+                                The highlighted portion of the passage seems to support the affirmation, so we can select <b>Supports</b>.
+                            </p>
+                            <br>
+                            <h6><b>Example #2</b></h6>
+                            <p>
+                                Affirmation: <b>The work period (start) of MOG Music is 2013.</b>
+                                <br>
+                                <br>
+                                Passage:
+                                <br>
+                                &emsp; "2.1 Live albums. 3 Awards and nomination. 4 References. Music career.
+                                <u>MOG Music released his first album in 2016 "New Wine" which earned him African Gospel Music awards Nominations for "Album of the Year" and "Discovery of the Year".</u>
+                                He released a single "Making it Big" featuring Sarkodie. He has collaborated and performed with numerous gospel musicians, including Ohemaa Mercy, Joe Mettle, Denzel Prempeh, Jekalyn Carr, Danny Nettey, Nii Okai, Ron Kenoly."
+                                <br>
+                                <br>
+                                Link: <a href='https://en.wikipedia.org/w/index.php?title=MOG_Music&oldid=930246276' target='_blank'>https://en.wikipedia.org/w/index.php?title=MOG_Music&oldid=930246276</a>
+                                <br>
+                                <br>
+                                The affirmation states that an entity named MOG Music started working in 2013.
+                                The highlighted portion of the passage states that MOG Music released his first album in 2016.
+                                If we assume the first release is the start of their work, this <b>Refutes</b> the affirmation. Otherwise, we can make no conclusion (<b>Neither</b>). Some cases are up to your interpretation.
+                            </p>
+                            <br>
+                            <h6><b>Example #3</b></h6>
+                            <p>
+                                Affirmation: <b>Raymond Andrews is in the Stuart A. Rose Manuscript, Archives, and Rare Book Library.</b>
+                                <br>
+                                <br>
+                                Passage:
+                                <br>
+                                &emsp; "Benny Andrews papers and Viola Andrews papers. Source. Purchased from Raymond Andrews, 1989, with subsequent additions from 1992 to 2015.
+                                <u>Citation. [after identification of item(s)], Raymond Andrews papers, Stuart A. Rose Manuscript, Archives, and Rare Book Library, Emory University.</u>
+                                Appraisal Note. "Acquired by Director of the Rose Library, Linda Matthews, as part of the Rose Library's holdings in African American culture and history, American literature, and Atlanta history.""
+                                <br>
+                                <br>
+                                Link: <a href='https://findingaids.library.emory.edu/documents/andrewsraymond673/' target='_blank'>https://findingaids.library.emory.edu/documents/andrewsraymond673/</a>
+                                <br>
+                                <br>
+                                The affirmation states that an entity named Raymond Andrews is located in the Stuart A. Rose Manuscript, Archives, and Rare Book Library.
+                                It means that work done by Raymond Andrews is in that archive, not the person Raymond. The website confirms this.
+                                The highlighted text indicates that the "Raymond Andrew papers" are in the "Stuart A. Rose Manuscript, Archives, and Rare Book Library".
+                                So we can select <b>Supports</b>.
+                            </p>
+                            <br>
+                            <h6><b>Example #4</b></h6>
+                            <p>
+                                Affirmation: <b>The former wash house, Blackness Castle, is located in the administrative territorial entity of Falkirk.</b>
+                                <br>
+                                <br>
+                                Passage:
+                                <br>
+                                &emsp; "Description: The building is a former barracks block associated with Blackness Castle, built following the castle's conversion to a munitions depot in 1870 and likely by 1874.
+                                <u>It lies on the southern shore of the Firth of Forth, just south of Blackness Castle. This is a two storey, 16-bay, rectangular plan, plain former barracks building, of tooled, squared and snecked sandstone with margins.</u>
+                                There is a slate roof and a mix of square and rectangular chimney stacks with tall, round clay pots."
+                                <br>
+                                <br>
+                                Link: <a href='http://portal.historicenvironment.scot/designation/LB52456' target='_blank'>http://portal.historicenvironment.scot/designation/LB52456</a>
+                                <br>
+                                <br>
+                                The affirmation talks about a former wash house in Blackness Castle, and says it is in Falkirk.
+                                The highlighted part of the passage says "it" is south of Blackness Castle.
+                                The remaining of the passage clarifies that "it" refers to the "former barracks block".
+                                We do not know if this is the same as the wash house.
+                                We also do not know if this Blackness Castle is in Falkirk.
+                                So we can select <b>Neither</b>, as we do not have enough information to judge the affirmation.
+                            </p>
+                            <br>
+                            <h6><b>Example #5</b></h6>
+                            <p>
+                                Affirmation: <b>Alec Waugh was born on 08/07/1898.</b>
+                                <br>
+                                <br>
+                                Passage:
+                                <br>
+                                &emsp; "License: This work is licensed under a Creative Commons License.
+                                Author: Alec Waugh.
+                                Author Record # 19637.
+                                <u>Legal Name: Waugh, Alexander Raban.
+                                Birthplace: Hampstead, London, England, UK.</u>
+                                Birthdate: 8 July 1898.
+                                Deathdate: 3 September 1981.
+                                Language: English.
+                                Webpages: IMDB, Wikipedia-EN.
+                                Showing all translations.
+                                Never display translations Registered users can choose which translations are shown."
+                                <br>
+                                <br>
+                                Link: <a href='http://www.isfdb.org/cgi-bin/ea.cgi?19637' target='_blank'>http://www.isfdb.org/cgi-bin/ea.cgi?19637</a>
+                                <br>
+                                <br>
+                                The affirmation states Alec Waugh was born July 8th, 1898.
+                                Although the passage does contain information on Alec Waugh's birthday, <i>it is not on the highlighted portion</i>. The highlighted text does not inform us of his birthdate.
+                                Thus, we cannot say that the highlighted text supports the affirmation, but it also does not refute it. So we can select <b>Neither</b>.
+                            </p>
+                            <br>
+                            <!--h6><b>Example #6</b></h6>
+                            <p>
+                                Affirmation: <b>Julius is 53.1 centimetres tall.</b>
+                                <br>
+                                <br>
+                                Passage:
+                                <br>
+                                &emsp; "Search results Start typing. Home. / Collection. / Explore the Collection. / "Julius" / Search the collection. 1 of 253523 objects.
+                                <u>Richard Barrett Davis (1782-1854) "Julius" Signed and dated 1846. Oil on canvas | 53.1 x 65.4 x 1.5 cm (support, canvas/panel/str external) | RCIN 402419.</u>
+                                Your share link is... Close. Facebook. Twitter. Email."
+                                <br>
+                                <br>
+                                Link: <a href='https://www.rct.uk/collection/402419/julius' target='_blank'>https://www.rct.uk/collection/402419/julius</a>
+                                <br>
+                                <br>
+                                The affirmation states Julius is 53.1 cm tall. Reading the passage indicates "Julius" is a painting, which can be
+                                confirmed by clicking on the URL. The highlighted part of the passage mentions the painting's dimensions, including 53.1 cm.
+                                Checking the URL helps us conclude that 53.1 cm refers to the height of the painting (since it is wider than it is tall). You can then select <b>Supports</b>.
+                                On some such cases, where a deduction is needed, we also accept <b>Not Sure</b>.
+                            </p>
+                            <br-->
+                            <h6><b>Not Sure</b></h6>
+                            <p>
+                                Sometimes, affirmations might not be very clear or have words and terms that are too specific to one knowledge domain (like biology or chemistry).
+                                Also, the passages might have a very unregular format, and even looking at the website does not help.
+                                For any case where you <i>legitimately</i> can not arrive at a conclusion, you can mark <b>Not Sure</b>, provide a fitting reason, and move on.
+                            </p>
+                        </div>
+                        <div id="instructions-3" class="instructions d-none">
+                            <h5><b>Task rules</b></h5>
+                            <p id="instructions-rules-text">
+                                <ul>
+                                    <li>
+                                        You can navigate freely through the pairs using the buttons at the bottom of the page.
+                                    </li>
+                                    <li>
+                                        You must fill in all the information requested.
+                                    </li>
+                                    <li>
+                                        At the end of the task, we check some indicators of the quality of your work, to make sure you are not a spammer. If you don't pass the test, you can try two more times, for a total of three trials. If you fail three times, the task ends and the work is not accepted.
+                                    </li>
+                                    <li>
+                                        This task will need you to have a good comprehension of English. Please answer the following short English language test and click on the green button to proceed. You can try the language test three times.
+                                    </li>
+                                    <li>
+                                        You can open these instructions again anytime you wish.
+                                    </li>
+                                    <li>
+                                        Make sure you are using either Chrome, Firefox, or Edge. <b>Do not use Internet Explorer.</b>
+                                    </li>
+                                    <li>
+                                        If you suspect there is an error in the task, or think we are being unfair, contact us politely and we will do our best to resolve the issue.
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                        <div id="instructions-4" class="instructions d-none">
+                            <div id="attention_test" class="text-left">
+                                <p><b>Attention Test:</b> Short English Quiz</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+
+        <!-- TASK PANELS  -->
+        <!-- ------------------------------------------------- -->
+        <!-- THE TASK ITSELF. FILL AS NEEDED PER THE TASK.-->
+        <div id="task-panel" class="row d-none">
+            <div class="col-sm-12 mx-auto border rounded shadow-sm" style="background-color: #f5f5f5;">
+                <h4 class="text-left mt-3">
+                    Pair <strong><span id="current-page"></span></strong> of
+                    <strong><span id="n-pages"></span></strong>:
+                </h4>
+                <br/>
+                <!---->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <h5>Read the following <b>affirmation</b>:</h5>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 bg-light border rounded p-2" style="width: 100%;">
+                        <p style="margin-top: 8px;margin-bottom: 8px;"><b><span id="affirmation"></b></span></p>
+                    </div>
+                </div>
+                <br/>
+                <!---->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <h5>Now, read the following passage, paying particular attention to the <u>highlighted text</u>:</h5>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 bg-light border rounded p-2">
+                        <p style="margin-top: 8px;margin-bottom: 8px;"><span id="passage"></span></p>
+                    </div>
+                </div>
+                <br />
+                <!---->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <h5>
+                            The passage was extracted from the following link:
+                            <br>
+                            <a id="reference_url" href=""></a>
+                            <br>
+                            You can click on the link to see the passage with its original form and with more context.
+                        </h5>
+                    </div>
+                </div>
+                <br />
+                <!---->
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <h5>In your opinion, how does the <u>highlighted text</u> relate to the <b>affirmation</b>?</h5>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-sm-11 pr-0 pl-0">
+                        <div id="relation_buttons" class="btn-group btn-group-vertical" data-toggle="buttons" style="width: 100%;">
+                            <label id="relation_0" class="btn btn-primary text-left relation_button">
+                                <input type="radio" autocomplete="off" value='unavailable' name='relation_buttons'> The highlighted text <b>SUPPORTS</b> the affirmation
+                            </label>
+                            <label id="relation_1" class="btn btn-primary text-left relation_button">
+                                <input type="radio" autocomplete="off" value='unavailable' name='relation_buttons'> The highlighted text <b>REFUTES</b> the affirmation
+                            </label>
+                            <label id="relation_2" class="btn btn-primary text-left relation_button">
+                                <input type="radio" autocomplete="off" value='unavailable' name='relation_buttons'> The highlighted text <b>NEITHER</b> supports nor refutes the affirmation
+                            </label>
+                            <label id="relation_3" class="btn btn-primary text-left relation_button">
+                                <input type="radio" autocomplete="off" value='unavailable' name='relation_buttons'> Not Sure
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <!---->
+                <div id="reasons-not-sure-panel" class=''>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-11 pr-0 pl-0">
+                            <h5>If you marked <b>Not Sure</b>, please select one of the reasons why:</h5>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-11 pr-0 pl-0">
+                            <div id="reason_not_sure_buttons"  class="btn-group btn-group-vertical" data-toggle="buttons" style="width: 100%;">
+                                <label id="reason_not_sure_0" class="btn btn-primary text-left reason_not_sure_button">
+                                    <input type="radio" autocomplete="off" value='unavailable' name='reason_not_sure_radios'> I did not understand the meaning of the affirmation
+                                </label>
+                                <label id="reason_not_sure_1" class="btn btn-primary text-left reason_not_sure_button">
+                                    <input type="radio" autocomplete="off" value='unavailable' name='reason_not_sure_radios'> I did not understand the meaning of the passage
+                                </label>
+                                <label id="reason_not_sure_2" class="btn btn-primary text-left reason_not_sure_button">
+                                    <input type="radio" autocomplete="off" value='unavailable' name='reason_not_sure_radios'> I needed but could not access the link to get the passage's context
+                                </label>
+                                <div class='container pl-0 pr-0 text-left' style="margin-left: -1px;margin-right: 0px;border-left-style: solid;border-left-width: 0px;">
+                                    <label id="reason_not_sure_3" class="btn btn-primary text-left reason_not_sure_button col-sm-2">
+                                        <input type="radio" autocomplete="off" value='unavailable' name='reason_not_sure_radios'> Other reason
+                                    </label>
+                                    <input id="reason_not_sure_other" type="text" autocomplete="off" placeholder='Please write it in this text box' class='h-75 w-75'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+                <div class="row p-3">
+                    <button type="button" class="btn btn-primary col-sm-2 mr-auto" id="previous-page">
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-success col-sm-2 ml-auto" id="presubmit" data-toggle="modal"
+                        data-target="#submitModal">
+                        Submit
+                    </button>
+                    <button type="button" class="btn btn-primary col-sm-2 ml-auto" id="next-page">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALS -->
+    <!-- ------------------------------------------------- -->
+    <!-- SUBMIT MODAL-->
+    <div class="modal" id="submitModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Submit your work?</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Please make sure every question has been properly answered before
+                    submitting your work. Incomplete work will not be rewarded!
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-danger ml-auto" data-dismiss="modal" value="Cancel" />
+                    <input type="button" class="btn btn-success mr-auto" data-dismiss="modal" value="Submit"
+                        id="submit" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ATTENTION TASK FAILURE MODAL -->
+    <div class="modal" id="attErrorModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Warning</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="att_warning_text">You didn't pass the attention test. Please review your
+                        answers and try again!</span>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-warning mx-auto" data-dismiss="modal" value="OK"
+                        id="att_close_error" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- QUALITY CHECK FAILURE MODAL -->
+    <div class="modal" id="errorModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Warning</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="warning-text">Your answer didn't pass our quality check. Please review your
+                        answers and try again!</span>
+                    <span id="warning-hints"></span>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-warning mx-auto" data-dismiss="modal" value="OK"
+                        id="close_error" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SUCCESS MODAL -->
+    <div class="modal" id="successModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title mx-auto">Success!</h4>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <span id="success-text">Your answer passed our quality check! Press finish to submit
+                        them. We appreciate any feedback you may have on the task.</span>
+                </div>
+                <textarea class="form-control" rows="5" id="feedback_text"
+                    placeholder="Type your feeback here ..."></textarea>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-success mx-auto" data-dismiss="modal" value="Finish"
+                        id="close_success" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- RETURNED VARIABLES AND SUBMIT BUTTON.-->
+    <form name="mturk_form" method="post" id="mturk_form" action="https://www.mturk.com/mturk/externalSubmit">
+        <input type="hidden" name="assignmentId"    value="" id="assignmentId" />
+        <input type="hidden" name="outputs"         value="" id="outputs" />
+        <input type="hidden" name="times"           value="" id="times" />
+        <input type="hidden" name="events"          value="" id="events" />
+        <input type="hidden" name="feedback"        value="" id="feedback" />
+
+        <input type="submit" id="submitButton" style="visibility: hidden;" />
+    </form>
+
+    <!-- TASK LOGIC -->
+    <script language="Javascript">
+        // INITIALIZATION LOGIC
+        // ---------------------------------------------------------------- //
+        let affirmation_evidence_pairs = [
+            {
+                "identifiers":"",
+                "affirmation":"G V Raja died in Kullu Valley.0",
+                "pre_evidence":"He was the main architect in developing Kovalam as an international tourist spot.",
+                "evidence":"He died in an air crash near Kullu (Kulu) Valley on April 30, 1971. Sports journalists, historians, experts and sportsmen consider him as the Father of Sports and Tourism in Kerala.",
+                "post_evidence": "",
+                "reference_url":"https://en.wikipedia.org/wiki/G._V._Raja",
+                "g_id": -1
+            },
+            {
+                "identifiers":"1",
+                "affirmation":"G V Raja died in Kullu Valley.1",
+                "pre_evidence":"1He was the main architect in developing Kovalam as an international tourist spot.",
+                "evidence":"1He died in an air crash near Kullu (Kulu) Valley on April 30, 1971. Sports journalists, historians, experts and sportsmen consider him as the Father of Sports and Tourism in Kerala.",
+                "post_evidence": "",
+                "reference_url":"https://www.google.com",
+                "g_id": -1
+            },
+            {
+                "identifiers":"2",
+                "affirmation":"G V Raja died in Kullu Valley.2",
+                "pre_evidence":"2He was the main architect in developing Kovalam as an international tourist spot.",
+                "evidence":"2He died in an air crash near Kullu (Kulu) Valley on April 30, 1971. Sports journalists, historians, experts and sportsmen consider him as the Father of Sports and Tourism in Kerala.",
+                "post_evidence": "",
+                "reference_url":"https://www.google.com",
+                "g_id": -1
+            },
+            {
+                "identifiers":"3",
+                "affirmation":"G V Raja died in Kullu Valley.3",
+                "pre_evidence":"3He was the main architect in developing Kovalam as an international tourist spot.",
+                "evidence":"3He died in an air crash near Kullu (Kulu) Valley on April 30, 1971. Sports journalists, historians, experts and sportsmen consider him as the Father of Sports and Tourism in Kerala.",
+                "post_evidence": "",
+                "reference_url":"https://www.google.com",
+                "g_id": -1
+            },
+            {
+                "identifiers":"4",
+                "affirmation":"G V Raja died in Kullu Valley.4",
+                "pre_evidence":"4He was the main architect in developing Kovalam as an international tourist spot.",
+                "evidence":"4He died in an air crash near Kullu (Kulu) Valley on April 30, 1971. Sports journalists, historians, experts and sportsmen consider him as the Father of Sports and Tourism in Kerala.",
+                "post_evidence": "",
+                "reference_url":"https://www.google.com",
+                "g_id": -1
+            },
+            {
+                "identifiers":"5",
+                "affirmation":"G V Raja died in Kullu Valley.5",
+                "pre_evidence":"5He was the main architect in developing Kovalam as an international tourist spot.",
+                "evidence":"5He died in an air crash near Kullu (Kulu) Valley on April 30, 1971. Sports journalists, historians, experts and sportsmen consider him as the Father of Sports and Tourism in Kerala.",
+                "post_evidence": "",
+                "reference_url":"https://www.google.com",
+                "g_id": -1
+            },
+        ]
+
+        let attention_questions = [{"question": "He advised me ___ the doctor.", "options": ["that I see", "to see", "seeing", "see"], "answer": 1}, {"question": "Jane's ___ nice and polite.", "options": ["a", "from", "very", "at"], "answer": 2}, {"question": "You ___ to come if you don't want to.", "options": ["don't need", "needn't", "needn't have", "didn't need"], "answer": 0}, {"question": "By the time you arrive ___", "options": ["he'll leave", "he'll have left", "he leaves", "he left"], "answer": 1}];
+        let total = affirmation_evidence_pairs.length;
+
+        var outputs = [];
+        // DEFAULT OUTPUTS IN JSON FORMAT, EX:  { similarity: -1, confidence: -1, reason: "" }
+        // REPLACES THE GD FIELD WITH THE PROPER SET
+        for (i = 0; i < total; i++) {
+            outputs[i] = {relation: -1, reason_not_sure: -1, reason_not_sure_other: ""};
+        }
+
+        var events = [];
+
+        function log_event(event_type, event_attr) {
+            event_obj = {
+                timestamp: new Date(),
+                type: event_type
+            };
+            if (event_attr != null) {
+                event_obj.attr = event_attr;
+            }
+            events.push(event_obj);
+        }
+
+        log_event("page_displayed", null);
+
+        var times = Array(total).fill(0.0);
+        var lastChange = null;
+
+        taskFailCount = 0;
+        attentionFailCount = 0;
+
+
+        for (i = 0; i < attention_questions.length; i++) {
+            $('#attention_test').append(`<p class="mb-0">${attention_questions[i]['question']}</p>`)
+            $('#attention_test').append(`<div id="att_quest_${i}" class="btn-group btn-group-toggle mb-3" data-toggle="buttons">`)
+            for (j = 0; j < attention_questions[i]['options'].length; j++)
+                $(`#att_quest_${i}`).append(`<label class="btn btn-primary"><input type="radio" autocomplete="off" value=${j} name='att_quest_${i}'>${attention_questions[i]['options'][j]}<br/></label>`)
+        }
+
+        $("#n-pages").text(total);
+
+
+        // FUNCTIONS
+        // ---------------------------------------------------------------- //
+
+        function showContent(currentPage) {
+            if (lastChange) {
+                times[parseInt($("#current-page").text()) - 1] +=
+                    Date.now() - lastChange;
+            }
+            $("#current-page").text(currentPage);
+            if (currentPage == 1) {
+                $("#previous-page").hide();
+                $("#next-page").show();
+                $("#presubmit").hide();
+            } else if (currentPage == total) {
+                $("#previous-page").show();
+                $("#next-page").hide();
+                $("#presubmit").show();
+            } else {
+                $("#previous-page").show();
+                $("#next-page").show();
+                $("#presubmit").hide();
+            }
+            pageIndex = currentPage - 1;
+            output = outputs[pageIndex];
+
+            if (output["relation"] == -1) {
+                $("#relation_0").removeClass('active');
+                $("#relation_0").children('input').prop('checked',false)
+                $("#relation_1").removeClass('active');
+                $("#relation_1").children('input').prop('checked',false)
+                $("#relation_2").removeClass('active');
+                $("#relation_2").children('input').prop('checked',false)
+                $("#relation_3").removeClass('active');
+                $("#relation_3").children('input').prop('checked',false)
+                $('#reasons-not-sure-panel').addClass('d-none');
+            } else if (output["relation"] == 0) {
+                $("#relation_0").addClass('active');
+                $("#relation_0").children('input').prop('checked',true)
+                $("#relation_1").removeClass('active');
+                $("#relation_1").children('input').prop('checked',false)
+                $("#relation_2").removeClass('active');
+                $("#relation_2").children('input').prop('checked',false)
+                $("#relation_3").removeClass('active');
+                $("#relation_3").children('input').prop('checked',false)
+                $('#reasons-not-sure-panel').addClass('d-none');
+            } else if (output["relation"] == 1) {
+                $("#relation_0").removeClass('active');
+                $("#relation_0").children('input').prop('checked',false)
+                $("#relation_1").addClass('active');
+                $("#relation_1").children('input').prop('checked',true)
+                $("#relation_2").removeClass('active');
+                $("#relation_2").children('input').prop('checked',false)
+                $("#relation_3").removeClass('active');
+                $("#relation_3").children('input').prop('checked',false)
+                $('#reasons-not-sure-panel').addClass('d-none');
+            } else if (output["relation"] == 2) {
+                $("#relation_0").removeClass('active');
+                $("#relation_0").children('input').prop('checked',false)
+                $("#relation_1").removeClass('active');
+                $("#relation_1").children('input').prop('checked',false)
+                $("#relation_2").addClass('active');
+                $("#relation_2").children('input').prop('checked',true)
+                $("#relation_3").removeClass('active');
+                $("#relation_3").children('input').prop('checked',false)
+                $('#reasons-not-sure-panel').addClass('d-none');
+            } else if (output["relation"] == 3) {
+                $("#relation_0").removeClass('active');
+                $("#relation_0").children('input').prop('checked',false)
+                $("#relation_1").removeClass('active');
+                $("#relation_1").children('input').prop('checked',false)
+                $("#relation_2").removeClass('active');
+                $("#relation_2").children('input').prop('checked',false)
+                $("#relation_3").addClass('active');
+                $("#relation_3").children('input').prop('checked',true)
+                $('#reasons-not-sure-panel').removeClass('d-none');
+            }
+
+            for (i = 0; i < $('#reason_not_sure_buttons').children().length; i++) {
+                if (output['reason_not_sure'] == i){
+                    $(`#reason_not_sure_${i}`).addClass("active");
+                    $(`#reason_not_sure_${i}`).children('input').prop('checked',true)
+                } else {
+                    $(`#reason_not_sure_${i}`).removeClass("active");
+                    $(`#reason_not_sure_${i}`).children('input').prop('checked',false)
+                }
+            }
+
+            if (output["reason_not_sure_other"].replace(/\s+/g, "") != ""){
+                $('#reason_not_sure_other').val(output["reason_not_sure_other"]);
+            } else {
+                $('#reason_not_sure_other').val("");
+            }
+
+            $("#affirmation").text(affirmation_evidence_pairs[pageIndex]["affirmation"]);
+
+            $("#passage").empty()
+            if (affirmation_evidence_pairs[pageIndex]["pre_evidence"] != ""){
+                $("#passage").append(
+                    `${affirmation_evidence_pairs[pageIndex]["pre_evidence"]} `
+                );
+            }
+            $("#passage").append(
+                `<u>${affirmation_evidence_pairs[pageIndex]["evidence"]}</u>`
+            );
+            if (affirmation_evidence_pairs[pageIndex]["post_evidence"] != ""){
+                $("#passage").append(
+                    ` ${affirmation_evidence_pairs[pageIndex]["post_evidence"]}`
+                );
+            }
+
+            $("#reference_url").text(affirmation_evidence_pairs[pageIndex]["reference_url"]);
+            $("#reference_url").attr("href", affirmation_evidence_pairs[pageIndex]["reference_url"]);
+
+
+            lastChange = Date.now();
+        }
+
+        function validateRegex(str) {
+            var reU = /^(null|(?!0*[.]0*$|[.]0*$|0*$)\d+[.]?\d{0,}$)/;
+            return reU.test(str);
+        }
+
+        function verifyAttentionAnswers() {
+            allOK = 4;
+            for (i=0; i<attention_questions.length; i++){
+                let chosen = parseInt($(`input[name="att_quest_${i}"]:checked`).val());
+                if (chosen != attention_questions[i]['answer']){
+                    allOK = allOK - 1
+                }
+            }
+            return true//(allOK == 4) //CHANGE BACK FOR PRODUCTION
+        }
+
+        function verifyAnswers() {
+            times[times.length - 1] += Date.now() - lastChange;
+            lastChange = Date.now();
+
+            var allControlsUsedCheck = true;
+            const outputs_flat = [].concat(...outputs)
+            for (s of outputs_flat) {
+                if (
+                    (s["relation"] == -1) ||
+                    (s["relation"] == 3 && s["reason_not_sure"] == -1) ||
+                    (s["reason_not_sure"] == 3 && s["reason_not_sure_other"].replace(/\s/g, "") == "")
+                ) {
+                    allControlsUsedCheck = false;
+                }
+            }
+            if (!allControlsUsedCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "outputs_moved_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+
+            var allTimesCheck = true;
+            for (t of times) {
+                if (t < 5000) {
+                    allTimesCheck = false;
+                }
+            }
+            if (!allTimesCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "minimum_time_check",
+                    times: JSON.parse(JSON.stringify(times))
+                });
+            }
+
+            var allGoldenCheck = true;
+            for (i = 0; i < total; i++) {
+                if (affirmation_evidence_pairs[i]['g_id'] != -1){
+                    if (affirmation_evidence_pairs[i]['g_id'].indexOf(outputs[i]['relation']) == -1){
+                        allGoldenCheck = false
+                    }
+                }
+            }
+
+
+            if (!allGoldenCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "golden_standard_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+
+            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'golden':allGoldenCheck};
+        }
+
+        // DYNAMIC LOGIC
+        // ---------------------------------------------------------------- //
+
+        $(function () {
+            $("#previous-page").click(function () {
+                var page = parseInt($("#current-page").text());
+                newPage = page - 1;
+                showContent(newPage);
+                log_event("moved_backward", {
+                    new_page_index: newPage,
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            });
+            $("#next-page").click(function () {
+                var page = parseInt($("#current-page").text());
+                newPage = page + 1;
+                showContent(newPage);
+                log_event("moved_forward", {
+                    new_page_index: newPage,
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            });
+            $("#ready-button").click(function () {
+                if (verifyAttentionAnswers()){
+                    $("#instructions-0").addClass("d-none");
+                    $("#instructions-1").removeClass("d-none");
+                    $("#instructions-2").removeClass("d-none");
+                    $("#instructions-3").removeClass("d-none");
+                    $("#instructions-4").addClass("d-none");
+                    $("#instructions-btns").addClass("d-none");
+                    $(this).addClass("d-none");
+                    $("#instructions-toggle").removeClass("d-none");
+                    $("#instructions-panel").addClass("collapse");
+                    $("#task-panel").removeClass("d-none");
+                    showContent(1);
+                    log_event("task_started", null);
+                } else {
+                    attentionFailCount = attentionFailCount + 1;
+                    if (attentionFailCount >= 3) {
+                        $("#att_warning_text").html(
+                            "You didn't pass the attention test.<br><br><strong>Unfortunately, you've reached the maximum amount of trials.<br><br>This window will be erased. Thank you very much for your work and please press return above so other worker may take this task.</strong>"
+                        );
+                        $("#attErrorModal").modal("toggle");
+                        $("#attErrorModal").on("hidden.bs.modal", function () {
+                            $("*").empty();
+                        });
+                    } else {
+                        $("#attErrorModal").modal("toggle");
+                    }
+                }
+            });
+            $("#instructions-toggle").click(function () {
+                is_shown = $("#instructions-panel").hasClass("show");
+                if (is_shown) {
+                    $("#instructions-toggle-text").text("Show Instructions");
+                    log_event("closed_instructions", null);
+                } else {
+                    $("#instructions-toggle-text").text("Hide Instructions");
+                    log_event("opened_instructions", null);
+                }
+            });
+            $('.relation_button').click(function() {
+                page = parseInt($("#current-page").text());
+                pageIndex = page - 1;
+                relation_idx = this.id.split('relation_')[1]
+                if (relation_idx == '0'){
+                    outputs[pageIndex]['relation'] = 0;
+                    $('#reasons-no-panel').addClass('d-none')
+                    $('#reasons-not-sure-panel').addClass('d-none')
+                } else if (relation_idx == '1'){
+                    outputs[pageIndex]['relation'] = 1;
+                    $('#reasons-no-panel').removeClass('d-none')
+                    $('#reasons-not-sure-panel').addClass('d-none')
+                } else if (relation_idx == '2'){
+                    outputs[pageIndex]['relation'] = 2;
+                    $('#reasons-no-panel').removeClass('d-none')
+                    $('#reasons-not-sure-panel').addClass('d-none')
+                } else if (relation_idx == '3'){
+                    outputs[pageIndex]['relation'] = 3;
+                    $('#reasons-no-panel').addClass('d-none')
+                    $('#reasons-not-sure-panel').removeClass('d-none')
+                }
+            });
+            $('.reason_not_sure_button').click(function() {
+                page = parseInt($("#current-page").text());
+                pageIndex = page - 1;
+                outputs[pageIndex]['reason_not_sure'] = parseInt(this.id.split('reason_not_sure_')[1]);
+            });
+            $('#reason_not_sure_other').change(function() {
+                page = parseInt($("#current-page").text());
+                pageIndex = page - 1;
+                outputs[pageIndex]['reason_not_sure_other'] = $('#reason_not_sure_other').val();
+            });
+            $('#intro-next').click(function (){
+                let current_instructions_active = $('div.instructions.active')[0];
+                let current_instructions_id = parseInt(current_instructions_active.id.split('instructions-')[1]);
+                $(`#instructions-${current_instructions_id}`).addClass('d-none').removeClass('active');
+                $(`#instructions-${current_instructions_id+1}`).removeClass('d-none').addClass('active');
+                if (current_instructions_id == 0){
+                    $('#intro-previous').removeClass('d-none');
+                } else if (current_instructions_id == 3){
+                    $('#intro-next').addClass('d-none');
+                    $('#ready-button').removeClass('d-none');
+                }
+            });
+            $('#intro-previous').click(function (){
+                let current_instructions_active = $('div.instructions.active')[0];
+                let current_instructions_id = parseInt(current_instructions_active.id.split('instructions-')[1]);
+                $(`#instructions-${current_instructions_id}`).addClass('d-none').removeClass('active');
+                $(`#instructions-${current_instructions_id-1}`).removeClass('d-none').addClass('active');
+                if (current_instructions_id == 4){
+                    $('#ready-button').addClass('d-none');
+                    $('#intro-next').removeClass('d-none');
+                } else if (current_instructions_id == 1){
+                    $('#intro-previous').addClass('d-none');
+                }
+            });
+            $("#submit").click(function () {
+                let verification = verifyAnswers();
+                if (verification['controls'] && verification['times'] && verification['golden']){
+                    $("#successModal").modal("toggle");
+                    $("#successModal").on("hidden.bs.modal", function () {
+                        log_event("task_finished", null);
+                        $("#feedback").val($("#feedback_text").val());
+                        $("#outputs").val(JSON.stringify(outputs));
+                        $("#times").val(JSON.stringify(times));
+                        $("#events").val(JSON.stringify(events));
+                        $("#submitButton").trigger("click");
+                    });
+                } else {
+                    taskFailCount = taskFailCount + 1;
+                    $("#warning-hints").empty();
+                    let warningString = "<ul>"
+                    if (!verification['controls']){
+                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one. If you provided answers to a non-required question, that is ok. If you marked 'Other' as a reason, you need to specify what in the accompanying text box.</li>"
+                    }
+                    if (!verification['times']){
+                        warningString += "<li>You seem to have filled some questions too quickly and we suspected bot activity. Spend a couple of seconds more in each item, maybe review your answers.</li>"
+                    }
+                    if (!verification['golden']){
+                        warningString += "<li>We know the answers for a small number of control questions, and you seem to disagree with us. Please review your answers, but if you feel you are right even so, please contact the Requester.</li>"
+                    }
+                    warningString += "</ul>"
+                    $("#warning-hints").html(warningString);
+                    if (taskFailCount >= 3) {
+                        $("#warning-text").html(
+                            "Your answer didn't pass our quality check.<br><br><strong>Unfortunately, you've reached the maximum amount of trials.<br><br>This window will be erased. Thank you very much for your work and please press return above so other worker may take this task.</strong>"
+                        );
+                        $("#errorModal").modal("toggle");
+                        $("#errorModal").on("hidden.bs.modal", function () {
+                            $("*").empty();
+                        });
+                    } else {
+                        $("#errorModal").modal("toggle");
+                    }
+                }
+            });
+        });
+
+        // OBLIGATORY CALL TO SET TURK ASSIGNMENT
+        turkSetAssignmentID();
+    </script>
+</body>
+
+</html>
