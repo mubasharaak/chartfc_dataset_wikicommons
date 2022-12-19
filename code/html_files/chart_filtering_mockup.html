@@ -71,7 +71,7 @@
                             <br />
                             <div id="example-table-1" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <img src="./images_html_files/not_english_chart.PNG" alt="..." class="img-thumbnail"/>
+                                    <img src="https://chartfc.s3.amazonaws.com/%25D0%25A0%25D0%25BE%25D0%25B7%25D1%2581%25D0%25B5%25D0%25BB%25D0%25B5%25D0%25BD%25D0%25BD%25D1%258F_%25D1%2582%25D1%2583%25D1%2580%25D0%25BA%25D1%2596%25D0%25B2_(%25D0%25A3%25D0%25BA%25D1%2580%25D0%25B0%25D1%2597%25D0%25BD%25D0%25B0).PNG" alt="..." class="img-thumbnail"/>
                                     <br />
                                 </div>
                                 <div class="row">
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The <b>title</b> of the chart shows it's <b>not in English</b>. Therefore the chart needs to be filtered; we <b>select</b> option <b>"The chart is not in English"</b> .</p>
+                        <p class="p-3 mb-2 bg-light text-primary"><b>EXPLANATION:</b> The <b>title and labels</b> of the chart show it's <b>not in English</b>. Therefore the chart needs to be filtered; we <b>select</b> option <b>"The chart is not in English"</b> .</p>
                         <hr>
                         <div>
                             <h5 class="text-left text-primary mt-3">
@@ -158,7 +158,7 @@
                             <br />
                             <div id="example-chart-2" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <img src="./images_html_files/not_readable_chart.png" alt="..." class="img-thumbnail">
+                                    <img src="https://chartfc.s3.amazonaws.com/2011_budget_tax_chart.png" alt="..." class="img-thumbnail">
                                     <br />
                                 </div>
                                 <div class="row">
@@ -422,7 +422,7 @@
                             <br />
                             <div id="example-chart-5" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <img src="./images_html_files/not_understandable_color_chart.gif" alt="..." class="img-thumbnail">
+                                    <img src="https://chartfc.s3.amazonaws.com/2D_3_line_scatter_plot.gif" alt="..." class="img-thumbnail">
                                     <br />
                                 </div>
                                 <div class="row">
@@ -511,7 +511,7 @@
                             <br />
                             <div id="example-chart-5" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <img src="./images_html_files/no_issues_chart_1.jpg" alt="..." class="img-thumbnail">
+                                    <img src="https://chartfc.s3.amazonaws.com/1831_Occupational_Graph.jpg" alt="..." class="img-thumbnail">
                                     <br />
                                 </div>
                                 <div class="row">
@@ -600,7 +600,7 @@
                             <br />
                             <div id="example-chart-7" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <img src="./images_html_files/no_issues_chart_2.png" alt="..." class="img-thumbnail">
+                                    <img src="https://chartfc.s3.amazonaws.com/2006_Mexican_elections_-_President.png" alt="..." class="img-thumbnail">
                                     <br />
                                 </div>
                                 <div class="row">
@@ -689,7 +689,7 @@
                             <br />
                             <div id="example-chart-8" class=''>
                                 <div class="row d-flex justify-content-center">
-                                    <img src="./images_html_files/no_issues_chart_3.png" alt="..." class="img-thumbnail">
+                                    <img src="https://chartfc.s3.amazonaws.com/2004_global_autogas_consumption.png" alt="..." class="img-thumbnail">
                                     <br />
                                 </div>
                                 <div class="row">
@@ -779,10 +779,10 @@
                     <div id="lan_test" class="text-left">
                         <h5><b>Task Qualification Test: </b></h5>
                         <p>Below you find a chart and a few related questions. You need to answer them successfully to start with the task. If you fail, you get a second chance. The task will terminate if you fail a second time. </p>
-                        <div class="row d-flex justify-content-center">
-                            <img src="./images_html_files/not_english_chart.PNG" alt="..." class="img-thumbnail">
-                            <br />
-                        </div>
+<!--                        <div class="row d-flex justify-content-center">-->
+<!--                            <img src="./images_html_files/not_english_chart.PNG" alt="..." class="img-thumbnail">-->
+<!--                            <br />-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>
@@ -810,7 +810,7 @@
             </div>
             <div class="row d-flex justify-content-center">
                 <!--                    <p><span id='chart_reference'></span></p>-->
-                <img src="test" id='chart_reference' alt="..." class="img-thumbnail">
+                <img src='test' id='chart_reference' alt="..." class="img-thumbnail">
                 <p><b>Caption: </b><span id='caption'></span></p>
                 <br />
             </div>
@@ -1057,6 +1057,7 @@
         // $("#lan_test_language").text(lan_test_language)
 
         for (i = 0; i < qualification_questions.length; i++) {
+            $('#lan_test').append(`<div class="row d-flex justify-content-center"><img src=${qualification_questions[i]['image']} alt="..." class="img-thumbnail"></div>`)
             $('#lan_test').append(`<p class="mb-0">${qualification_questions[i]['question']}</p>`)
             $('#lan_test').append(`<div id="lan_quest_${i}" class="btn-group btn-group-toggle mb-3" data-toggle="buttons">`)
             for (j = 0; j < qualification_questions[i]['options'].length; j++)
@@ -1141,7 +1142,7 @@
                 }
             }
 
-            $("#chart_reference").prop("src", references[pageIndex]["chart"]);
+            $("#chart_reference").attr("src", references[pageIndex]["chart_img"]);
             $("#caption").text(references[pageIndex]["caption"]);
 
 

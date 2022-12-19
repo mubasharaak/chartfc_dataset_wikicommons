@@ -1,72 +1,123 @@
 [
-    {
-        "question": " What is the first column describing?",
-        "options": ["Countries", "Cities", "Regions"], 
+    {	
+		"image": "https://chartfc.s3.amazonaws.com/1831_Occupational_Graph.jpg",
+        "question": " Which occupation had the most number in 1831?",
+        "options": ["Manufacturing", "Agricultural labourers", "capitalists and professionals"], 
         "answer": 1
     }, 
     {
-        "question": " What is the last column describing?", 
-         "options": ["Countries", "Cities", "Regions"], 
-         "answer": 2
-    }, 
-    {
-        "question": " What is the region of Los Angeles?", 
-         "options": ["West", "Midwest", "South"], 
+		"image": "https://chartfc.s3.amazonaws.com/1831_Occupational_Graph.jpg",
+        "question": " Which occupation had the third place in 1831?", 
+         "options": ["capitalists and professionals", "Manufacturing", "Retails and handicraft"], 
          "answer": 0
     }, 
     {
-        "question": " What is the region for Miami?", 
-         "options": ["West", "Midwest", "South"], 
-         "answer": 2
-    }, 
-    {
-        "question": " What is the region for St. Louis?", 
-         "options": ["West", "Midwest", "South"], 
+		"image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif",
+        "question": " What ages most of the builing in New York City are from ?", 
+         "options": ["1967-2017", "1920-1945", "<1920"], 
          "answer": 1
     }, 
     {
-        "question": " Which city has the largest population?", 
-        "options": ["Los Angeles", "Miami", "New York City"], 
+		"image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif",
+        "question": " Which American city has the most bulidings from 1967-2017?", 
+         "options": ["Baltimore", "National (50 cities)", "San Francisco"], 
+         "answer": 1
+    }, 
+    {
+		"image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif",
+        "question": " Which color shows the buildings from 1945-1967 ", 
+         "options": ["gray", "blue", "yellow"], 
+         "answer": 0
+    }, 
+    {
+		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
+        "question": " Which year has the most expenses regarding paypal fees?", 
+        "options": ["2004", "2006", "2015"], 
+        "answer": 1
+    }, 
+    {
+		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
+        "question": " What expenses second bar from the left shows?", 
+        "options": ["awards and grants", "paypal fees", "other"], 
+        "answer": 0
+    }, 
+    {
+		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
+        "question": " which color shows the expenses of 2011?", 
+        "options": ["green", "red", "purple"], 
         "answer": 2
-    }, 
+    },
     {
-        "question": " Which city has the smallest population?", 
-        "options": ["St. Louis", "Seattle", "New York City"], 
+		 "image": "https://chartfc.s3.amazonaws.com/2005_sources_of_vocs.png",
+         "question": " Which color shows the Non Road Equipment?", 
+         "options": ["green", "dark blue","red"], 
+         "answer": 2
+    },
+    {
+		 "image": "https://chartfc.s3.amazonaws.com/2005_sources_of_vocs.png",
+         "question": " What was the most source of Volatile Organic Compounds in 2005?", 
+         "options": ["solvent use", "industrial process","other"], 
+         "answer": 0
+    },
+    {
+		 "image": "https://chartfc.s3.amazonaws.com/2005_sources_of_vocs.png",
+         "question": " How many percents of Volatile Organic Compounds is related to industrial process?",
+         "options": ["19%", "11%","13%"], 
+         "answer": 1
+    },
+    {
+		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
+         "question": " What was the most common race in high school in 2009?", 
+         "options": ["Asian", "African American"," Caucasian"], 
+         "answer": 2
+    },
+    {
+		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
+         "question": " How many percents of people were Asian in high school during 2009?", 
+         "options": ["3%", "79%","4%"], 
+         "answer": 2
+    },
+    {
+		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
+         "question": " which color shows African American race?", 
+         "options": ["green", "orange","light blue"], 
+         "answer": 1
+    },
+	{	
+		"image": "https://chartfc.s3.amazonaws.com/Airbus_and_Boeing_Passengers_vs_Range.jpg",
+        "question": " Which Airbus model has the most number of passengers?",
+        "options": ["A380-800", "A330-300", "A330-200"], 
         "answer": 0
     }, 
     {
-        "question": " Houston has a larger number of population than Chicago.", 
-        "options": ["False", "True"], 
-        "answer": 0
-    },
+		"image": "https://chartfc.s3.amazonaws.com/Airbus_and_Boeing_Passengers_vs_Range.jpg",
+        "question": " Which Boeing model has the most number of passengers?", 
+         "options": ["767-200ER", "747-400", "747-81"], 
+         "answer": 2
+    }, 
     {
-         "question": " Los Angeles has a larger number of population than San Diego.", 
-         "options": ["False", "True"], 
+		"image": "https://chartfc.s3.amazonaws.com/Airbus_and_Boeing_Passengers_vs_Range.jpg",
+        "question": " What color shows Boein airline?", 
+         "options": ["Blue", "red", "green"], 
          "answer": 1
-    },
+    }, 
     {
-         "question": " Denver has a larger number of population than Detroit.", 
-         "options": ["False", "True"], 
+		"image": "https://chartfc.s3.amazonaws.com/1881_occupation_for_Sourton.jpg",
+        "question": " Who had more numbers of agriculture occupations in Sourtron 1881?", 
+         "options": ["men", "women", "both"], 
          "answer": 0
-    },
+    }, 
+	
     {
-         "question": " New York has a larger number of population than Philadelphia.", 
-         "options": ["False", "True"], 
+		"image": "https://chartfc.s3.amazonaws.com/1881_occupation_for_Sourton.jpg",
+        "question": " How many men had agriculture occupations in Sourtron 1881?", 
+         "options": ["around 20", "around 80", "around 100"], 
          "answer": 1
-    },
+    }, 
     {
-         "question": " Los Angeles has a smaller number of population than San Diego.", 
-         "options": ["False", "True"], 
-         "answer": 0
-    },
-    {
-         "question": " Denver has a smaller number of population than Detroit.", 
-         "options": ["False", "True"], 
-         "answer": 1
-    },
-    {
-         "question": " New York has a smaller number of population than Philadelphia.", 
-         "options": ["False", "True"], 
-         "answer": 0
-    }
+		"image": "https://chartfc.s3.amazonaws.com/1881_occupation_for_Sourton.jpg",
+        "question": " Which color shows female information in the chart?", 
+        "options": ["blue", "orange", "green"], 
+        "answer": 1
+    } 
 ]
