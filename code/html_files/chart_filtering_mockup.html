@@ -865,6 +865,12 @@
                                             <textarea class="form-control" id="reason_other" rows="1" placeholder="Enter reason here..." style="min-width: 100%"></textarea>
                                         </div>
                                     </div>
+                                    <div class="form-check form-check-inline" style="margin-top:15px;">
+                                        <label id="label_5" class="btn form-check-label" for="input_label_5">
+                                        <input class="form-check-input" type="radio" id="input_label_5" name="label_radio">
+                                            The chart has no issue from above (i.e. it is in English, readable, and understandable)
+                                        </label>
+                                    </div>
                                     <br>
                                 </div>
                             </div>
@@ -1093,7 +1099,7 @@
             else {
                 $(`#reason_other`).val("");
             }
-            for (i = 0; i < 5; i++) {
+            for (i = 0; i < 6; i++) {
                 if (output['label'] == i) {
                     $(`#label_${i}`).addClass("active");
                     $(`#label_${i}`).children('input').prop('checked', true)
