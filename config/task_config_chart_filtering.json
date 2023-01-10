@@ -4,7 +4,7 @@
     "language": "en",
     "tasks" : "chart_filtering_tasksets.json",
     "language_str": "English",
-    "html_layout": "chart_filtering_mockup.html",
+    "html_layout": "chart_filtering.html",
     "instructions_project_text_file" : "instructions_project_text.txt",
     "instructions_intro_text_file": "instructions_intro_text_chart_filtering.txt",
     "instructions_rules_text_file": "instructions_rules_text_chart_filtering.txt",
