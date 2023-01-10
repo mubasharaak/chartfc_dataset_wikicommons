@@ -1,122 +1,122 @@
 [
     {	
 		"image": "https://chartfc.s3.amazonaws.com/1831_Occupational_Graph.jpg",
-        "question": " Which occupation had the most number in 1831?",
+        "question": " Which occupation had the highest number in 1831?",
         "options": ["Manufacturing", "Agricultural labourers", "capitalists and professionals"], 
         "answer": 1
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/1831_Occupational_Graph.jpg",
-        "question": " Which occupation had the third place in 1831?", 
+        "question": " Which occupation was ranked third in 1831?",
          "options": ["capitalists and professionals", "Manufacturing", "Retails and handicraft"], 
          "answer": 0
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif",
-        "question": " What ages most of the builing in New York City are from ?", 
+        "question": " In which years most of the buildings in New York City were built ?",
          "options": ["1967-2017", "1920-1945", "<1920"], 
          "answer": 1
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif",
-        "question": " Which American city has the most bulidings from 1967-2017?", 
+        "question": " Which option has the highest share of buildings from 1967-2017?",
          "options": ["Baltimore", "National (50 cities)", "San Francisco"], 
          "answer": 1
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif",
-        "question": " Which color shows the buildings from 1945-1967 ", 
+        "question": " Which color shows the buildings built between 1945-1967 ",
          "options": ["gray", "blue", "yellow"], 
          "answer": 0
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
-        "question": " Which year has the most expenses regarding paypal fees?", 
+        "question": " In which year expenses for paypal fees were the highest?",
         "options": ["2004", "2006", "2015"], 
         "answer": 1
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
-        "question": " What expenses second bar from the left shows?", 
+        "question": " What expenses is the second bar from the left showing?",
         "options": ["awards and grants", "paypal fees", "other"], 
         "answer": 0
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
-        "question": " which color shows the expenses of 2011?", 
-        "options": ["green", "red", "purple"], 
+        "question": " Which color shows the expenses of 2010?",
+        "options": ["dark green", "red", "light blue"],
         "answer": 2
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2005_sources_of_vocs.png",
-         "question": " Which color shows the Non Road Equipment?", 
+         "question": " Which color shows the source 'Non Road Equipment'?",
          "options": ["green", "dark blue","red"], 
          "answer": 2
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2005_sources_of_vocs.png",
-         "question": " What was the most source of Volatile Organic Compounds in 2005?", 
+         "question": " Which source had the highest share in volatile organic compounds in 2005?",
          "options": ["solvent use", "industrial process","other"], 
          "answer": 0
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2005_sources_of_vocs.png",
-         "question": " How many percents of Volatile Organic Compounds is related to industrial process?",
+         "question": " How many volatile organic compounds have industrial processes as source?",
          "options": ["19%", "11%","13%"], 
          "answer": 1
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
-         "question": " What was the most common race in high school in 2009?", 
+         "question": " Which option had the highest share in high schools in 2009 according to the chart?",
          "options": ["Asian", "African American"," Caucasian"], 
          "answer": 2
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
-         "question": " How many percents of people were Asian in high school during 2009?", 
+         "question": " How many percent of people were Asian in high schools during 2009 according to the chart?",
          "options": ["3%", "79%","4%"], 
          "answer": 2
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
-         "question": " which color shows African American race?", 
+         "question": " Which chart color shows 'African American'?",
          "options": ["green", "orange","light blue"], 
          "answer": 1
     },
 	{	
-		"image": "https://chartfc.s3.amazonaws.com/Airbus_and_Boeing_Passengers_vs_Range.jpg",
-        "question": " Which Airbus model has the most number of passengers?",
-        "options": ["A380-800", "A330-300", "A330-200"], 
+		"image": "https://chartfc.s3.amazonaws.com/2017_Profile_of_US_Total_Electric_Energy_Generation.jpg",
+        "question": " In which year energy generation with coal was the highest?",
+        "options": ["2008", "2012", "2018"],
         "answer": 0
     }, 
     {
-		"image": "https://chartfc.s3.amazonaws.com/Airbus_and_Boeing_Passengers_vs_Range.jpg",
-        "question": " Which Boeing model has the most number of passengers?", 
-         "options": ["767-200ER", "747-400", "747-81"], 
+		"image": "https://chartfc.s3.amazonaws.com/2017_Profile_of_US_Total_Electric_Energy_Generation.jpg",
+        "question": " What color shows energy generation with natural gas?",
+         "options": ["gray", "green", "red"],
          "answer": 2
     }, 
     {
-		"image": "https://chartfc.s3.amazonaws.com/Airbus_and_Boeing_Passengers_vs_Range.jpg",
-        "question": " What color shows Boein airline?", 
-         "options": ["Blue", "red", "green"], 
+		"image": "https://chartfc.s3.amazonaws.com/2017_Profile_of_US_Total_Electric_Energy_Generation.jpg",
+        "question": " This chart shows energy generation over which time frame?",
+         "options": ["2008-2017", "2008-2018", "2010-2018"],
          "answer": 1
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/1881_occupation_for_Sourton.jpg",
-        "question": " Who had more numbers of agriculture occupations in Sourtron 1881?", 
+        "question": " Which group was most prominent in agriculture occupations in Sourton 1881?",
          "options": ["men", "women", "both"], 
          "answer": 0
     }, 
 	
     {
 		"image": "https://chartfc.s3.amazonaws.com/1881_occupation_for_Sourton.jpg",
-        "question": " How many men had agriculture occupations in Sourtron 1881?", 
-         "options": ["around 20", "around 80", "around 100"], 
+        "question": " How many female had an unknown occupations in Sourton 1881?",
+         "options": ["around 20", "around 100", "around 80"],
          "answer": 1
     }, 
     {
 		"image": "https://chartfc.s3.amazonaws.com/1881_occupation_for_Sourton.jpg",
-        "question": " Which color shows female information in the chart?", 
+        "question": " Which color shows female occupation in the chart?",
         "options": ["blue", "orange", "green"], 
         "answer": 1
     } 
