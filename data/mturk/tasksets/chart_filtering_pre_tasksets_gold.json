@@ -21,7 +21,7 @@
         "db_id": "6390686799c9ed38aa870ee8",
         "chart_img": "https://chartfc.s3.amazonaws.com/Regional_profile_of_the_South_East.png",
         "caption": "South East had the joint lowest regional unemployment rate in mid-2013. The latest ONS Region and Country Profiles analysis takes a look at the regional characteristics of the UK, exploring aspects such as population, age, employment, crime and house prices. The profile of the South East shows it to be the largest region in population terms, with the longest life expectancy. The South East contributed 15% to the UK’s economic output. The unemployment rate is among the lowest, and incomes are the highest outside London.",
-        "g_id": 4 //todo why not clear?
+        "g_id": 4 //todo delete
     },
     {
         "db_id": "6390685299c9ed38aa870b3a",
