@@ -32,15 +32,15 @@
     {
 		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
         "question": " In which year expenses for paypal fees were the highest?",
-        "options": ["2004", "2006", "2015"], 
+        "options": ["2004", "2006", "2015"],
         "answer": 1
-    }, 
+    },
     {
 		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
         "question": " What expenses is the second bar from the left showing?",
-        "options": ["awards and grants", "paypal fees", "other"], 
+        "options": ["awards and grants", "paypal fees", "other"],
         "answer": 0
-    }, 
+    },
     {
 		"image": "https://chartfc.s3.amazonaws.com/Evolution_of_the_expenses_of_the_Wikimedia_Foundation.jpg",
         "question": " Which color shows the expenses of 2010?",
@@ -73,7 +73,7 @@
     },
     {
 		 "image": "https://chartfc.s3.amazonaws.com/2009TimothyHSDiversity.png",
-         "question": " How many percent of people were Asian in high schools during 2009 according to the chart?",
+         "question": " How many percent of people were Asian in high schools in 2009 according to the chart?",
          "options": ["3%", "79%","4%"], 
          "answer": 2
     },

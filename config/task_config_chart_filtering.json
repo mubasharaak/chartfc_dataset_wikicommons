@@ -10,12 +10,12 @@
     "instructions_rules_text_file": "instructions_rules_text_chart_filtering.txt",
     "task_attributes":
     {
-        "MaxAssignments": 2,
+        "MaxAssignments": 3,
         "LifetimeInSeconds": 604800,
         "AssignmentDurationInSeconds": 1800,
-        "Reward": "0.5",
-        "Title": "Checking the relevance of websites",
-        "Keywords": "Pilot, Weblinks, Statements, Information Retrieval",
+        "Reward": "4",
+        "Title": "Filtering chart images",
+        "Keywords": "Image filtering, fact checking, chart information",
         "Description": "This is a pilot study, so useful feedback is rewarded.",
         "QualificationRequirements": [{
             "QualificationTypeId": "000000000000000000L0",
