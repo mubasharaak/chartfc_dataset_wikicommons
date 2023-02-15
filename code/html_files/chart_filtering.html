@@ -1250,12 +1250,11 @@
             // check gold labels - var references saves gold labels
             var allGoldenCheck = true;
             for (i = 0; i < total; i++) {
-                if (references[i]['g_id'] != 0) {
-                    if (references[i]['g_id']['label'] != -1){
-                        // check if gold label (g_id) same as input by annotator
-                        if (references[i]['g_id']['label'].indexOf(outputs[i]['label']) == -1){
-                            allGoldenCheck = false
-                        }
+                if (references[i]['g_id'] != -1) {
+                    // this is a gold sample
+                    // check if gold label (g_id) same as input by annotator
+                    if (references[i]['g_id'] != outputs[i]['label']) {
+                        allGoldenCheck = false
                     }
                 }
             }

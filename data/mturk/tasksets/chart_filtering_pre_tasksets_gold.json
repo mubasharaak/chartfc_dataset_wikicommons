@@ -18,12 +18,6 @@
         "g_id": 5
     },
     {
-        "db_id": "6390686799c9ed38aa870ee8",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Regional_profile_of_the_South_East.png",
-        "caption": "South East had the joint lowest regional unemployment rate in mid-2013. The latest ONS Region and Country Profiles analysis takes a look at the regional characteristics of the UK, exploring aspects such as population, age, employment, crime and house prices. The profile of the South East shows it to be the largest region in population terms, with the longest life expectancy. The South East contributed 15% to the UK’s economic output. The unemployment rate is among the lowest, and incomes are the highest outside London.",
-        "g_id": 4 //todo delete
-    },
-    {
         "db_id": "6390685299c9ed38aa870b3a",
         "chart_img": "https://chartfc.s3.amazonaws.com/NOMINATE_polarization.jpg",
         "caption": "Political polarization in the U.S. House.",
@@ -48,46 +42,10 @@
         "g_id": 2
     },
     {
-        "db_id": "6390687199c9ed38aa8711a3",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Pie_chart.jpg",
-        "caption": "The TrueMajority Pie Chart, designed to give the viewer a better example of how much money the pentagon uses compared to the rest of the government.",
-        "g_id": 5 //todo missing title etc?
-    },
-    {
-        "db_id": "6390685299c9ed38aa870b03",
-        "chart_img": "https://chartfc.s3.amazonaws.com/MaxMind_Country_Geocode_MoM_Change_Versus_DB_Months_Out_of_Date.png",
-        "caption": "The absolute month over month change in the number of requests originating from countries as a function of the version (release date) of MaxMind database.",
-        "g_id": 1 //todo could be also color or "other" reason
-    },
-    {
-        "db_id": "6390685299c9ed38aa870bb8",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Prikaz_10.16.jpg",
-        "caption": "Prikaz_10.16",
-        "g_id": 2 // todo would say missing title etc.
-    },
-    {
-        "db_id": "6390685299c9ed38aa870adf",
-        "chart_img": "https://chartfc.s3.amazonaws.com/JETtheory.jpg",
-        "caption": "graph",
-        "g_id": 5 //todo replace?
-    },
-    {
-        "db_id": "6390687199c9ed38aa8710fc",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Iowa_Electricity_Generation_Sources_Pie_Chart.svg",
-        "caption": "Pie chart showing sources of electricity generated in Iowa",
-        "g_id": 5 //todo get an error when opening image
-    },
-    {
         "db_id": "6390687199c9ed38aa8710cc",
         "chart_img": "https://chartfc.s3.amazonaws.com/Google_Chart.gif",
         "caption": "\nThis chart shows the relative percentage, by number of search results on Google, the abundance of certain names for the Second Lebanon war on the internet. The spelling of \"Hezbollah\" was varied to \"Hizbollah\" and \"Hizbullah\" as well, in order to account for spelling differences. Additionally, the word \"wikipedia\" was excluded from all search results in order to avoid circular reference.",
         "g_id": 5
-    },
-    {
-        "db_id": "6390687199c9ed38aa8711af",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Playfair-piechart.jpg",
-        "caption": "\nPie chart from Playfair's \"Statistical Breviary\"",
-        "g_id": 3 //todo could be also other reason
     },
     {
         "db_id": "6390687199c9ed38aa871085",
@@ -100,12 +58,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/Page_view_data_for_News_on_Wikipedia-_July_14%25E2%2580%259321.png",
         "caption": "Pageview data for News on Wikipedia on the Blog.",
         "g_id": 5
-    },
-    {
-        "db_id": "6390685299c9ed38aa870a32",
-        "chart_img": "https://chartfc.s3.amazonaws.com/DNA_melting_scematic_curve_2.jpg",
-        "caption": "Schenatic representation of HRM melt curves showing a mutation",
-        "g_id": 5 //todo should we keep this?
     },
     {
         "db_id": "6390687199c9ed38aa8711dc",
@@ -138,12 +90,6 @@
         "g_id": 5
     },
     {
-        "db_id": "6390685e99c9ed38aa870d16",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Metrics-Voting-Results_Sorted.jpg",
-        "caption": "Metrics Project voting results, sorted",
-        "g_id": 5 //todo I dont really understand
-    },
-    {
         "db_id": "6390687199c9ed38aa870f95",
         "chart_img": "https://chartfc.s3.amazonaws.com/1881_Occupational_Structure_of_Stocking_Pelham.jpg",
         "caption": "1881 occupational structure of Stocking Pelham according to the 1881 Census of England and Wales",
@@ -154,12 +100,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/R%25C3%25A9amor%25C3%25A7age_disjoncteur.JPG",
         "caption": "\nRestrike during capacitive current interruption by HV circuit breaker",
         "g_id": 0
-    },
-    {
-        "db_id": "6390687199c9ed38aa8711e3",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Rok_liturgiczny_-_Liturgical_year.jpg",
-        "caption": "Liturgical year",
-        "g_id": 5 //todo I would be able to write a claim about this
     },
     {
         "db_id": "6390686799c9ed38aa870ed9",
@@ -174,22 +114,10 @@
         "g_id": 2
     },
     {
-        "db_id": "6390686799c9ed38aa870e0e",
-        "chart_img": "https://chartfc.s3.amazonaws.com/FIFA_rank_2015.jpg",
-        "caption": "FIFA rank 2015 for top 20 nations",
-        "g_id": 5 //todo could be also confusing use of colors
-    },
-    {
         "db_id": "6390687199c9ed38aa8710e3",
         "chart_img": "https://chartfc.s3.amazonaws.com/Health_Insurance_Coverage_of_the_Non-Elderly_Population,_2011.png",
         "caption": "Health Insurance Coverage of the Non-Elderly Population, 2011. Chart made from data collected by the Kaiser Family Foundation",
         "g_id": 5
-    },
-    {
-        "db_id": "6390685299c9ed38aa870abd",
-        "chart_img": "https://chartfc.s3.amazonaws.com/IdempotentCosineAngle.jpg",
-        "caption": "A mathematical graph illustrating the angle at which Cos(t)=t. Created with Mathematica 7.0",
-        "g_id": 5 //todo dont understand why "5"
     },
     {
         "db_id": "6390687199c9ed38aa87118e",
@@ -214,18 +142,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/FacultyPieChart.jpg",
         "caption": "2005 Chronicle of Higher Education Almanac, cited in: Turner, C. S. V., González, J. C., & Wood, J. L. (2008). Faculty of color in academe: What 20 years of literature tells us. Journal of Diversity in Higher Education, 1(3), 139.",
         "g_id": 5
-    },
-    {
-        "db_id": "6390686799c9ed38aa870f43",
-        "chart_img": "https://chartfc.s3.amazonaws.com/US_female_arrests_for_drunkenness_by_age.svg",
-        "caption": "Arrests in the United States of females for drunkenness in 2014 by age. Data from UCR",
-        "g_id": 5 //todo not visible
-    },
-    {
-        "db_id": "6390686799c9ed38aa870f61",
-        "chart_img": "https://chartfc.s3.amazonaws.com/US_male_arrests_for_prostitution_by_age.svg",
-        "caption": "Arrest rate in the United States of males in 2014 for prostitution by age. Data from UCR",
-        "g_id": 5 //todo not visible
     },
     {
         "db_id": "6390687199c9ed38aa87128d",
@@ -264,12 +180,6 @@
         "g_id": 5
     },
     {
-        "db_id": "6390685299c9ed38aa870b92",
-        "chart_img": "https://chartfc.s3.amazonaws.com/PIA16836-MarsCuriosityRover-JohnKleinRock-ChemAnal2.jpg",
-        "caption": "JPL Home\nEarth\nSolar System\nStars & Galaxies\nScience & Tech\nhttp://photojournal.jpl.nasa.gov/catalog/PIA16836\nPIA16836: Chlorinated Forms of Methane at \"John Klein\" Site \nTarget Name:\tMars\nMission:\t Mars Science Laboratory (MSL)\nSpacecraft:\t Curiosity\nInstrument:\t Sample Analysis at Mars (SAM)\nProduct Size:\t844 x 720 pixels (width x height)\nProduced By:\t JPL\nFull-Res TIFF:\t PIA16836.tif (1.824 MB)\nFull-Res JPEG:\t PIA16836.jpg (50.18 kB)\nClick on the image above to download a moderately sized image in JPEG format (possibly reduced in size from original)\nOriginal Caption Released with Image:\nNASA's Curiosity rover has detected the simple carbon-containing compounds chloro- and dichloromethane from the powdered rock sample extracted from the \"John Klein\" rock on Mars. These species were detected by the gas chromatograph mass spectrometer (GCMS) on Curiosity's Sample Analysis at Mars instrument (SAM).\nThe blue peak on the left shows the presence of chloromethane and the two red peaks on the right show the presence of dichloromethane. The powdered rock sample from John Klein was heated and some of the gas released was injected into the capillary column of the GCMS. The time at which different compounds exited the gas chromatograph column and entered the mass spectrometer, and the patterns produced in the mass spectrometer indicated molecular identity.\nThis chart also indicates \"blank runs,\" which were conducted on Mars prior to delivery of this drilled sample to SAM. The runs helped to insure that signals from the gases released from the John Klein sample were above background levels. Curiosity began drilling at John Klein in February 2013. The SAM analysis was conducted on Sol 200 (the 200th Martian day of Curosity's operations, which was Feb. 27, 2013, on Earth).\nBoth chloro- and dichloromethane were also detected earlier by SAM at the \"Rocknest\" drift. It is possible that these simple carbon-containing compounds were produced by the reaction between Martian carbon and chlorine released when this sample was heated in the SAM oven. However, analysis of an additional drilled sample is required to help scientists understand if instead any residual terrestrial carbon from the drill, or perhaps chlorine left over from the Rocknest sample, is responsible for the generation of some or all of these compounds. In any case, these detections demonstrate clearly that the SAM GCMS is performing as designed and ready to continue the search for organic compounds in Gale Crater.\nJPL manages the Mars Science Laboratory/Curiosity for NASA's Science Mission Directorate in Washington. The rover was designed, developed and assembled at JPL, a division of the California Institute of Technology in Pasadena.\nFor more about NASA's Curiosity mission, visit: http://www.jpl.nasa.gov/msl, http://www.nasa.gov/mars, and http://mars.jpl.nasa.gov/msl.\nImage Credit:\nNASA/JPL-Caltech\nImage Addition Date:\n\n2013-03-12",
-        "g_id": 4 //todo why 4
-    },
-    {
         "db_id": "6390687199c9ed38aa871007",
         "chart_img": "https://chartfc.s3.amazonaws.com/Browser_usage_on_wikimedia_Sep_2010.png",
         "caption": "Browser usage share to all wikimedia sites, sep 2010.",
@@ -280,18 +190,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/Iraq_Trends_3_Jan_2009.pdf",
         "caption": "This is the current Iraq Security Trends dating from January 2004 to January 3, 2009.  This depicts unclassified reporting of how MNF-I tracks security incidents over time.",
         "g_id": 1
-    },
-    {
-        "db_id": "6390685299c9ed38aa870c4f",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Step_PT1.svg",
-        "caption": "Step Response Diagram (PT1, T = 1, K = 2)",
-        "g_id": 5 //todo not visible
-    },
-    {
-        "db_id": "6390687199c9ed38aa871070",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Douglas_County_Pie_Chart_New_Wiki_Version.pdf",
-        "caption": "Pie chart shows native vegetation of Douglas County Minnesota.",
-        "g_id": 5 //todo not readable
     },
     {
         "db_id": "6390686799c9ed38aa870f1f",
@@ -318,12 +216,6 @@
         "g_id": 5
     },
     {
-        "db_id": "6390685299c9ed38aa870afe",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Matano_Interface.png",
-        "caption": "Graph of a concentration profile showing the Matano interface and the areas on either side of the interface that should be equal if it is located correctly.",
-        "g_id": 4 //todo missing title etc.
-    },
-    {
         "db_id": "6390685299c9ed38aa870c05",
         "chart_img": "https://chartfc.s3.amazonaws.com/Rsc_frankfurt_member_statistics.png",
         "caption": "Membership statistics RSC Frankfurt, Frankfurt, Hesse, Germany",
@@ -334,12 +226,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/Us_savings_rate_history.jpg",
         "caption": "This is a chart outlining the historical personal savings rates in United States as compiled by the US Department of Commerce, Bureau of Economic Analysis",
         "g_id": 5
-    },
-    {
-        "db_id": "6390687199c9ed38aa870fc5",
-        "chart_img": "https://chartfc.s3.amazonaws.com/ACE2011_voter_and_candidate_proportions.png",
-        "caption": "Signpost",
-        "g_id": 5 //todo discuss
     },
     {
         "db_id": "6390686799c9ed38aa870ecb",
@@ -354,12 +240,6 @@
         "g_id": 5
     },
     {
-        "db_id": "6390687199c9ed38aa870fa5",
-        "chart_img": "https://chartfc.s3.amazonaws.com/2008_U.S._MSW_Generation.pdf",
-        "caption": "Total MSW Generation (by Category), 2008 - 250 million tons (Before Recycling)",
-        "g_id": 5 //todo not readable
-    },
-    {
         "db_id": "6390685e99c9ed38aa870d30",
         "chart_img": "https://chartfc.s3.amazonaws.com/On_Wikipedia_1.png",
         "caption": "Community perspectives on Wikipedia",
@@ -370,12 +250,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/Adforton_total_population_between_1861_and_1961..PNG",
         "caption": "A scatter graph showing the population over a 100 year period.",
         "g_id": 5
-    },
-    {
-        "db_id": "6390687199c9ed38aa870fc4",
-        "chart_img": "https://chartfc.s3.amazonaws.com/ACE2010_voter_proportions.png",
-        "caption": "Signpost",
-        "g_id": 5 //todo discuss
     },
     {
         "db_id": "6390687199c9ed38aa871164",
@@ -390,22 +264,10 @@
         "g_id": 5
     },
     {
-        "db_id": "6390685299c9ed38aa870cb5",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Zlogp.pdf",
-        "caption": "Created using MATLAB and Export Fig, Ged.R (talk) 14:57, 13 February 2015 (UTC)",
-        "g_id": 5 //todo not readbale
-    },
-    {
         "db_id": "6390685299c9ed38aa870bf7",
         "chart_img": "https://chartfc.s3.amazonaws.com/Representation_of_Francophones_and_Anglophones_in_the_public_service_of_Canada.JPG",
         "caption": "Chart showing trends of Anglophone and Francophone participation in the public service of Canada.",
         "g_id": 5
-    },
-    {
-        "db_id": "6390685299c9ed38aa870c4c",
-        "chart_img": "https://chartfc.s3.amazonaws.com/Statistical_meaningfulness_test.JPG",
-        "caption": "Illustration of the difference between high statistical significance and statistical meaningfulness of time trends. See Wikipedia article \"Statistical meaningfulness test\" for more info",
-        "g_id": 5 //todo y axis missing
     },
     {
         "db_id": "6390686799c9ed38aa870e40",
@@ -424,12 +286,6 @@
         "chart_img": "https://chartfc.s3.amazonaws.com/Edre_heitor_Particionar-tasks.png",
         "caption": "Partitioning - tasks",
         "g_id": 0
-    },
-    {
-        "db_id": "6390685299c9ed38aa870c95",
-        "chart_img": "https://chartfc.s3.amazonaws.com/US_Crime_rates_per_capita_1970-2001,_GAO_Chart.png",
-        "caption": "A line chart of the crime rate in the United States, as reported in the Uniform Crime Reports from 1970 to 2001. The chart highlights the period after 1994 when the COPS grant program of the Violent Crime Control and Law Enforcement Act of 1994 supported hiring of additional police officers.\nChart appeared in US General Accounting Office. “COMMUNITY POLICING GRANTS: COPS Grants Were a Modest Contributor to Declines in Crime in the 1990s.” Washington, DC: General Accounting Office, October 2005. https://www.gao.gov/new.items/d06104.pdf.",
-        "g_id": 4 //todo why?
     },
     {
         "db_id": "6390685299c9ed38aa870bf8",
