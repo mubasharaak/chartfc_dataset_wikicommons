@@ -13,7 +13,7 @@
         "MaxAssignments": 3,
         "LifetimeInSeconds": 604800,
         "AssignmentDurationInSeconds": 1800,
-        "Reward": "0.3",
+        "Reward": "0.25",
         "Title": "Filtering chart images",
         "Keywords": "Image filtering, fact checking, chart information",
         "Description": "This is a pilot study, so useful feedback is rewarded.",
