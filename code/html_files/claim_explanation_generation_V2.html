@@ -330,7 +330,7 @@
                                 <h6>2a. Afterwards write a claim that is SUPPORTED by the chart:</h6>
                                 <p>Claim should contain at least 5 words.</p>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="claim-text-support" rows="2" placeholder="Write claim here..." ></textarea>
+                                    <textarea class="form-control" id="claim_text_support" rows="2" placeholder="Write claim here..." ></textarea>
                                 </div>
                             </div>
                         </div>
@@ -339,7 +339,7 @@
                                 <h6>2b. Explain in 1-3 sentences referring to information from the chart (and caption if available) why the claim is supported:</h6>
                                 <p>Explanation should contain at least 3 words from the claim.</p>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="explanation" rows="2" placeholder="Write explanation here..." style="min-width: 10%"></textarea>
+                                    <textarea class="form-control" id="explanation_claim_text_support" rows="2" placeholder="Write explanation here..." style="min-width: 10%"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -348,7 +348,7 @@
                                 <h6>3a. Afterwards write a claim that is REFUTED by the chart:</h6>
                                 <p>Claim should contain at least 5 words. Do not simply add NOT to revert the previous claim.</p>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="claim-text-refute" rows="2" placeholder="Write claim here..." ></textarea>
+                                    <textarea class="form-control" id="claim_text_refute" rows="2" placeholder="Write claim here..." ></textarea>
                                 </div>
                             </div>
                         </div>
@@ -357,7 +357,7 @@
                                 <h6>3b. Explain in 1-3 sentences referring to information from the chart (and caption if available) WHY THE CLAIM CONTRADICTS THE CHART:</h6>
                                 <p>Explanation should contain at least 3 words from the claim.</p>
                                 <div class="form-group">
-                                    <textarea class="form-control" id="explanation" rows="2" placeholder="Write explanation here..." style="min-width: 10%"></textarea>
+                                    <textarea class="form-control" id="explanation_claim_text_refute" rows="2" placeholder="Write explanation here..." style="min-width: 10%"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -497,29 +497,22 @@
             5: []
         }
         // ['g_id'] sets gold labels
-        let references = [{'claim_db_id': '6072bd2d000ca92c09d146fb', 'chart_img': 'https://chartfc.s3.amazonaws.com/Top_articles_familiarity_general.png', 'caption': 'This is a test caption!', 'label': 'false', 'g_id': {'label': [0]}}, {'claim_db_id': '6072bd2d000ca92c09d1473b', 'chart': './images_html_files/no_issues_chart_2.png', 'label': 'false', 'caption': '', 'table': {'url': 'https://www.law.cornell.edu/uscode/text/28/133', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['Delaware', '1'], ['Florida, Northern and Southern', '1'], ['Georgia, Northern', '1'], ['Kansas', '1'], ['Missouri, Eastern and Western', '1'], ['Ohio, Northern', '1'], ['Oklahoma, Western', '1'], ['Pennsylvania, Eastern, Middle and Western', '1'], ['West Virginia, Northern and Southern', '1']], 'html_table': `<table><colgroup><col/><col/></colgroup><thead><tr><th><p><em>Districts</em></p></th><th><p><em>Judges</em></p></th></tr></thead><tbody><tr><td><p><span>Delaware</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Florida, Northern and Southern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Georgia, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Kansas</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Missouri, Eastern and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Ohio, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Oklahoma, Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Pennsylvania, Eastern, Middle and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>West Virginia, Northern and Southern</span></p></td><td><p>1</p></td></tr></tbody></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d1453d', 'chart': './images_html_files/no_issues_chart_3.png', 'label': 'false', 'table': {'url': 'https://www.nps.gov/parkhistory/online_books/blm/history/', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['OPPORTUNITY AND CHALLENGE The Story of BLM', 'OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM By James Muhn Hanson R. Stuart designed by Peter D. Doran September 1988 second printing U.S. Department of the Interior Bureau of Land Management TABLE OF CONTENTS', 'OPPORTUNITY AND CHALLENGE', 'The Story of BLM'], ['OPPORTUNITY AND CHALLENGE'], ['The Story of BLM'], ['index.htm Last Updated: 08-Sep-2008']], 'html_table': `<table><tr><td><table><tr><td><font>OPPORTUNITY AND CHALLENGE</font><br/><font>The Story of BLM</font><hr/></td><td><img/></td></tr></table></td></tr><tr><td><img/></td><td><br/><table><tr><td><font><b>OPPORTUNITY AND CHALLENGE</b></font></td></tr><tr><td><font><b>The Story of BLM</b></font></td></tr></table><p><br/><font><b>By</b></font><br/><font><b>James Muhn<br/>Hanson R. Stuart</b></font></p><p><br/><font><b>designed by</b></font><br/><font><b>Peter D. Doran</b></font></p><p><br/><font><b>September 1988</b></font><br/><font>second printing</font></p><p><font>U.S. Department of the Interior<br/>Bureau of Land Management</font></p><p><br/><a><b>TABLE OF CONTENTS</b></a></p></td></tr><tr><td><div><br/><hr/><font>index.htm<br/>Last Updated: 08-Sep-2008</font></div></td></tr></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d145bc', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'true', 'table': {'url': 'https://www.tax-brackets.org/connecticuttaxtable', 'caption': '', 'header_horizontal': ['Tax Bracket', 'Tax Rate'], 'header_vertical': [], 'rows_list': [['$0.00+', '3%'], ['$10,000.00+', '5%'], ['$50,000.00+', '5.5%'], ['$100,000.00+', '6%'], ['$200,000.00+', '6.5%'], ['$250,000.00+', '6.9%'], ['$500,000.00+', '6.99%']], 'html_table': '<table><thead><tr><th> Tax Bracket </th><th> Tax Rate </th></tr></thead><tbody><tr><td> $0.00+ </td><td> 3% </td></tr><tr><td> $10,000.00+ </td><td> 5% </td></tr><tr><td> $50,000.00+ </td><td> 5.5% </td></tr><tr><td> $100,000.00+ </td><td> 6% </td></tr><tr><td> $200,000.00+ </td><td> 6.5% </td></tr><tr><td> $250,000.00+ </td><td> 6.9% </td></tr><tr><td> $500,000.00+ </td><td> 6.99% </td></tr></tbody></table>'}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d14861', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'true', 'table': {'url': 'https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section3.html', 'caption': 'This is NOT a test caption', 'header_horizontal': ['Measure', 'Numerator', 'Denominator', '10n'], 'header_vertical': ['Crude death rate', 'Cause-specific death rate', 'Proportionate mortality', 'Death-to-case ratio', 'Neonatal mortality rate', 'Postneonatal mortality rate', 'Infant mortality rate', 'Maternal mortality rate'], 'rows_list': [['Total number of deaths during a given time interval', 'Mid-interval population', '1,000 or 100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Mid-interval population', '100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Total number of deaths from all causes during the same time interval', '100 or 1,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Number of new cases of same disease reported during the same time interval', '100'], ['Number of deaths among children < 28 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children 28364 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children < 1 year of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths assigned to pregnancy-related causes during a given time interval', 'Number of live births during the same time interval', '100,000']], 'html_table': '<table><thead><tr><th>Measure</th><th>Numerator</th><th>Denominator</th><th>10<sup>n</sup></th></tr></thead><tbody><tr><th>Crude death rate</th><td>Total number of deaths during a given time interval</td><td>Mid-interval population</td><td>1,000 or<br/>100,000</td></tr><tr><th>Cause-specific death rate</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Mid-interval population</td><td>100,000</td></tr><tr><th>Proportionate mortality</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Total number of deaths from all causes during the same time interval</td><td>100 or 1,000</td></tr><tr><th>Death-to-case ratio</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Number of new cases of same disease reported during the same time interval</td><td>100</td></tr><tr><th>Neonatal mortality rate</th><td>Number of deaths among children<br/>&lt; 28 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Postneonatal mortality rate</th><td>Number of deaths among children 28–364 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Infant mortality rate</th><td>Number of deaths among children<br/>&lt; 1 year of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Maternal mortality rate</th><td>Number of deaths assigned to pregnancy-related causes during a given time interval</td><td>Number of live births during the same time interval</td><td>100,000</td></tr></tbody></table>'}, 'g_id': 0, 'caption': ''}]
+        // let references = [{'claim_db_id': '6072bd2d000ca92c09d146fb', 'chart_img': 'https://chartfc.s3.amazonaws.com/Top_articles_familiarity_general.png', 'caption': 'This is a test caption!', 'label': 'false', 'g_id': {'label': [0]}}, {'claim_db_id': '6072bd2d000ca92c09d1473b', 'chart': './images_html_files/no_issues_chart_2.png', 'label': 'false', 'caption': '', 'table': {'url': 'https://www.law.cornell.edu/uscode/text/28/133', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['Delaware', '1'], ['Florida, Northern and Southern', '1'], ['Georgia, Northern', '1'], ['Kansas', '1'], ['Missouri, Eastern and Western', '1'], ['Ohio, Northern', '1'], ['Oklahoma, Western', '1'], ['Pennsylvania, Eastern, Middle and Western', '1'], ['West Virginia, Northern and Southern', '1']], 'html_table': `<table><colgroup><col/><col/></colgroup><thead><tr><th><p><em>Districts</em></p></th><th><p><em>Judges</em></p></th></tr></thead><tbody><tr><td><p><span>Delaware</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Florida, Northern and Southern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Georgia, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Kansas</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Missouri, Eastern and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Ohio, Northern</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Oklahoma, Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>Pennsylvania, Eastern, Middle and Western</span></p></td><td><p>1</p></td></tr><tr><td><p><span>West Virginia, Northern and Southern</span></p></td><td><p>1</p></td></tr></tbody></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d1453d', 'chart': './images_html_files/no_issues_chart_3.png', 'label': 'false', 'table': {'url': 'https://www.nps.gov/parkhistory/online_books/blm/history/', 'caption': '', 'header_horizontal': [], 'header_vertical': [], 'rows_list': [['OPPORTUNITY AND CHALLENGE The Story of BLM', 'OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM'], ['OPPORTUNITY AND CHALLENGE The Story of BLM By James Muhn Hanson R. Stuart designed by Peter D. Doran September 1988 second printing U.S. Department of the Interior Bureau of Land Management TABLE OF CONTENTS', 'OPPORTUNITY AND CHALLENGE', 'The Story of BLM'], ['OPPORTUNITY AND CHALLENGE'], ['The Story of BLM'], ['index.htm Last Updated: 08-Sep-2008']], 'html_table': `<table><tr><td><table><tr><td><font>OPPORTUNITY AND CHALLENGE</font><br/><font>The Story of BLM</font><hr/></td><td><img/></td></tr></table></td></tr><tr><td><img/></td><td><br/><table><tr><td><font><b>OPPORTUNITY AND CHALLENGE</b></font></td></tr><tr><td><font><b>The Story of BLM</b></font></td></tr></table><p><br/><font><b>By</b></font><br/><font><b>James Muhn<br/>Hanson R. Stuart</b></font></p><p><br/><font><b>designed by</b></font><br/><font><b>Peter D. Doran</b></font></p><p><br/><font><b>September 1988</b></font><br/><font>second printing</font></p><p><font>U.S. Department of the Interior<br/>Bureau of Land Management</font></p><p><br/><a><b>TABLE OF CONTENTS</b></a></p></td></tr><tr><td><div><br/><hr/><font>index.htm<br/>Last Updated: 08-Sep-2008</font></div></td></tr></table>`}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d145bc', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'true', 'table': {'url': 'https://www.tax-brackets.org/connecticuttaxtable', 'caption': '', 'header_horizontal': ['Tax Bracket', 'Tax Rate'], 'header_vertical': [], 'rows_list': [['$0.00+', '3%'], ['$10,000.00+', '5%'], ['$50,000.00+', '5.5%'], ['$100,000.00+', '6%'], ['$200,000.00+', '6.5%'], ['$250,000.00+', '6.9%'], ['$500,000.00+', '6.99%']], 'html_table': '<table><thead><tr><th> Tax Bracket </th><th> Tax Rate </th></tr></thead><tbody><tr><td> $0.00+ </td><td> 3% </td></tr><tr><td> $10,000.00+ </td><td> 5% </td></tr><tr><td> $50,000.00+ </td><td> 5.5% </td></tr><tr><td> $100,000.00+ </td><td> 6% </td></tr><tr><td> $200,000.00+ </td><td> 6.5% </td></tr><tr><td> $250,000.00+ </td><td> 6.9% </td></tr><tr><td> $500,000.00+ </td><td> 6.99% </td></tr></tbody></table>'}, 'g_id': 0}, {'claim_db_id': '6072bd2d000ca92c09d14861', 'chart': './images_html_files/no_issues_chart_1.jpg', 'label': 'true', 'table': {'url': 'https://www.cdc.gov/csels/dsepd/ss1978/lesson3/section3.html', 'caption': 'This is NOT a test caption', 'header_horizontal': ['Measure', 'Numerator', 'Denominator', '10n'], 'header_vertical': ['Crude death rate', 'Cause-specific death rate', 'Proportionate mortality', 'Death-to-case ratio', 'Neonatal mortality rate', 'Postneonatal mortality rate', 'Infant mortality rate', 'Maternal mortality rate'], 'rows_list': [['Total number of deaths during a given time interval', 'Mid-interval population', '1,000 or 100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Mid-interval population', '100,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Total number of deaths from all causes during the same time interval', '100 or 1,000'], ['Number of deaths assigned to a specific cause during a given time interval', 'Number of new cases of same disease reported during the same time interval', '100'], ['Number of deaths among children < 28 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children 28364 days of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths among children < 1 year of age during a given time interval', 'Number of live births during the same time interval', '1,000'], ['Number of deaths assigned to pregnancy-related causes during a given time interval', 'Number of live births during the same time interval', '100,000']], 'html_table': '<table><thead><tr><th>Measure</th><th>Numerator</th><th>Denominator</th><th>10<sup>n</sup></th></tr></thead><tbody><tr><th>Crude death rate</th><td>Total number of deaths during a given time interval</td><td>Mid-interval population</td><td>1,000 or<br/>100,000</td></tr><tr><th>Cause-specific death rate</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Mid-interval population</td><td>100,000</td></tr><tr><th>Proportionate mortality</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Total number of deaths from all causes during the same time interval</td><td>100 or 1,000</td></tr><tr><th>Death-to-case ratio</th><td>Number of deaths assigned to a specific cause during a given time interval</td><td>Number of new cases of same disease reported during the same time interval</td><td>100</td></tr><tr><th>Neonatal mortality rate</th><td>Number of deaths among children<br/>&lt; 28 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Postneonatal mortality rate</th><td>Number of deaths among children 28–364 days of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Infant mortality rate</th><td>Number of deaths among children<br/>&lt; 1 year of age during a given time interval</td><td>Number of live births during the same time interval</td><td>1,000</td></tr><tr><th>Maternal mortality rate</th><td>Number of deaths assigned to pregnancy-related causes during a given time interval</td><td>Number of live births during the same time interval</td><td>100,000</td></tr></tbody></table>'}, 'g_id': 0, 'caption': ''}]
         // let lan_test_language = "Swedish";
-        let qualification_questions = [{"question": " The data of which years is shown in the chart?", "options": ["<1920 till 2017", "1920 and 2017", "1920 till 2017"], "answer": 0, "image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif"}, {"question": " What does the x-axis show?", "options": ["different countries", "different years", "different cities"], "answer": 2, "image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif"}, {"question": " What color represents data of 1945-1967?", "options": ["blue", "gray", "yellow"], "answer": 1, "image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif"}];
-        $("#instructions-project-text").html(`<br> Welcome to the Claim-Explanation-Generation-Task. <br><br> We will show you <b>seven charts and (if available) their captions</b>. For each chart, you will be asked to do the following: <b>Write a claim that can be verified or refuted given the chart and its caption.</b> Write the claim using only information from the chart and its caption. Please avoid using any additional sources or own knowledge.
-        <br><br> We will also ask you to write <b>a short text (1-3 sentences) explaining why</b> the claim can be verified or refuted using the chart and caption.
-        <br><br> We will show you some examples of how to solve this task on the next page. <br><br> Afterwards, we will ask you <b>three questions</b>. You can progress to the task by answering these questions correctly. The task also includes some <b>checks</b> and we will <b>manually check submissions</b> before accepting.
-        You can only submit and receive payment by passing them successfully.
-        <br><br> The data collected in this study consist of your inputs, the time you spent on the task and the buttons clicked. This experiment received ethical clearance on 2nd December, 2022 from King's College London (KCL), with registration number MRSP-20/21-22978.
-        The data controller for this project will be KCL. If you have any <b>questions or need further assistance</b>, please contact <a href='mailto:sahar.tahmasebi@tib.eu'>sahar.tahmasebi@tib.eu</a>.
-        <br><br> By continuing with the task, you agree to take part in this research project and consent for the data collected to be used for the purpose of this study.`);
-        $("#instructions-rules-text").html(`<ul><li><b>Read</b> the chart and (if available) its caption carefully.</li><li>You might need to <b>scroll down</b> to see the entire page.</li><li>Do <b>not use</b> any additional <b>sources or your own background knowledge</b> to solve the task. </li><li>You can navigate freely through the tasks using the buttons at the bottom of the page.</li><li>At the end of the task, we <b>automatically check the quality</b> of your work. If you don't pass the test, you can adjust your answers and <b>resubmit</b> two more times. If you fail three times, the <b>task terminates</b> and the work is not accepted.</li><li>We <b>check</b> the quality of the task <b>after submission</b>.</li><li>Make sure you are using either Chrome, Firefox or Edge <b>internet browser</b>. Do not use Internet Explorer.</li><li>You can open these <b>instructions</b> again anytime during the task.</li><li>You must <b>fill all the information</b> requested.</li></ul>`);
+        // let qualification_questions = [{"question": " The data of which years is shown in the chart?", "options": ["<1920 till 2017", "1920 and 2017", "1920 till 2017"], "answer": 0, "image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif"}, {"question": " What does the x-axis show?", "options": ["different countries", "different years", "different cities"], "answer": 2, "image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif"}, {"question": " What color represents data of 1945-1967?", "options": ["blue", "gray", "yellow"], "answer": 1, "image": "https://chartfc.s3.amazonaws.com/Building_ages_(33444399651).gif"}];
+        // $("#instructions-rules-text").html(`<ul><li><b>Read</b> the chart and (if available) its caption carefully.</li><li>You might need to <b>scroll down</b> to see the entire page.</li><li>Do <b>not use</b> any additional <b>sources or your own background knowledge</b> to solve the task. </li><li>You can navigate freely through the tasks using the buttons at the bottom of the page.</li><li>At the end of the task, we <b>automatically check the quality</b> of your work. If you don't pass the test, you can adjust your answers and <b>resubmit</b> two more times. If you fail three times, the <b>task terminates</b> and the work is not accepted.</li><li>We <b>check</b> the quality of the task <b>after submission</b>.</li><li>Make sure you are using either Chrome, Firefox or Edge <b>internet browser</b>. Do not use Internet Explorer.</li><li>You can open these <b>instructions</b> again anytime during the task.</li><li>You must <b>fill all the information</b> requested.</li></ul>`);
 
-        // let qualification_questions = ${qualification_questions}$;
-        // let references = ${references}$;
-        // $("#instructions-project-text").html(${instructions_project_text}$);
-        // $("#instructions-rules-text").html(${instructions_rules_text}$);
+        let qualification_questions = ${qualification_questions}$;
+        let references = ${references}$;
+        $("#instructions-project-text").html(${instructions_project_text}$);
+        $("#instructions-rules-text").html(${instructions_rules_text}$);
 
         let total = references.length;
 
         var outputs = [];
         // DEFAULT OUTPUTS IN JSON FORMAT, EX:  { similarity: -1, confidence: -1, reason: "" }
         for (i = 0; i < total; i++) {
-            outputs[i] = {label: -1, reason_other: -1, header: -1, publisher: -1, sub_publisher: -1};
+            outputs[i] = {label: -1};
         }
 
         var events = [];
@@ -583,74 +576,79 @@
             }
             pageIndex = currentPage - 1;
             output = outputs[pageIndex];
-            if (output['reason_other'] != -1 && output['reason_other'] != '' && output['reason_other'] != 'Enter reason here...') {
-                $(`#reason_other`).val(output['reason_other']);
-            }
-            else {
-                $(`#reason_other`).val("");
-            }
-            for (i = 0; i < 6; i++) {
-                if (output['label'] == i) {
-                    $(`#label_${i}`).addClass("active");
-                    $(`#label_${i}`).children('input').prop('checked', true)
-                } else {
-                    $(`#label_${i}`).removeClass("active");
-                    $(`#label_${i}`).children('input').prop('checked', false)
-                }
-            }
+<!--            if (output['reason_other'] != -1 && output['reason_other'] != '' && output['reason_other'] != 'Enter reason here...') {-->
+<!--                $(`#reason_other`).val(output['reason_other']);-->
+<!--            }-->
+<!--            else {-->
+<!--                $(`#reason_other`).val("");-->
+<!--            }-->
 
-            for (i = 0; i < 6; i++) {
-                if (output['publisher'] == i) {
-                    $(`#publisher_${i}`).addClass("active");
-                    $(`#publisher_${i}`).children('input').prop('checked', true)
-                } else {
-                    $(`#publisher_${i}`).removeClass("active");
-                    $(`#publisher_${i}`).children('input').prop('checked', false)
-                }
-            }
+            $("textarea#claim_text_support").val(output['claim_text_support']);
+            $("textarea#claim_text_refute").val(output['claim_text_refute']);
+            $("textarea#explanation_claim_text_support").val(output['explanation_claim_text_support']);
+            $("textarea#explanation_claim_text_refute").val(output['explanation_claim_text_refute']);
+<!--TODO -->
+<!--            for (i = 0; i < 6; i++) {-->
+<!--                if (output['label'] == i) {-->
+<!--                    $(`#label_${i}`).addClass("active");-->
+<!--                    $(`#label_${i}`).children('input').prop('checked', true)-->
+<!--                } else {-->
+<!--                    $(`#label_${i}`).removeClass("active");-->
+<!--                    $(`#label_${i}`).children('input').prop('checked', false)-->
+<!--                }-->
+<!--            }-->
 
-            $('#sub-publisher-options').empty()
-            if (output['publisher'] == -1){
-                $('#sub-publisher-panel').addClass('d-none')
-            } else if (sub_publisher_options[output['publisher']].length == 0) {
-                $('#sub-publisher-panel').addClass('d-none')
-            } else {
-                $('#sub-publisher-panel').removeClass('d-none')
-                for (i = 0; i < sub_publisher_options[output['publisher']].length; i++) {
-                    $("#sub-publisher-options").append(
-                        `<label id="sub_publisher_${i}" class="btn btn-primary subpublisher">
-                            <input type="radio" autocomplete="off" value='unavailable' name='sub_publisher_radios'>
-                            ${sub_publisher_options[output['publisher']][i]}
-                        </label>`
-                    );
-                    $('label.btn.subpublisher').click(function () {
-                        page = parseInt($("#current-page").text());
-                        pageIndex = page - 1;
-                        outputs[pageIndex]['sub_publisher'] = parseInt(this.id.split('sub_publisher_')[1]);
-                    });
-                    if (output['sub_publisher'] == i) {
-                        $(`#sub_publisher_${i}`).addClass("active");
-                        $(`#sub_publisher_${i}`).children('input').prop('checked', true)
-                    } else {
-                        $(`#sub_publisher_${i}`).removeClass("active");
-                        $(`#sub_publisher_${i}`).children('input').prop('checked', false)
-                    }
-                }
-            }
+<!--            for (i = 0; i < 6; i++) {-->
+<!--                if (output['publisher'] == i) {-->
+<!--                    $(`#publisher_${i}`).addClass("active");-->
+<!--                    $(`#publisher_${i}`).children('input').prop('checked', true)-->
+<!--                } else {-->
+<!--                    $(`#publisher_${i}`).removeClass("active");-->
+<!--                    $(`#publisher_${i}`).children('input').prop('checked', false)-->
+<!--                }-->
+<!--            }-->
+
+<!--            $('#sub-publisher-options').empty()-->
+<!--            if (output['publisher'] == -1){-->
+<!--                $('#sub-publisher-panel').addClass('d-none')-->
+<!--            } else if (sub_publisher_options[output['publisher']].length == 0) {-->
+<!--                $('#sub-publisher-panel').addClass('d-none')-->
+<!--            } else {-->
+<!--                $('#sub-publisher-panel').removeClass('d-none')-->
+<!--                for (i = 0; i < sub_publisher_options[output['publisher']].length; i++) {-->
+<!--                    $("#sub-publisher-options").append(-->
+<!--                        `<label id="sub_publisher_${i}" class="btn btn-primary subpublisher">-->
+<!--                            <input type="radio" autocomplete="off" value='unavailable' name='sub_publisher_radios'>-->
+<!--                            ${sub_publisher_options[output['publisher']][i]}-->
+<!--                        </label>`-->
+<!--                    );-->
+<!--                    $('label.btn.subpublisher').click(function () {-->
+<!--                        page = parseInt($("#current-page").text());-->
+<!--                        pageIndex = page - 1;-->
+<!--                        outputs[pageIndex]['sub_publisher'] = parseInt(this.id.split('sub_publisher_')[1]);-->
+<!--                    });-->
+<!--                    if (output['sub_publisher'] == i) {-->
+<!--                        $(`#sub_publisher_${i}`).addClass("active");-->
+<!--                        $(`#sub_publisher_${i}`).children('input').prop('checked', true)-->
+<!--                    } else {-->
+<!--                        $(`#sub_publisher_${i}`).removeClass("active");-->
+<!--                        $(`#sub_publisher_${i}`).children('input').prop('checked', false)-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
 
             $("#chart_reference").attr("src", references[pageIndex]["chart_img"]);
             $("#caption").text(references[pageIndex]["caption"]);
 
-
-            // set added checkbox to checked if it has been clicked before
-            if (output['header'] != -1) {
-            // headers for this page have been check-boxed before
-                for (j = 0; j < output['header'].length; j++) {
-                    var elem_j = output['header'][j]
-                    // set checkbox to checked when found in output['header] list
-                    $(`#input_header_${elem_j}`).prop('checked', true)
-                }
-            }
+<!--            // set added checkbox to checked if it has been clicked before-->
+<!--            if (output['header'] != -1) {-->
+<!--            // headers for this page have been check-boxed before-->
+<!--                for (j = 0; j < output['header'].length; j++) {-->
+<!--                    var elem_j = output['header'][j]-->
+<!--                    // set checkbox to checked when found in output['header] list-->
+<!--                    $(`#input_header_${elem_j}`).prop('checked', true)-->
+<!--                }-->
+<!--            }-->
 
 
             lastChange = Date.now();
@@ -677,20 +675,142 @@
             lastChange = Date.now();
 
             var allControlsUsedCheck = true;
+            var claimDuplicateCheck = true;
+            var claimLengthCheck = true;
+            var claimNegationCheck = true;
+            var claimUncertaintyCheck = true;
+
             const outputs_flat = [].concat(...outputs)
             for (i = 0; i < outputs_flat.length; i++){
                 if (
-                    // check if all labels are set and "reason_other" given if "Other reason" selected
-                    (outputs_flat[i]["label"] == -1) ||
-                    ((outputs_flat[i]["label"] == 4) &&
-                    ((outputs_flat[i]["reason_other"] == -1) || (outputs_flat[i]["reason_other"].trim() == '')))
+                    (outputs_flat[i]["claim_text_support"].length == 0) ||
+                    (outputs_flat[i]["claim_text_refute"].length == 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].length == 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].length == 0)
                 ) {
                     allControlsUsedCheck = false;
+                }
+                if (
+                    (outputs_flat[i]["claim_text_support"].split(' ').length < 5) ||
+                    (outputs_flat[i]["claim_text_support"].split(' ').length > 30) ||
+                    (outputs_flat[i]["claim_text_refute"].split(' ').length < 5) ||
+                    (outputs_flat[i]["claim_text_refute"].split(' ').length > 30) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].split(' ').length < 10) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].split(' ').length > 100) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].split(' ').length < 10) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].split(' ').length > 100)
+                ) {
+                    claimLengthCheck = false;
+                }
+                if (
+                    (outputs_flat[i]["claim_text_support"] == outputs_flat[i]["claim_text_refute"]) ||
+                    (outputs_flat[i]["claim_text_support"] == outputs_flat[i]["explanation_claim_text_support"]) ||
+                    (outputs_flat[i]["claim_text_support"] == outputs_flat[i]["explanation_claim_text_refute"]) ||
+                    (outputs_flat[i]["claim_text_refute"] == outputs_flat[i]["explanation_claim_text_support"]) ||
+                    (outputs_flat[i]["claim_text_refute"] == outputs_flat[i]["explanation_claim_text_refute"]) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"] == outputs_flat[i]["explanation_claim_text_support"])
+                ) {
+                    claimDuplicateCheck = false;
+                }
+                if ((outputs_flat[i]["claim_text_support"].indexOf(" perhaps ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" maybe ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" probably ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" mostly ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" occasionally ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" frequently ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" might ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" many ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" few ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" some ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" several ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" most of ") >= 0) ||
+                    (outputs_flat[i]["claim_text_support"].indexOf(" sometimes ") >= 0)
+                    ) {
+                    claimUncertaintyCheck = false;
+                }
+                if ((outputs_flat[i]["claim_text_refute"].indexOf(" perhaps ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" maybe ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" probably ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" mostly ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" occasionally ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" frequently ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" might ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" many ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" few ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" some ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" several ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" most of ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" sometimes ") >= 0)
+                    ) {
+                    claimUncertaintyCheck = false;
+                }
+                if ((outputs_flat[i]["explanation_claim_text_support"].indexOf(" perhaps ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" maybe ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" probably ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" mostly ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" occasionally ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" frequently ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" might ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" many ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" few ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" some ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" several ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" most of ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_support"].indexOf(" sometimes ") >= 0)
+                    ) {
+                    claimUncertaintyCheck = false;
+                }
+                if ((outputs_flat[i]["explanation_claim_text_refute"].indexOf(" perhaps ") >= 0) x||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" maybe ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" probably ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" mostly ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" occasionally ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" frequently ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" might ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" many ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" few ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" some ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" several ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" most of ") >= 0) ||
+                    (outputs_flat[i]["explanation_claim_text_refute"].indexOf(" sometimes ") >= 0)
+                    ) {
+                    claimUncertaintyCheck = false;
+                }
+                if ((outputs_flat[i]["claim_text_refute"].indexOf(" not ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" never ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" none ") >= 0) ||
+                    (outputs_flat[i]["claim_text_refute"].indexOf(" nobody ") >= 0)
+                    ) {
+                    claimNegationCheck = false;
                 }
             }
             if (!allControlsUsedCheck) {
                 log_event("verification_check_failed", {
                     check_failed: "outputs_moved_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!claimLengthCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "claim_length_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!claimDuplicateCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "claim_duplicate_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!claimNegationCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "claim_negation_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!claimUncertaintyCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "claim_uncertainty_check",
                     outputs: JSON.parse(JSON.stringify(outputs))
                 });
             }
@@ -710,16 +830,16 @@
 
             // check gold labels - var references saves gold labels
             var allGoldenCheck = true;
-            for (i = 0; i < total; i++) {
-                if (references[i]['g_id'] != 0) {
-                    if (references[i]['g_id']['label'] != -1){
-                        // check if gold label (g_id) same as input by annotator
-                        if (references[i]['g_id']['label'].indexOf(outputs[i]['label']) == -1){
-                            allGoldenCheck = false
-                        }
-                    }
-                }
-            }
+<!--            for (i = 0; i < total; i++) {-->
+<!--                if (references[i]['g_id'] != 0) {-->
+<!--                    if (references[i]['g_id']['label'] != -1){-->
+<!--                        // check if gold label (g_id) same as input by annotator-->
+<!--                        if (references[i]['g_id']['label'].indexOf(outputs[i]['label']) == -1){-->
+<!--                            allGoldenCheck = false-->
+<!--                        }-->
+<!--                    }-->
+<!--                }-->
+<!--            }-->
             if (!allGoldenCheck) {
                 log_event("verification_check_failed", {
                     check_failed: "golden_standard_check",
@@ -727,14 +847,18 @@
                 });
             }
 
-            //allGoldenCheck = true;
+            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'claim_length':claimLengthCheck, 'claim_negation':claimNegationCheck, 'claim_uncertainty':claimUncertaintyCheck, 'claim_duplicate':claimDuplicateCheck};
 
-            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'golden':allGoldenCheck};
         }
 
         $(function () {
             $("#previous-page").click(function () {
                 var page = parseInt($("#current-page").text());
+                outputs[pageIndex]['claim_text_support'] = $("textarea#claim_text_support").val()
+                outputs[pageIndex]['claim_text_refute'] = $("textarea#claim_text_refute").val()
+                outputs[pageIndex]['explanation_claim_text_support'] = $("textarea#explanation_claim_text_support").val()
+                outputs[pageIndex]['explanation_claim_text_refute'] = $("textarea#explanation_claim_text_refute").val()
+
                 if ($("reason_other").val() != "" && $("reason_other").val() != -1) {
                     outputs[page-1]['reason_other'] = $("#reason_other").val()
                 }
@@ -747,6 +871,11 @@
             });
             $("#next-page").click(function () {
                 var page = parseInt($("#current-page").text());
+                outputs[pageIndex]['claim_text_support'] = $("textarea#claim_text_support").val()
+                outputs[pageIndex]['claim_text_refute'] = $("textarea#claim_text_refute").val()
+                outputs[pageIndex]['explanation_claim_text_support'] = $("textarea#explanation_claim_text_support").val()
+                outputs[pageIndex]['explanation_claim_text_refute'] = $("textarea#explanation_claim_text_refute").val()
+
                 if ($("reason_other").val() != "" && $("reason_other").val() != -1) {
                     outputs[page-1]['reason_other'] = $("#reason_other").val()
                 }
@@ -872,8 +1001,13 @@
                 }
             });
             $("#submit").click(function () {
+                outputs[pageIndex]['claim_text_support'] = $("textarea#claim_text_support").val()
+                outputs[pageIndex]['claim_text_refute'] = $("textarea#claim_text_refute").val()
+                outputs[pageIndex]['explanation_claim_text_support'] = $("textarea#explanation_claim_text_support").val()
+                outputs[pageIndex]['explanation_claim_text_refute'] = $("textarea#explanation_claim_text_refute").val()
+
                 let verification = verifyAnswers();
-                if (verification['controls'] && verification['times'] && verification['golden']){
+                if (verification['controls'] && verification['claim_length'] && verification['claim_duplicate'] && verification['claim_uncertainty'] && verification['claim_negation'] && verification['times']){
                     $("#successModal").modal("toggle");
                     $("#successModal").on("hidden.bs.modal", function () {
                         log_event("task_finished", null);
@@ -888,13 +1022,22 @@
                     $("#warning-hints").empty();
                     let warningString = "<ul>"
                     if (!verification['controls']){
-                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one. If you provided answers to a non-required question, that is ok. If any slider is in the position you want, but grey, click on it to turn it blue.</li>"
+                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one.</li>"
                     }
                     if (!verification['times']){
                         warningString += "<li>You seem to have filled some questions too quickly and we suspected bot activity. Spend a couple of seconds more in each item, maybe review your answers.</li>"
                     }
-                    if (!verification['golden']){
-                        warningString += "<li>We know the answers for a small portion of the questions, and you seem to disagree with us. Please review your answers, but if you feel you are right even so, please contact the Requester.</li>"
+                    if (!verification['claim_length']){
+                        warningString += "<li>At least on of the written claims (or explanations) is too short in length (less than 5 words; 10 for explanations) or too long (more than thirty words; 100 for explanations).</li>"
+                    }
+                    if (!verification['claim_duplicate']){
+                        warningString += "<li>At least two of your claims/explanations are almost identical. Please adjust the claims/explanations given the instructions otherwise this task will be rejected after submission.</li>"
+                    }
+                    if (!verification['claim_negation']){
+                        warningString += "<li>At least on of your refute claims has a clear negation word like 'not' and 'never'. Please adjust the claims given the instructions.</li>"
+                    }
+                    if (!verification['claim_uncertainty']){
+                        warningString += "<li>At least on of your claims/explanations has a word expressing uncertainty like 'maybe' and 'probably'. Please adjust them given the instructions.</li>"
                     }
                     warningString += "</ul>"
                     $("#warning-hints").html(warningString);

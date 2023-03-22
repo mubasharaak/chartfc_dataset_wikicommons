@@ -1,0 +1,33 @@
+{
+    "type": "claim_explanation_generation",
+    "time_thr": "4500",
+    "language": "en",
+    "tasks" : "claim_explanation_generation_tasksets.json",
+    "language_str": "English",
+    "html_layout": "claim_explanation_generation_V2.html",
+    "instructions_project_text_file" : "instructions_project_text_claim_explanation_generation.txt",
+    "instructions_intro_text_file": "instructions_intro_text_claim_explanation_generation.txt",
+    "instructions_rules_text_file": "instructions_rules_text_claim_explanation_generation.txt",
+    "task_attributes":
+    {
+        "MaxAssignments": 3,
+        "LifetimeInSeconds": 604800,
+        "AssignmentDurationInSeconds": 1800,
+        "Reward": "0.7",
+        "Title": "Filtering chart images",
+        "Keywords": "chart images, fact checking, text writing",
+        "Description": "This is a pilot study, so useful feedback is rewarded.",
+        "QualificationRequirements": [{
+            "QualificationTypeId": "000000000000000000L0",
+            "Comparator": "GreaterThanOrEqualTo",
+            "IntegerValues": [95],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        },
+        {
+            "QualificationTypeId": "00000000000000000040",
+            "Comparator": "GreaterThan",
+            "IntegerValues": [1000],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        }]
+    }
+}
