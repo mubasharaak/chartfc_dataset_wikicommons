@@ -1,0 +1,33 @@
+{
+    "type": "claim_explanation_verification",
+    "time_thr": "4500",
+    "language": "en",
+    "tasks" : "claim_explanation_verification_tasksets.json",
+    "language_str": "English",
+    "html_layout": "claim_explanation_verification.html",
+    "instructions_project_text_file" : "instructions_project_text_claim_explanation_verification.txt",
+    "instructions_intro_text_file": "instructions_intro_text_claim_explanation_verification.txt",
+    "instructions_rules_text_file": "instructions_rules_text_claim_explanation_verification.txt",
+    "task_attributes":
+    {
+        "MaxAssignments": 3,
+        "LifetimeInSeconds": 604800,
+        "AssignmentDurationInSeconds": 3600,
+        "Reward": "0.7",
+        "Title": "Verification of claims and explanations",
+        "Keywords": "chart images, fact checking, text verification",
+        "Description": "This is a pilot study, so useful feedback is rewarded.",
+        "QualificationRequirements": [{
+            "QualificationTypeId": "000000000000000000L0",
+            "Comparator": "GreaterThanOrEqualTo",
+            "IntegerValues": [95],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        },
+        {
+            "QualificationTypeId": "00000000000000000040",
+            "Comparator": "GreaterThan",
+            "IntegerValues": [1000],
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        }]
+    }
+}

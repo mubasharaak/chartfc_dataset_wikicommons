@@ -10,10 +10,10 @@
     "instructions_rules_text_file": "instructions_rules_text_claim_explanation_generation.txt",
     "task_attributes":
     {
-        "MaxAssignments": 3,
+        "MaxAssignments": 2,
         "LifetimeInSeconds": 604800,
-        "AssignmentDurationInSeconds": 1800,
-        "Reward": "0.7",
+        "AssignmentDurationInSeconds": 3600,
+        "Reward": "1.0",
         "Title": "Filtering chart images",
         "Keywords": "chart images, fact checking, text writing",
         "Description": "This is a pilot study, so useful feedback is rewarded.",
