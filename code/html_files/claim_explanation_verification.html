@@ -57,7 +57,7 @@
                             Examples
                         </h4>
                         <br> In this task you will see a chart and (if available) its caption. For each chart, you have a claim and an explanation given. After looking at them carefully, <b>decide if the claim is TRUE (or FALSE if asked to)</b> using only the chart and its caption. Also, <b>check if the explanation correctly explains WHY the claims is TRUE (or FALSE if asked to).</b>
-                        <br><br> We added some automated checks and will manually check submissions before accepting.
+                        <br><br> We added some automated checks and will manually check submissions before accepting. MALICIOUS ANSWERS WILL BE REJECTED AND WORKERS BLOCKED!
                         <hr>
                         <div>
                             <h5 class="text-left text-primary mt-3">
@@ -506,7 +506,7 @@
                 <div class="col-sm-11 pr-0 pl-0">
                     <h6>2. Look at the following claim: </h6>
                     <div class="form-group">
-                        <p><b>Claim: </b><span id='claim'></span></p>
+                        <p><b>Claim: </b>"<span id='claim'></span>"</p>
 <!--                        <textarea class="form-control" id="claim" rows="1" placeholder="" style="min-width: 10%"></textarea>-->
                     </div>
                 </div>
@@ -535,33 +535,33 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <br />
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-11 pr-0 pl-0">
-                            <h6>4a. If you selected NO, rewrite the claim such that it is <b><span id='claim_label_1'></span></b> using only the chart and caption:</h6>
+                            <h6>4. If you selected NO, rewrite the claim such that it is <b><span id='claim_label_1'></span></b> using only the chart and caption:</h6>
                             <div class="form-group">
                                 <textarea class="form-control" id="claim_rewritten" rows="1" placeholder="Write claim here..." style="min-width: 10%"></textarea>
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-sm-11 pr-0 pl-0">
-                            <h6>4b. If you selected YES, check if the claim has errors (grammar, typos, written in upper case, etc.). Correct these errors and enter the corrected claim below:</h6>
-                            <p>If there are no errors, just copy and paste the claim below.</p>
-                            <div class="form-group">
-                                <textarea class="form-control" id="claim_error_corrected" rows="1" placeholder="Write claim here..." style="min-width: 10%"></textarea>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="row d-flex justify-content-center">-->
+<!--                        <div class="col-sm-11 pr-0 pl-0">-->
+<!--                            <h6>4b. If you selected YES, check if the claim has errors (grammar, typos, written in upper case, etc.). Correct these errors and enter the corrected claim below:</h6>-->
+<!--                            <p>If there are no errors, just copy and paste the claim below.</p>-->
+<!--                            <div class="form-group">-->
+<!--                                <textarea class="form-control" id="claim_error_corrected" rows="1" placeholder="Write claim here..." style="min-width: 10%"></textarea>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <br />
             </div>
             <hr>
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-11 pr-0 pl-0">
-                    <h6>5. Afterwards look at the following explanation telling you why the claim (or your rewritten claim) is <b><span id='claim_label_2'></span></b>: </h6>
+                    <h6>5. Afterwards look at the following explanation telling you WHY the claim (or your rewritten claim) is <b><span id='claim_label_2'></span></b>: </h6>
                     <div class="form-group">
-                        <p><b>Explanation: </b><span id='explanation'></span></p>
+                        <p><b>Explanation: </b>"<span id='explanation'></span>"</p>
 <!--                        <textarea class="form-control" id="explanation" rows="1" placeholder="explanation will be displayed here..." style="min-width: 10%"></textarea>-->
                     </div>
                 </div>
@@ -589,24 +589,24 @@
                             </div>
                         </div>
                     </div>
-                    <hr>
+                    <br />
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-11 pr-0 pl-0">
-                            <h6>7a. If you selected NO, rewrite the explanation such that the explanation is correctly explaining why the claim is <b><span id='claim_label_4'></span></b>:</h6>
+                            <h6>7. If you selected NO, rewrite the explanation such that the explanation is correctly explaining why the claim is <b><span id='claim_label_4'></span></b>:</h6>
                             <div class="form-group">
                                 <textarea class="form-control" id="explanation_rewritten" rows="1" placeholder="Write claim here..." style="min-width: 10%"></textarea>
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-sm-11 pr-0 pl-0">
-                            <h6>7b. If you selected YES, check if the explanation has errors (grammar, typos, written in upper case, etc.). Correct these errors and enter the corrected explanation below:</h6>
-                            <p>If there are no errors, just copy and paste the explanation below.</p>
-                            <div class="form-group">
-                                <textarea class="form-control" id="explanation_error_corrected" rows="1" placeholder="Write claim here..." style="min-width: 10%"></textarea>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="row d-flex justify-content-center">-->
+<!--                        <div class="col-sm-11 pr-0 pl-0">-->
+<!--                            <h6>7b. If you selected YES, check if the explanation has errors (grammar, typos, written in upper case, etc.). Correct these errors and enter the corrected explanation below:</h6>-->
+<!--                            <p>If there are no errors, just copy and paste the explanation below.</p>-->
+<!--                            <div class="form-group">-->
+<!--                                <textarea class="form-control" id="explanation_error_corrected" rows="1" placeholder="Write claim here..." style="min-width: 10%"></textarea>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                 </div>
                 <br />
                 <br />
@@ -791,8 +791,8 @@
 
 
         $("#instructions-intro-text").html("In this task, we want your help classifying the nature of some websites. You will be asked to take a look at six websites, and, for each, we'll ask:<br>1) What is the kind of author that normally puts information in that website;<br>2) What is the type of publisher that the website most closely classifies as;<br>3) Depending on the publisher type, a sub-type of publisher will also be asked.");
-        $("#instructions-rules-claim-verification-text").html(`<ul><li>The aim of this task is to <b>check the correctness of claims and explanations</b>.</li><li>Given the chart check if the <b>claim is TRUE or FALSE</b> (depending on the question).</li><li>If this is not the case, <b>rewrite the claim</b> to be either TRUE or FALSE.</li><li>Otherwise check if the claim is correctly written and has <b>no typos, grammatical errors, lower-/uppercase mistakes, etc. </b> and rewrite to correct</li><li>Check if the <b>explanation</b> correctly explains why the claims is TRUE or FALSE.</li><li><b>Rewrite</b> the explanation if this not the case, otherwise <b>check for errors</b> (typos, grammar, etc.)</li><li>To verify the claim/explanation, only information from the chart and commonsense should be needed.</li><li>Do <b>not include your own background knowledge</b> on the topic while writing.</li><br><li>The claim and explanation must contain <b>well-formed, grammatically correct</b> sentences.</li><li><b>Exclude</b> vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Exclude ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>The claim should be consistent for itself, e.g. avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>FALSE claims must <b>not include negation words</b> like “not”, “never”, “none”, etc.</li><li><b>Numbers and dates</b> can be formatted in any appropriate English format.</li></ul><p>We added some automated <b>checks</b> and will manually check submissions before accepting.</p><p> Next, we will ask you a few questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates.</p>`);
-        $("#instructions-rules-claim-verification-text-2").html(`<ul><li>The aim of this task is to <b>check the correctness of claims and explanations</b>.</li><li>Given the chart check if the <b>claim is TRUE or FALSE</b> (depending on the question).</li><li>If this is not the case, <b>rewrite the claim</b> to be either TRUE or FALSE.</li><li>Otherwise check if the claim is correctly written and has <b>no typos, grammatical errors, lower-/uppercase mistakes, etc. </b> and rewrite to correct</li><li>Check if the <b>explanation</b> correctly explains why the claims is TRUE or FALSE.</li><li><b>Rewrite</b> the explanation if this not the case, otherwise <b>check for errors</b> (typos, grammar, etc.)</li><li>To verify the claim/explanation, only information from the chart and commonsense should be needed.</li><li>Do <b>not include your own background knowledge</b> on the topic while writing.</li><br><li>The claim and explanation must contain <b>well-formed, grammatically correct</b> sentences.</li><li><b>Exclude</b> vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Exclude ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>The claim should be consistent for itself, e.g. avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>FALSE claims must <b>not include negation words</b> like “not”, “never”, “none”, etc.</li><li><b>Numbers and dates</b> can be formatted in any appropriate English format.</li></ul><p>We added some automated <b>checks</b> and will manually check submissions before accepting.</p>`);
+        $("#instructions-rules-claim-verification-text").html(`<ul><li>The aim of this task is to <b>check the correctness of claims and explanations</b>.</li><li>Given the chart check if the <b>claim is TRUE or FALSE</b> (depending on the question).</li><li>If this is not the case, <b>rewrite the claim</b> to be either TRUE or FALSE.</li><li>Otherwise check if the claim is correctly written and has <b>no typos, grammatical errors, lower-/uppercase mistakes, etc. </b> and rewrite to correct</li><li>Check if the <b>explanation</b> correctly explains why the claims is TRUE or FALSE.</li><li><b>Rewrite</b> the explanation if this not the case, otherwise <b>check for errors</b> (typos, grammar, etc.)</li><li>To verify the claim/explanation, only information from the chart and commonsense should be needed.</li><li>Do <b>not include your own background knowledge</b> on the topic while writing.</li><br><li>The claim and explanation must contain <b>well-formed, grammatically correct</b> sentences.</li><li><b>Exclude</b> vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Exclude ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>The claim should be consistent for itself, e.g. avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>FALSE claims must <b>not include negation words</b> like “not”, “never”, “none”, etc.</li><li><b>Numbers and dates</b> can be formatted in any appropriate English format.</li></ul><p>We added some automated <b>checks</b> and will manually check submissions before accepting. MALICIOUS ANSWERS WILL BE REJECTED AND WORKERS BLOCKED!</p><p> Next, we will ask you a few questions. You need to answer them correctly to start the task. You have two attempts to answer them correctly, otherwise the task terminates.</p>`);
+        $("#instructions-rules-claim-verification-text-2").html(`<ul><li>The aim of this task is to <b>check the correctness of claims and explanations</b>.</li><li>Given the chart check if the <b>claim is TRUE or FALSE</b> (depending on the question).</li><li>If this is not the case, <b>rewrite the claim</b> to be either TRUE or FALSE.</li><li>Otherwise check if the claim is correctly written and has <b>no typos, grammatical errors, lower-/uppercase mistakes, etc. </b> and rewrite to correct</li><li>Check if the <b>explanation</b> correctly explains why the claims is TRUE or FALSE.</li><li><b>Rewrite</b> the explanation if this not the case, otherwise <b>check for errors</b> (typos, grammar, etc.)</li><li>To verify the claim/explanation, only information from the chart and commonsense should be needed.</li><li>Do <b>not include your own background knowledge</b> on the topic while writing.</li><br><li>The claim and explanation must contain <b>well-formed, grammatically correct</b> sentences.</li><li><b>Exclude</b> vague words like “perhaps”, “seems like”, “maybe” which express uncertainty.</li><li>Exclude ambiguous words like “mostly”, “many”, “bad”, etc.</li><li>The claim should be consistent for itself, e.g. avoid using pronouns (e.g. he, it, they) or nominals (the medicine).</li><li>FALSE claims must <b>not include negation words</b> like “not”, “never”, “none”, etc.</li><li><b>Numbers and dates</b> can be formatted in any appropriate English format.</li></ul><p>We added some automated <b>checks</b> and will manually check submissions before accepting. MALICIOUS ANSWERS WILL BE REJECTED AND WORKERS BLOCKED!</p>`);
         $("#main-page-rules-claim-generation-text").html(`<ul><li>The aim of this task is to <b>filter charts with certain issues</b>.</li><li>We ask you to filter the chart if it is (1.) not in in <b>English</b>, (2.) not <b>readable</b>, or (3.) not <b>understandable</b> (i.e. you are not able to describe the chart in one sentence).</li><li>Before deciding, you should read <b>both the chart and its caption</b>.</li><li><b>Not in English:</b> parts of the chart (e.g. title, axes. caption) are not in English.</li><li><b>Not readable:</b> you can not see parts of the chart properly, for example the text is blurred or the image is cropped.</li><li><b>Not understandable:</b> the chart misses crucial information, for example what the axes mean, OR you cannot describe the chart in one sentence to someone.</li></ul><p>Click <b>Show Instructions</b> above to see some <b>examples</b>.`);
 
         // $("#lan_test_language").text(lan_test_language)
@@ -836,9 +836,9 @@
 <!--            }-->
 
             $("textarea#claim_rewritten").val(output['claim_rewritten']);
-            $("textarea#claim_error_corrected").val(output['claim_error_corrected']);
+<!--            $("textarea#claim_error_corrected").val(output['claim_error_corrected']);-->
             $("textarea#explanation_rewritten").val(output['explanation_rewritten']);
-            $("textarea#explanation_error_corrected").val(output['explanation_error_corrected']);
+<!--            $("textarea#explanation_error_corrected").val(output['explanation_error_corrected']);-->
 
             for (i = 0; i < 2; i++) {
                 if (output['label_claim'] == i) {
@@ -952,18 +952,96 @@
             lastChange = Date.now();
 
             var allControlsUsedCheck = true;
+            var malBehaviourCheck = true;
+            var claimLengthCheck = true;
+            var claimUncertaintyCheck = true;
             const outputs_flat = [].concat(...outputs)
+
             for (i = 0; i < outputs_flat.length; i++){
+                for (j = 0; j < outputs_flat.length; j++){
+                    if (
+                        (i != j) &&
+                        (
+                        (references[i]["claim"] == outputs_flat[j]["claim_rewritten"]) ||
+                        (references[i]["explanation"] == outputs_flat[j]["explanation_rewritten"]) ||
+                        (outputs_flat[i]["claim_rewritten"].length != 0 && outputs_flat[i]["claim_rewritten"] == outputs_flat[j]["claim_rewritten"]) ||
+                        (outputs_flat[i]["explanation_rewritten"].length != 0 && outputs_flat[i]["explanation_rewritten"] == outputs_flat[j]["explanation_rewritten"]) ||
+                        (outputs_flat[i]["claim_rewritten"].length != 0 && outputs_flat[i]["claim_rewritten"] == outputs_flat[j]["explanation_rewritten"])
+                        )
+                    ) {
+                        malBehaviourCheck = false;
+                    }
+                }
                 if (
                     (outputs_flat[i]["label_claim"] == -1) ||
-                    (outputs_flat[i]["label_explanation"] == -1)
+                    (outputs_flat[i]["label_explanation"] == -1) ||
+                    ((outputs_flat[i]["label_claim"] == 1) && (outputs_flat[i]["claim_rewritten"].length == 0)) ||
+                    ((outputs_flat[i]["label_explanation"] == 1) && (outputs_flat[i]["explanation_rewritten"].length == 0))
                 ) {
                     allControlsUsedCheck = false;
+                }
+                if (
+                    ((outputs_flat[i]["claim_rewritten"].split(' ').length > 1) && (outputs_flat[i]["claim_rewritten"].split(' ').length < 5)) ||
+                    (outputs_flat[i]["claim_rewritten"].split(' ').length > 30) ||
+                    ((outputs_flat[i]["explanation_rewritten"].split(' ').length > 1) && (outputs_flat[i]["explanation_rewritten"].split(' ').length < 10)) ||
+                    (outputs_flat[i]["explanation_rewritten"].split(' ').length > 100)
+                ) {
+                    claimLengthCheck = false;
+                }
+                if ((outputs_flat[i]["claim_rewritten"].indexOf(" perhaps ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" maybe ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" probably ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" mostly ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" occasionally ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" frequently ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" might ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" many ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" few ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" some ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" several ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" most of ") >= 0) ||
+                    (outputs_flat[i]["claim_rewritten"].indexOf(" sometimes ") >= 0)
+                    ) {
+                    claimUncertaintyCheck = false;
+                }
+                if ((outputs_flat[i]["explanation_rewritten"].indexOf(" perhaps ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" maybe ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" probably ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" mostly ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" occasionally ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" frequently ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" might ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" many ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" few ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" some ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" several ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" most of ") >= 0) ||
+                    (outputs_flat[i]["explanation_rewritten"].indexOf(" sometimes ") >= 0)
+                    ) {
+                    claimUncertaintyCheck = false;
                 }
             }
             if (!allControlsUsedCheck) {
                 log_event("verification_check_failed", {
                     check_failed: "outputs_moved_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!malBehaviourCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "mal_behaviour_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!claimUncertaintyCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "claim_uncertainty_check",
+                    outputs: JSON.parse(JSON.stringify(outputs))
+                });
+            }
+            if (!claimLengthCheck) {
+                log_event("verification_check_failed", {
+                    check_failed: "claim_length_check",
                     outputs: JSON.parse(JSON.stringify(outputs))
                 });
             }
@@ -983,16 +1061,22 @@
 
             // check gold labels - var references saves gold labels
             var allGoldenCheck = true;
-<!--            for (i = 0; i < total; i++) {-->
-<!--                if (references[i]['g_id'] != 0) {-->
-<!--                    if (references[i]['g_id']['label'] != -1){-->
-<!--                        // check if gold label (g_id) same as input by annotator-->
-<!--                        if (references[i]['g_id']['label'].indexOf(outputs[i]['label']) == -1){-->
-<!--                            allGoldenCheck = false-->
-<!--                        }-->
-<!--                    }-->
-<!--                }-->
-<!--            }-->
+            for (i = 0; i < total; i++) {
+                if (references[i]['g_id_claim'] != -1) {
+                    // check if gold label (g_id) same as input by annotator
+                    if (references[i]['g_id_claim'] != outputs[i]['label_claim']){
+                        allGoldenCheck = false
+                    }
+                }
+            }
+            for (i = 0; i < total; i++) {
+                if (references[i]['g_id_explanation'] != -1) {
+                    // check if gold label (g_id) same as input by annotator
+                    if (references[i]['g_id_explanation'] != outputs[i]['label_explanation']){
+                        allGoldenCheck = false
+                    }
+                }
+            }
             if (!allGoldenCheck) {
                 log_event("verification_check_failed", {
                     check_failed: "golden_standard_check",
@@ -1002,16 +1086,16 @@
 
             //allGoldenCheck = true;
 
-            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'golden':allGoldenCheck};
+            return {'controls':allControlsUsedCheck, 'times':allTimesCheck, 'golden':allGoldenCheck, 'claim_length':claimLengthCheck, 'claim_uncertainty':claimUncertaintyCheck, 'mal_behaviour':malBehaviourCheck};
         }
 
         $(function () {
             $("#previous-page").click(function () {
                 var page = parseInt($("#current-page").text());
                 outputs[pageIndex]['claim_rewritten'] = $("textarea#claim_rewritten").val()
-                outputs[pageIndex]['claim_error_corrected'] = $("textarea#claim_error_corrected").val()
+<!--                outputs[pageIndex]['claim_error_corrected'] = $("textarea#claim_error_corrected").val()-->
                 outputs[pageIndex]['explanation_rewritten'] = $("textarea#explanation_rewritten").val()
-                outputs[pageIndex]['explanation_error_corrected'] = $("textarea#explanation_error_corrected").val()
+<!--                outputs[pageIndex]['explanation_error_corrected'] = $("textarea#explanation_error_corrected").val()-->
 
                 if ($("reason_other").val() != "" && $("reason_other").val() != -1) {
                     outputs[page-1]['reason_other'] = $("#reason_other").val()
@@ -1026,9 +1110,9 @@
             $("#next-page").click(function () {
                 var page = parseInt($("#current-page").text());
                 outputs[pageIndex]['claim_rewritten'] = $("textarea#claim_rewritten").val()
-                outputs[pageIndex]['claim_error_corrected'] = $("textarea#claim_error_corrected").val()
+<!--                outputs[pageIndex]['claim_error_corrected'] = $("textarea#claim_error_corrected").val()-->
                 outputs[pageIndex]['explanation_rewritten'] = $("textarea#explanation_rewritten").val()
-                outputs[pageIndex]['explanation_error_corrected'] = $("textarea#explanation_error_corrected").val()
+<!--                outputs[pageIndex]['explanation_error_corrected'] = $("textarea#explanation_error_corrected").val()-->
 
                 if ($("reason_other").val() != "" && $("reason_other").val() != -1) {
                     outputs[page-1]['reason_other'] = $("#reason_other").val()
@@ -1159,12 +1243,12 @@
             });
             $("#submit").click(function () {
                 outputs[pageIndex]['claim_rewritten'] = $("textarea#claim_rewritten").val()
-                outputs[pageIndex]['claim_error_corrected'] = $("textarea#claim_error_corrected").val()
+<!--                outputs[pageIndex]['claim_error_corrected'] = $("textarea#claim_error_corrected").val()-->
                 outputs[pageIndex]['explanation_rewritten'] = $("textarea#explanation_rewritten").val()
-                outputs[pageIndex]['explanation_error_corrected'] = $("textarea#explanation_error_corrected").val()
+<!--                outputs[pageIndex]['explanation_error_corrected'] = $("textarea#explanation_error_corrected").val()-->
 
                 let verification = verifyAnswers();
-                if (verification['controls'] && verification['times'] && verification['golden']){
+                if (verification['controls'] && verification['claim_length'] && verification['claim_uncertainty'] && verification['mal_behaviour'] && verification['times'] && verification['golden']){
                     $("#successModal").modal("toggle");
                     $("#successModal").on("hidden.bs.modal", function () {
                         log_event("task_finished", null);
@@ -1178,11 +1262,23 @@
                     failCount = failCount + 1;
                     $("#warning-hints").empty();
                     let warningString = "<ul>"
+                    if (!verification['mal_behaviour']){
+                        warningString += "<li>We have spotted malicious behaviour. Correct this or return the HIT, otherwise this task will be REJECTED and the worker ID BLOCKED and REPORTED!</li>"
+                    }
                     if (!verification['controls']){
-                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one. If you provided answers to a non-required question, that is ok. If any slider is in the position you want, but grey, click on it to turn it blue.</li>"
+                        warningString += "<li>You did not provide all required answers. Please provide answers to every question required. Maybe you skipped the last one.</li>"
                     }
                     if (!verification['times']){
                         warningString += "<li>You seem to have filled some questions too quickly and we suspected bot activity. Spend a couple of seconds more in each item, maybe review your answers.</li>"
+                    }
+                    if (!verification['golden']){
+                        warningString += "<li>We know the answers for a small portion of the questions, and you seem to disagree with us. Please review your answers, but if you feel you are right even so, please contact the Requester.</li>"
+                    }
+                    if (!verification['claim_length']){
+                        warningString += "<li>At least on of the written claims (or explanations) is too short in length (less than 5 words; 10 for explanations) or too long (more than thirty words; 100 for explanations).</li>"
+                    }
+                    if (!verification['claim_uncertainty']){
+                        warningString += "<li>At least on of your claims/explanations has a word expressing uncertainty like 'maybe' and 'probably'. Please adjust them given the instructions.</li>"
                     }
                     if (!verification['golden']){
                         warningString += "<li>We know the answers for a small portion of the questions, and you seem to disagree with us. Please review your answers, but if you feel you are right even so, please contact the Requester.</li>"
