@@ -988,38 +988,6 @@
                 ) {
                     claimLengthCheck = false;
                 }
-                if ((outputs_flat[i]["claim_rewritten"].indexOf(" perhaps ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" maybe ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" probably ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" mostly ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" occasionally ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" frequently ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" might ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" many ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" few ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" some ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" several ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" most of ") >= 0) ||
-                    (outputs_flat[i]["claim_rewritten"].indexOf(" sometimes ") >= 0)
-                    ) {
-                    claimUncertaintyCheck = false;
-                }
-                if ((outputs_flat[i]["explanation_rewritten"].indexOf(" perhaps ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" maybe ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" probably ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" mostly ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" occasionally ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" frequently ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" might ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" many ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" few ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" some ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" several ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" most of ") >= 0) ||
-                    (outputs_flat[i]["explanation_rewritten"].indexOf(" sometimes ") >= 0)
-                    ) {
-                    claimUncertaintyCheck = false;
-                }
             }
             if (!allControlsUsedCheck) {
                 log_event("verification_check_failed", {
