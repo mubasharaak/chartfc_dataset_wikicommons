@@ -9,3 +9,4 @@ The following files contain links for and information related to the Wikimedia C
 [pie_chart.json](https://github.com/mubasharaak/chartfc_dataset_wikicommons/blob/main/data/dataset/pie_chart.json), 
 [scatter_plot.json](https://github.com/mubasharaak/chartfc_dataset_wikicommons/blob/main/data/dataset/scatter_plot.json).
 
+This directory further contains the ChartCheck training set, test set 1, test set 2, and validation set. 
