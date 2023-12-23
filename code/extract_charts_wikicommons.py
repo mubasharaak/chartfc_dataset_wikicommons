@@ -179,7 +179,7 @@ def main():
         chart_image_list.append(create_chart_dataset(page, chart_type))
 
     # save chart_image_list @todo adjust file name
-    with open(r"../data/init_dataset/pie_chart.json", "w", encoding="utf-8") as file:
+    with open(r"../data/dataset/pie_chart.json", "w", encoding="utf-8") as file:
         json.dump(chart_image_list, file, indent=4)
 
 
