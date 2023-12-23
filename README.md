@@ -1,4 +1,4 @@
-# chartfc_dataset_wikicommons
+# ChartCheck: An Evidence-Based Fact-Checking Dataset over Real-World Chart Images
 
 ChartCheck, a chart fact-checking dataset with real-world chart images from Wiki Commons.
 
