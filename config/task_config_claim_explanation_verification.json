@@ -13,7 +13,7 @@
         "MaxAssignments": 3,
         "LifetimeInSeconds": 604800,
         "AssignmentDurationInSeconds": 3600,
-        "Reward": "0.6",
+        "Reward": "0.5",
         "Title": "Verification of claims and explanations",
         "Keywords": "chart images, fact checking, text verification",
         "Description": "This is a pilot study, so useful feedback is rewarded.",
