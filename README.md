@@ -2,7 +2,9 @@
 
 ChartCheck, a chart fact-checking dataset with real-world chart images from [Wikimedia Commons](https://commons.wikimedia.org/wiki/Main_Page).
 
-If you use our dataset, please cite our paper: [ChartCheck: An Evidence-Based Fact-Checking Dataset over Real-World Chart Images](https://arxiv.org/pdf/2311.07453.pdf).
+Code for baselines available here: [github.com/RainbowMan1/ChartFC](https://github.com/RainbowMan1/ChartFC)
+
+If you use our dataset or code, please cite our paper: [ChartCheck: An Evidence-Based Fact-Checking Dataset over Real-World Chart Images](https://arxiv.org/pdf/2311.07453.pdf).
 
 ```
 @article{akhtar-etal-2023-chartcheck,
